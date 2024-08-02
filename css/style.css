@@ -16,8 +16,11 @@ header {
   justify-content: space-between;
   align-items: center;
   border-radius: 50px;
-  padding: 10px 40px;
+  padding: 10px;
   margin: 20px 0; }
+  header h2 {
+    margin: 0;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.638); }
   header nav button {
     background-image: linear-gradient(to right, #5D45FD 0%, #A89CFF 51%, #5D45FD 100%);
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.582);
@@ -45,7 +48,8 @@ main {
 @media (min-width: 1000px) {
   header {
     width: 1000px;
-    margin: 20px auto; } }
+    margin: 20px auto;
+    padding: 10px 40px; } }
 main {
   width: 1000px;
   margin: auto; }

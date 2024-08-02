@@ -20,7 +20,7 @@
     <!-- Titulo do jogo -->
     <header>
      
-        <h3>Minecraft</h3>
+        <h2>Minecraft</h2>
 
         <nav>
             <button type="">Start</button>
@@ -32,7 +32,7 @@
 
     <!-- conteudo prinscipal -->
     <main>
-        <h2>fsdfdsdsfsd</h2>
+        <h2>Hello Word</h2>
     
     </main>
 
