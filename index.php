@@ -18,7 +18,7 @@
 <body>
 
     <!-- Titulo do jogo -->
-    <header>
+    <header >
      
         <h2>Minecraft</h2>
 
