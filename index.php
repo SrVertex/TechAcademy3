@@ -18,15 +18,22 @@
 <body>
 
     <!-- Titulo do jogo -->
-
     <header>
-        <h1 class="text-center">Nome do Game</h1>
+     
+        <h3>Minecraft</h3>
+
+        <nav>
+            <button type="">Start</button>
+            <button type="" style="margin: 0 10px;">Save</button>
+            <button type="">Reset</button>
+        </nav>
+
     </header>
 
     <!-- conteudo prinscipal -->
-
     <main>
-        <h2>Hello Word</h2>
+        <h2>fsdfdsdsfsd</h2>
+    
     </main>
 
 
@@ -37,3 +44,4 @@
      <script src="js/bootstrap.bundle.min.js"></script>
 
 </html>
+
