@@ -32,8 +32,19 @@
 
     <!-- conteudo prinscipal -->
     <main>
-        <h2>Hello Word</h2>
-    
+
+        <section id="main">
+
+            <div class="form-center">
+                <h2 class="text-center">Hello Word</h2>
+            </div>
+
+            <div class="form-psq">
+                <h4 class="text-center">local de pesquisa</h4>
+            </div>
+        
+        </section>
+
     </main>
 
 
