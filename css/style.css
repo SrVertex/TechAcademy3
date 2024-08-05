@@ -13,13 +13,15 @@ header {
   border: 2px solid;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  flex-direction: column;
   align-items: center;
   border-radius: 50px;
   padding: 10px;
   margin: 25px 0; }
   header h2 {
     margin: 0;
+    margin-bottom: 10px;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.638); }
   header nav button {
     background-image: linear-gradient(to right, #5D45FD 0%, #A89CFF 51%, #5D45FD 100%);
@@ -61,7 +63,11 @@ main #main {
   header {
     width: 1000px;
     margin: 25px auto;
-    padding: 10px 40px; }
+    padding: 10px 40px;
+    justify-content: space-between;
+    flex-direction: row; }
+    header h2 {
+      margin: 0; }
 
   main #main {
     width: 1000px;
