@@ -17,15 +17,18 @@
 
 <body>
 
+<div class="BG">
+
     <!-- Titulo do jogo -->
     <header >
      
         <h2>Minecraft</h2>
 
+    <!-- buttons -->
         <nav>
-            <button type="">Start</button>
-            <button type="" style="margin: 0 10px;">Save</button>
-            <button type="">Reset</button>
+            <button type="button" href="">Start</button>
+            <button type="" style="margin: 0 10px;" href="">Save</button>
+            <button type="" href="">Reset</button>
         </nav>
 
     </header>
@@ -35,10 +38,12 @@
 
         <section id="main">
 
+        <!--  conteudo principal-->
             <div class="form-center">
                 <h2 class="text-center">Hello Word</h2>
             </div>
 
+        <!-- barra de pesquisa  -->
             <div class="form-psq">
                 <h4 class="text-center">local de pesquisa</h4>
             </div>
@@ -46,6 +51,7 @@
         </section>
 
     </main>
+</div>
 
 
 </body>
