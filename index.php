@@ -13,21 +13,21 @@
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
 </head>
 
 <body>
 
-<div class="BG">
 
     <!-- Titulo do jogo -->
-    <header >
-     
+    <header>
+
         <h2>Minecraft</h2>
 
-    <!-- buttons -->
+        <!-- buttons -->
         <nav>
-            <button type="button" href="">Start</button>
-            <button type="" style="margin: 0 10px;" href="">Save</button>
+            <button type="" style="margin: 0 10px 0 0 ;" href="">Save</button>
             <button type="" href="">Reset</button>
         </nav>
 
@@ -37,28 +37,46 @@
     <main>
 
         <section id="main">
+            <!-- conteiner de historia -->
+            <div class="historia">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi asperiores et, maiores consequatur ex voluptate, sed ratione consequuntur praesentium aut quisquam sequi saepe culpa, officia odit? Repellendus, nihil!
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi asperiores et,
+                </p>
+            </div>
 
-        <!--  conteudo principal-->
+            <!--  conteudo principal-->
             <div class="form-center">
-                <h2 class="text-center">Hello Word</h2>
+                <form action="">
+                    <h2 class="text-center">Hello Word</h2>
+                </form>
             </div>
 
-        <!-- barra de pesquisa  -->
+            <!-- barra de pesquisa  -->
             <div class="form-psq">
-                <h4 class="text-center">local de pesquisa</h4>
+
+                <form action="">
+                    <!-- input de pesquisa -->
+                    <input type="search" placeholder="Digite os codigos" required>
+
+                    <!-- botão de pesquisa -->
+                    <a href="" type="submit">
+
+                        <i class="bi bi-arrow-right-square-fill"></i>
+
+                    </a>
+
+                </form>
             </div>
-        
+
         </section>
 
-    </main>
-</div>
+
 
 
 </body>
 
-    <!-- codigos js -->
+<!-- codigos js -->
 
-     <script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
 
 </html>
-
