@@ -46,9 +46,15 @@
 
             <!--  conteudo principal-->
             <div class="form-center">
-                <form action="">
-                    <h2 class="text-center">Hello Word</h2>
-                </form>
+                
+                 <div>
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nulla itaque vel excepturi voluptates aut voluptatem tempora ipsa adipisci beatae laborum earum blanditiis at est cupiditate, eum reiciendis ea exercitationem.</p>
+                    <br>
+                    
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nulla itaque vel excepturi voluptates aut voluptatem tempora ipsa adipisci beatae laborum earum blanditiis at est cupiditate, eum reiciendis ea exercitationem.</p>
+
+                 </div>
+             
             </div>
 
             <!-- barra de pesquisa  -->
