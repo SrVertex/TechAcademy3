@@ -15,13 +15,16 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 </head>
 
 <body>
 
 
     <!-- Titulo do jogo -->
-    <header>
+    <header class="animate__bounceIn">
 
         <h2>Minecraft</h2>
 
@@ -49,16 +52,18 @@
                 
                  <div>
                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nulla itaque vel excepturi voluptates aut voluptatem tempora ipsa adipisci beatae laborum earum blanditiis at est cupiditate, eum reiciendis ea exercitationem.</p>
-                    <br>
                     
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nulla itaque vel excepturi voluptates aut voluptatem tempora ipsa adipisci beatae laborum earum blanditiis at est cupiditate, eum reiciendis ea exercitationem.</p>
+                    
+                    <p>ola meu nome é lucas carvalho </p>
+
+                    <p>meu nome é lucas carvalhp pedrozmeu e eu gosto de </p>
 
                  </div>
              
             </div>
 
             <!-- barra de pesquisa  -->
-            <div class="form-psq">
+            <div class="form-psq" data-aos="zoom-in" data-aos-duration="500">
 
                 <form action="">
                     <!-- input de pesquisa -->
@@ -67,7 +72,7 @@
                     <!-- botão de pesquisa -->
                     <a href="" type="submit">
 
-                        <i class="bi bi-arrow-right-square-fill"></i>
+                        <i class="bi bi-arrow-up-square-fill"></i>
 
                     </a>
 
@@ -80,9 +85,14 @@
 
 
 </body>
-
 <!-- codigos js -->
 
 <script src="js/bootstrap.bundle.min.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
 
 </html>
