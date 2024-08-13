@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <title>jogo em java</title>
+    
+    <link rel="shortcut icon" href="imagens/logo2.jpg">
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -26,13 +28,18 @@
 
     <!-- Titulo do jogo -->
     <header>
-
-        <h2>Minecraft</h2>
+    
+            <div class="logo">
+                <img src="imagens/logo1.jpg" alt="" class="w-100">
+                <h2>Java</h2>
+            </div>
+           
 
         <!-- buttons -->
         <nav>
-            <button type="" style="margin: 0 10px 0 0 ;" href="">Save</button>
-            <button type="" href="">Reset</button>
+            <button type="" href="" style="margin: 0 10px 0 0 ;">Reset</button>
+            <button type=""  href="">Save</button>
+            
         </nav>
 
     </header>
