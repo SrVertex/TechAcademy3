@@ -8,12 +8,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <title>jogo em java</title>
+    
+    <link rel="shortcut icon" href="imagens/logo2.jpg">
 
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 </head>
 
@@ -22,13 +28,18 @@
 
     <!-- Titulo do jogo -->
     <header>
-
-        <h2>Minecraft</h2>
+    
+            <div class="logo">
+                <img src="imagens/logo1.jpg" alt="" class="w-100">
+                <h2>Java</h2>
+            </div>
+           
 
         <!-- buttons -->
         <nav>
-            <button type="" style="margin: 0 10px 0 0 ;" href="">Save</button>
-            <button type="" href="">Reset</button>
+            <button type="" href="" style="margin: 0 10px 0 0 ;">Reset</button>
+            <button type=""  href="">Save</button>
+            
         </nav>
 
     </header>
@@ -46,9 +57,17 @@
 
             <!--  conteudo principal-->
             <div class="form-center">
-                <form action="">
-                    <h2 class="text-center">Hello Word</h2>
-                </form>
+                
+                 <div>
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nulla itaque vel excepturi voluptates aut voluptatem tempora ipsa adipisci beatae laborum earum blanditiis at est cupiditate, eum reiciendis ea exercitationem.</p>
+                    
+                    
+                    <p>ola meu nome é lucas carvalho </p>
+
+                    <p>meu nome é lucas carvalhp pedrozmeu e eu gosto de </p>
+
+                 </div>
+             
             </div>
 
             <!-- barra de pesquisa  -->
@@ -61,7 +80,7 @@
                     <!-- botão de pesquisa -->
                     <a href="" type="submit">
 
-                        <i class="bi bi-arrow-right-square-fill"></i>
+                        <i class="bi bi-arrow-up-square-fill"></i>
 
                     </a>
 
@@ -74,9 +93,14 @@
 
 
 </body>
-
 <!-- codigos js -->
 
 <script src="js/bootstrap.bundle.min.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
 
 </html>

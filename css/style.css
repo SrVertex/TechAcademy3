@@ -13,7 +13,7 @@
 body {
   background-color: var(--primary) !important;
   color: var(--text) !important;
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;     
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
   background: url(..//imagens/bg\ site\ game.webp);
   background-position: center;
   background-repeat: initial;
@@ -23,8 +23,8 @@ body {
 header {
   background-color: #ffffff1c;
   background-image: linear-gradient(140deg, #ffffff13 0%, #ffffff04 100%);
-  backdrop-filter: blur(4px);
-  border: 2px solid;
+  /* backdrop-filter: blur(5px); */
+  border: 0.1px solid white;
 
   width: 100%;
   display: flex;
@@ -36,11 +36,23 @@ header {
   padding: 10px;
   margin: 25px 0;
 
-  h2 {
-    margin: 0;
-    margin-bottom: 10px;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.638);
-  }
+    .logo {
+      display: flex;
+      margin-bottom: 10px;
+
+        img {
+            width: 38px !important;
+            border-radius: 10px;
+            box-shadow: 0 3px 7px black;
+        }
+        h2 {
+          margin: 0;
+          margin-left: 18px;
+          text-shadow: 0 2px 5px rgba(0, 0, 0, 0.638);
+        }
+      
+    }
+
 
   nav {
     button {
@@ -79,13 +91,13 @@ main {
     margin: auto;
 
     .historia {
-        width: 100%;
-      padding: 10px;
+      width: 100%;
+      padding: 20px 10px;
       margin-bottom: 20px;
 
       background-color: #ffffff0e;
       background-image: linear-gradient(140deg, #ffffff0e 0%, #ffffff04 100%);
-      backdrop-filter: blur(4px);
+      /* backdrop-filter: blur(5px); */
       border: 2px solid;
       border-radius: 20px;
 
@@ -95,50 +107,62 @@ main {
     }
 
     .form-center {
-        margin-bottom: 30px;
+      display: flex;
+      align-items: end ;
+    
+      height: 500px;
+      background-color: #ffffff0e;
+      background-image: linear-gradient(140deg, #ffffff0e 0%, #ffffff04 100%);
+      /* backdrop-filter: blur(4px);  */
+      border: 2px solid;
+      overflow: hidden;
+
+      border-radius: 20px;
+      margin-bottom: 30px;
+      padding: 10px;
+
+      p {
+        margin: 0;
       
-
-        form {
-            padding: 200px 10px;
-            background-color: #ffffff0e;
-            background-image: linear-gradient(140deg, #ffffff0e 0%, #ffffff04 100%);
-            backdrop-filter: blur(4px);
-            border: 2px solid;
-            border-radius: 20px;
-        }
+      }
     }
+  }
 
-    .form-psq {
-      form {
-        display: flex;
-        width: 98%;
-        justify-content: space-between;
-        align-content: center;
+  .form-psq {
+    form {
+      display: flex;
+      width: 98%;
+      justify-content: space-between;
+      align-content: center;
+      margin-bottom: 20px;
 
-        input {
-          width: 88%;
-          padding: 10px;
+      input {
+        width: 88%;
+        padding: 10px;
 
-          background-color: #ffffff0e;
-          background-image: linear-gradient(
-            140deg,
-            #ffffff0e 0%,
-            #ffffff04 100%
-          );
-          backdrop-filter: blur(4px);
-          border: 2px solid white;
-          border-radius: 50px;
-          color: var(--color3);
-        }
+        background-color: #ffffff0e;
+        background-image: linear-gradient(140deg, #ffffff0e 0%, #ffffff04 100%);
+        /* backdrop-filter: blur(4px); */
+        border: 2px solid white;
+        border-radius: 50px;
+        color: var(--color3);
+      }
 
-        a {
-          i {
-            font-size: 45px;
-            color: white;
-          }
+      a {
+        i {
+          font-size: 45px;
+          color: white;
         }
       }
     }
+  }
+}
+
+@media (min-width: 580px) {
+  header {
+    padding: 10px 40px;
+    justify-content: space-between;
+    flex-direction: row;
   }
 }
 
@@ -146,13 +170,10 @@ main {
   header {
     width: 1000px;
     margin: 25px auto;
-    padding: 10px 40px;
-    justify-content: space-between;
-    flex-direction: row;
 
-    h2 {
-      margin: 0;
-    }
+      .logo {
+        margin: 0;
+      }
   }
 
   main {
@@ -160,25 +181,26 @@ main {
       width: 1000px;
       margin: auto;
 
-        .historia {
-            width: 90%;
-            margin: 25px auto;
-        }
+      .historia {
+        width: 100%;
+        margin: 25px auto;
+      }
 
       .form-psq {
         form {
           width: 80%;
           margin: auto;
+          margin-bottom: 20px;
           input {
             width: 92%;
           }
-            a {
+          a {
             opacity: 50%;
             transition: 400ms;
-                &:hover  {
-                    opacity: 100%;
-                }
+            &:hover {
+              opacity: 100%;
             }
+          }
         }
       }
     }
