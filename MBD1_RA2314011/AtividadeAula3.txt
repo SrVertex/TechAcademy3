@@ -1,0 +1,59 @@
+/*EXERC 1*/
+
+select * from produto
+where UNIDADE like '%UN%';
+
+/*EXERC 2*/
+
+select * from produto
+where CODIGO_CLASSIFICACAO like '%020%' and QUANTIDADE > 20;
+
+/*EXERC 3*/
+
+select * from produto
+where DESCRICAO like '%bala %' and QUANTIDADE >= 6 order by CODIGO_CLASSIFICACAO ASC;
+
+/*EXERC 4*/
+
+select * from produto
+where DESCRICAO like '%martelo%' and CODIGO_CLASSIFICACAO not like '%001%';
+
+/*EXERC 5*/
+
+select * from produto
+where CODIGO_CLASSIFICACAO like '%002%' and UNIDADE like 'CX' and QUANTIDADE < 5;
+
+/*EXERC 6*/
+
+select * from produto
+where CODIGO_CLASSIFICACAO like '%002%' and UNIDADE not like 'CX' and QUANTIDADE >= 10 and QUANTIDADE <= 50;
+
+/*EXERC 7*/
+
+select * from produto
+where CODIGO_CLASSIFICACAO = 021 and (DESCRICAO like '%camiseta%') or CODIGO_CLASSIFICACAO = 008 and (DESCRICAO like '%bola%');
+
+/*EXERC 8*/
+
+select * from produto
+where UNIDADE = 'PCT' and produto.CODIGO_CLASSIFICACAO = 003;
+
+/*EXERC 9*/
+
+select distinct UNIDADE from produto
+where CODIGO_CLASSIFICACAO = 006;
+
+/*EXERC 10*/
+
+select * from produto
+where QUANTIDADE > 6 and QUANTIDADE <10;
+
+/*EXERC 11*/
+
+select * from produto
+where DESCRICAO like 'oleo%' and UNIDADE like 'L';
+
+/*EXERC 12*/
+
+select CODIGO,DESCRICAO,TIPO,CODIGO_CLASSIFICACAO,UNIDADE, (QUANTIDADE * VALOR) as TOTAL from produto
+where CODIGO_CLASSIFICACAO = 015 and UNIDADE like 'CX';
