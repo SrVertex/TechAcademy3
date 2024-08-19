@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 
     <title>jogo em java</title>
-    
+
     <link rel="shortcut icon" href="imagens/logo2.jpg">
 
     <link rel="stylesheet" href="css/style.css">
@@ -19,7 +20,7 @@
 
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 </head>
 
@@ -28,18 +29,32 @@
 
     <!-- Titulo do jogo -->
     <header>
-    
-            <div class="logo">
-                <img src="imagens/logo1.jpg" alt="" class="w-100">
-                <h2>Java</h2>
-            </div>
-           
+
+        <div class="logo">
+            <img src="imagens/logo1.jpg" alt="">
+            <h2>Java</h2>
+        </div>
+
 
         <!-- buttons -->
         <nav>
-            <button type="" href="" style="margin: 0 10px 0 0 ;">Reset</button>
-            <button type=""  href="">Save</button>
-            
+        <li class="nav-item dropdown" >
+                            <a class="nav-link dropdown-toggle" href="#" role="" data-bs-toggle="dropdown" aria-expanded="false">Help</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="jogo/ghost">Ghost of Tsushima</a></li>
+                                <li><a class="dropdown-item" href="jogo/hollow">Hollow Knight</a></li>
+                                <li><a class="dropdown-item" href="jogo/horizon">Horizon Zero Dows</a></li>
+                                <li><a class="dropdown-item" href="null">Islets</a></li>
+                                <li><a class="dropdown-item" href="null">Minecraft Dungeons</a></li>
+                                <li><a class="dropdown-item" href="null">Hogwarts Legacy</a></li>
+
+                            </ul>
+                        </li>
+                    </ul>
+            <form action="" method="post">
+                <button id="reset" type="submit" name="reset" style="margin: 0 10px 0 15px;">Reset</button>
+                <button type="" href="">Save</button>
+            </form>
         </nav>
 
     </header>
@@ -50,25 +65,26 @@
         <section id="main">
             <!-- conteiner de historia -->
             <div class="historia">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi asperiores et, maiores consequatur ex voluptate, sed ratione consequuntur praesentium aut quisquam sequi saepe culpa, officia odit? Repellendus, nihil!
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi asperiores et,
+                    maiores consequatur ex voluptate, sed ratione consequuntur praesentium aut quisquam sequi saepe
+                    culpa, officia odit? Repellendus, nihil!
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi asperiores et,
                 </p>
             </div>
 
             <!--  conteudo principal-->
-            <div class="form-center">
-                
-                 <div>
-                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nulla itaque vel excepturi voluptates aut voluptatem tempora ipsa adipisci beatae laborum earum blanditiis at est cupiditate, eum reiciendis ea exercitationem.</p>
-                    
-                    
-                    <p>ola meu nome é lucas carvalho </p>
+            <div class="form-bg">   
+                <!-- imagens game -->
 
-                    <p>meu nome é lucas carvalhp pedrozmeu e eu gosto de </p>
+                <div class="form-center">
 
-                 </div>
-             
+                    <span>
+                        <h2>Hello Word</h2>
+                    </span>
+
+                </div>
             </div>
+
 
             <!-- barra de pesquisa  -->
             <div class="form-psq">
@@ -78,10 +94,10 @@
                     <input type="search" placeholder="Digite os codigos" required>
 
                     <!-- botão de pesquisa -->
-                    <a href="" type="submit">
+                    <a href="" type="submit" style="color: white;">
 
                         <i class="bi bi-arrow-up-square-fill"></i>
-
+                                oK
                     </a>
 
                 </form>
@@ -93,14 +109,49 @@
 
 
 </body>
-<!-- codigos js -->
+
+<!-- COMANDO EM JAVSSCRIPT -->
+<!-- COMANDO EM JAVSSCRIPT -->
+<!-- COMANDO EM JAVSSCRIPT -->
 
 <script src="js/bootstrap.bundle.min.js"></script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
-  AOS.init();
+    AOS.init();
 </script>
+ <script>
+    const btn = document.querySelector('#reset')
+
+    btn.addEventListener('click', () => {
+        location.reload()
+    })
+</script> 
 
 </html>
+
+
+
+<!--  BACK-END EM PHP  -->
+<!--  BACK-END EM PHP  -->
+<!--  BACK-END EM PHP  -->
+
+
+<?php
+// if (isset($_POST['reset'])) {
+//     // Handle any reset logic if needed
+//     header("Refresh:0"); // Refresh the page
+//     exit;
+// }
+
+// $showAlert = true;
+
+// if ($showAlert) {
+//     echo "<script>
+//             alert('Todos os seu Itens e Progresso no jogo seram resetados!');
+//                 </script>";
+// }
+
+
+?>
