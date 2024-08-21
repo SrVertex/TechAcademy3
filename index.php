@@ -24,7 +24,7 @@
 
 </head>
 
-<body>
+    <body>
 
 
     <!-- Titulo do jogo -->
@@ -38,21 +38,8 @@
 
         <!-- buttons -->
         <nav>
-        <li class="nav-item dropdown" >
-                            <a class="nav-link dropdown-toggle" href="#" role="" data-bs-toggle="dropdown" aria-expanded="false">Help</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="jogo/ghost">Ghost of Tsushima</a></li>
-                                <li><a class="dropdown-item" href="jogo/hollow">Hollow Knight</a></li>
-                                <li><a class="dropdown-item" href="jogo/horizon">Horizon Zero Dows</a></li>
-                                <li><a class="dropdown-item" href="null">Islets</a></li>
-                                <li><a class="dropdown-item" href="null">Minecraft Dungeons</a></li>
-                                <li><a class="dropdown-item" href="null">Hogwarts Legacy</a></li>
-
-                            </ul>
-                        </li>
-                    </ul>
             <form action="" method="post">
-                <button id="reset" type="submit" name="reset" style="margin: 0 10px 0 15px;">Reset</button>
+                <button id="reset" type="submit" name="reset" style="margin: 0 10px 0 0 ;">Reset</button>
                 <button type="" href="">Save</button>
             </form>
         </nav>
@@ -73,14 +60,23 @@
             </div>
 
             <!--  conteudo principal-->
-            <div class="form-bg">   
+            <div class="form-bg">
                 <!-- imagens game -->
 
                 <div class="form-center">
 
                     <span>
-                        <h2>Hello Word</h2>
-                    </span>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi
+                            asperiores et,
+                            maiores consequatur ex voluptate, sed ratione consequuntur praesentium aut quisquam sequi
+                            saepe
+                            culpa, officia odit? Repellendus, nihil!
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi
+                            asperiores et,
+                        </p>
+                        </span>
+                        <br>
+                  
 
                 </div>
             </div>
@@ -97,7 +93,7 @@
                     <a href="" type="submit" style="color: white;">
 
                         <i class="bi bi-arrow-up-square-fill"></i>
-                                oK
+
                     </a>
 
                 </form>
@@ -121,13 +117,13 @@
 <script>
     AOS.init();
 </script>
- <script>
+<script>
     const btn = document.querySelector('#reset')
 
     btn.addEventListener('click', () => {
         location.reload()
     })
-</script> 
+</script>
 
 </html>
 
