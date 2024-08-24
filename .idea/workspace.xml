@@ -5,27 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eadf96f7-6fc5-42b9-b45b-a7ca80caa090" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/JavaGamer/JavaGamer.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/Comandos.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JavaGamer/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TechAcademy3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TechAcademy3.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Artboard-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MBD1_RA2313641/AtividadeAula3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/MBD1_RA2314011/AtividadeAula3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/teste.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/figma.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/index.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechAcademy3/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechAcademy3/.idea/TechAcademy3.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechAcademy3/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechAcademy3/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechAcademy3/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechAcademy3/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TechAcademy3/index.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/ComandoPrompt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/help.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/set.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Comandos/Comandos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,16 +48,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "front-end2",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "D:/Projetos do vs code/ProjecXampp/TechAcademy3/JavaGamer/src/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;front-end2&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/Projetos do vs code/ProjecXampp/TechAcademy3/JavaGamer/src/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
