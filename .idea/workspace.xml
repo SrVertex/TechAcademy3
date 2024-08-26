@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eadf96f7-6fc5-42b9-b45b-a7ca80caa090" name="Changes" comment="" />
+    <list default="true" id="eadf96f7-6fc5-42b9-b45b-a7ca80caa090" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Comandos/ComandoPrompt.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/ComandoPrompt.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

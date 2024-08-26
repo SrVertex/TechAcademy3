@@ -7,6 +7,7 @@ public class ComandoPrompt {
         String ComandoDigitado = comandos[0];
 
         Comandos.help lista = new help();
+
         comandos = lista.getNomes();
 
         switch (ComandoDigitado.toUpperCase()) {
@@ -17,6 +18,7 @@ public class ComandoPrompt {
                 }
 
             break;
+
 
         default:
             System.out.println("comando invalido Digite novamente!");
