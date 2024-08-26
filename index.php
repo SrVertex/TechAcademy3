@@ -1,3 +1,23 @@
+<!--  BACK-END EM PHP  -->
+
+<?php
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['inputText'])) {
+        if (!isset($_SESSION['historico'])) {
+            $_SESSION['historico'] = [];
+        }
+        $inputText = htmlspecialchars($_POST['inputText']);
+        $_SESSION['historico'][] = $inputText;
+    } elseif (isset($_POST['clear'])) {
+        $_SESSION['historico'] = [];
+    }
+}
+?>
+
+<!--  BACK-END EM PHP  -->
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -24,7 +44,7 @@
 
 </head>
 
-    <body>
+<body>
 
 
     <!-- Titulo do jogo -->
@@ -39,7 +59,7 @@
         <!-- buttons -->
         <nav>
             <form action="" method="post">
-                <button id="reset" type="submit" name="reset" style="margin: 0 10px 0 0 ;">Reset</button>
+                <button id="reset" type="submit" name="clear" style="margin: 0 10px 0 0 ;">Reset</button>
                 <button type="" href="">Save</button>
             </form>
         </nav>
@@ -65,18 +85,16 @@
 
                 <div class="form-center">
 
-                    <span>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi
-                            asperiores et,
-                            maiores consequatur ex voluptate, sed ratione consequuntur praesentium aut quisquam sequi
-                            saepe
-                            culpa, officia odit? Repellendus, nihil!
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi
-                            asperiores et,
-                        </p>
-                        </span>
-                        <br>
-                  
+                    <?php
+                    if (isset($_SESSION['historico']) && !empty($_SESSION['historico'])) {
+
+                        foreach ($_SESSION['historico'] as $item) {
+                            echo "<p>$item</p>";
+                        }
+
+                    }
+                    ?>
+
 
                 </div>
             </div>
@@ -85,9 +103,9 @@
             <!-- barra de pesquisa  -->
             <div class="form-psq">
 
-                <form action="">
+                <form method="POST" action="">
                     <!-- input de pesquisa -->
-                    <input type="search" placeholder="Digite os codigos" required>
+                    <input type="text" id="inputText" name="inputText" placeholder="Digite os codigos" required>
 
                     <!-- botão de pesquisa -->
                     <a href="" type="submit" style="color: white;">
@@ -100,6 +118,7 @@
             </div>
 
         </section>
+
 
 
 
@@ -123,31 +142,10 @@
     btn.addEventListener('click', () => {
         location.reload()
     })
+
 </script>
 
 </html>
 
 
 
-<!--  BACK-END EM PHP  -->
-<!--  BACK-END EM PHP  -->
-<!--  BACK-END EM PHP  -->
-
-
-<?php
-// if (isset($_POST['reset'])) {
-//     // Handle any reset logic if needed
-//     header("Refresh:0"); // Refresh the page
-//     exit;
-// }
-
-// $showAlert = true;
-
-// if ($showAlert) {
-//     echo "<script>
-//             alert('Todos os seu Itens e Progresso no jogo seram resetados!');
-//                 </script>";
-// }
-
-
-?>
