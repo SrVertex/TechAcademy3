@@ -79,14 +79,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </p>
             </div>
 
-            <!--  conteudo principal-->
-            <div class="form-bg">
-                <!-- imagens game -->
 
+            <div class="form-bg">
                 <div class="form-center">
 
                     <?php
-                    if (isset($_SESSION['historico']) && !empty($_SESSION['historico'])) {
+                    if (isset($_SESSION['history'])) {
 
                         foreach ($_SESSION['historico'] as $item) {
                             echo "<p>$item</p>";
@@ -101,26 +99,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
             <!-- barra de pesquisa  -->
-            <div class="form-psq">
+    <div class="form-psq">
+            <form method="POST" action="">
+                <!-- input de pesquisa -->
+                <input type="text" id="inputText" name="inputText" placeholder="Digite os codigos" required>
 
-                <form method="POST" action="">
-                    <!-- input de pesquisa -->
-                    <input type="text" id="inputText" name="inputText" placeholder="Digite os codigos" required>
+                <!-- botão de pesquisa -->
+                <button type="submit">
+                <i class="bi bi-arrow-up-square-fill"></i>
+                </button>
 
-                    <!-- botão de pesquisa -->
-                    <a href="" type="submit" style="color: white;">
+            </form>
 
-                        <i class="bi bi-arrow-up-square-fill"></i>
-
-                    </a>
-
-                </form>
             </div>
-
         </section>
-
-
-
 
 
 </body>
@@ -146,6 +138,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </script>
 
 </html>
-
-
-

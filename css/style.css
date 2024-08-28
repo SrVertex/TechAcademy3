@@ -178,16 +178,28 @@ main {
         color: var(--color3);
       }
 
-      a {
-        i {
-          
-          font-size: 45px;
-          color: white;
-          transition: all 500ms;
-          &:hover {
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.568);
+      button {
+          border: none;
+          background-color: transparent !important; 
+          padding: 0 !important;
+          margin: 0 !important;
+
+
+          i {
+            padding: 0 !important;
+            margin: 0 !important;
+            font-size: 45px;
+            align-content: center;
+            color: white;
+            opacity: 60%;
+            transition: 500ms;
+            &:hover{
+              opacity: 100%;
+              text-shadow: 0 0 10px rgba(255, 255, 255, 0.321);
+            }
+
           }
-        }
+      
       }
     }
   }

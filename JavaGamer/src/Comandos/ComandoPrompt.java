@@ -3,25 +3,33 @@ package Comandos;
 public class ComandoPrompt {
 
     public ComandoPrompt(String help) {
+
         String[] comandos = help.split(" ");
         String ComandoDigitado = comandos[0];
-
-        Comandos.help lista = new help();
-
-        comandos = lista.getNomes();
 
         switch (ComandoDigitado.toUpperCase()) {
             case "HELP":
 
-                for (String print : comandos ) {
-                    System.out.println(print);
-                }
+                System.out.println(
+                        "\n" +
+                            "Help é um comando de mostra comandos usaveis no durante o game.\n" +
+                            "Get: \n" +
+                            "Inventory: O comando de inventario mostrara todos os itens que o jogador adquiriu duarante o progreço do jogo. \n" +
+                            "Reset: Cuidado com esse comando, o reset limpara todo o progreço do jogador!!!!!!!! \n" +
+                            "Save: Esse é um comando para salvar o progreço do game.\n" +
+                        "\n"
+                );
 
-            break;
+                break;
+            case "GET_MADEIRA":
+                System.out.println("Blocos de maderira coletados");
 
+                break;
+            default:
 
-        default:
-            System.out.println("comando invalido Digite novamente!");
+                System.out.println("comando invalido Digite novamente!");
+
         }
     }
 }
+
