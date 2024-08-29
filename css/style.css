@@ -254,13 +254,7 @@ main {
           input {
             width: 92%;
           }
-          a {
-            opacity: 50%;
-            transition: 400ms;
-            &:hover {
-              opacity: 100%;
-            }
-          }
+        
         }
       }
     }

@@ -12,7 +12,7 @@ public class Main {
             System.out.println("Digite o comando");
             String help = scanner.nextLine();
 
-            ComandoPrompt ComandoHelp = new ComandoPrompt(help);
+            ComandoPrompt comandoHelp = new ComandoPrompt(help);
         }
     }
 }

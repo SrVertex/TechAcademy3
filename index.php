@@ -1,6 +1,25 @@
     <!--  BACK-END EM PHP  -->
 
     <?php
+// session_start();
+
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     if (isset($_POST['inputText'])) {
+//         if (!isset($_SESSION['historico'])) {
+//             $_SESSION['historico'] = [];
+//         }
+//         $inputText = htmlspecialchars($_POST['inputText']);
+//         $url = "http://localhost:8080/api/comando?comando=" . urlencode($inputText);
+//         $ch = curl_init($url);
+//         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//         $response = curl_exec($ch);
+//         curl_close($ch);
+//         $_SESSION['historico'][] = $response;
+//     } elseif (isset($_POST['clear'])) {
+//         $_SESSION['historico'] = [];
+//     }
+// }
+
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -9,17 +28,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['historico'] = [];
         }
         $inputText = htmlspecialchars($_POST['inputText']);
-        $url = "http://localhost:8080/api/comando?comando=" . urlencode($inputText);
-        $ch = curl_init($url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($ch);
-        curl_close($ch);
-        $_SESSION['historico'][] = $response;
+        $_SESSION['historico'][] = $inputText;
     } elseif (isset($_POST['clear'])) {
         $_SESSION['historico'] = [];
     }
 }
+
 ?>
+
+
 
 
     <!--  BACK-END EM PHP  -->
