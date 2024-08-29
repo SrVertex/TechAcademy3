@@ -183,9 +183,12 @@ main {
           background-color: transparent !important; 
           padding: 0 !important;
           margin: 0 !important;
+       
 
 
           i {
+            width: 45px !important;
+            height: 45px !important;
             padding: 0 !important;
             margin: 0 !important;
             font-size: 45px;

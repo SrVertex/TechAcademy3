@@ -1,6 +1,6 @@
-<!--  BACK-END EM PHP  -->
+    <!--  BACK-END EM PHP  -->
 
-<?php
+    <?php
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -9,132 +9,138 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['historico'] = [];
         }
         $inputText = htmlspecialchars($_POST['inputText']);
-        $_SESSION['historico'][] = $inputText;
+        $url = "http://localhost:8080/api/comando?comando=" . urlencode($inputText);
+        $ch = curl_init($url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+        curl_close($ch);
+        $_SESSION['historico'][] = $response;
     } elseif (isset($_POST['clear'])) {
         $_SESSION['historico'] = [];
     }
 }
 ?>
 
-<!--  BACK-END EM PHP  -->
 
-<!DOCTYPE html>
-<html lang="pt-br">
+    <!--  BACK-END EM PHP  -->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
+    <html lang="pt-br">
 
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>jogo em java</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
 
-    <link rel="shortcut icon" href="imagens/logo2.jpg">
+        <title>jogo em java</title>
 
-    <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="imagens/logo2.jpg">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
-</head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-<body>
+    </head>
 
-
-    <!-- Titulo do jogo -->
-    <header>
-
-        <div class="logo">
-            <img src="imagens/logo1.jpg" alt="">
-            <h2>Java</h2>
-        </div>
+    <body>
 
 
-        <!-- buttons -->
-        <nav>
-            <form action="" method="post">
-                <button id="reset" type="submit" name="clear" style="margin: 0 10px 0 0 ;">Reset</button>
-                <button type="" href="">Save</button>
-            </form>
-        </nav>
+        <!-- Titulo do jogo -->
+        <header>
 
-    </header>
-
-    <!-- conteudo prinscipal -->
-    <main>
-
-        <section id="main">
-            <!-- conteiner de historia -->
-            <div class="historia">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi asperiores et,
-                    maiores consequatur ex voluptate, sed ratione consequuntur praesentium aut quisquam sequi saepe
-                    culpa, officia odit? Repellendus, nihil!
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi asperiores et,
-                </p>
+            <div class="logo">
+                <img src="imagens/logo1.jpg" alt="">
+                <h2>Java</h2>
             </div>
 
 
-            <div class="form-bg">
-                <div class="form-center">
+            <!-- buttons -->
+            <nav>
+                <form action="" method="post">
+                    <button id="reset" type="submit" name="clear" style="margin: 0 10px 0 0 ;">Reset</button>
+                    <button type="" href="">Save</button>
+                </form>
+            </nav>
 
-                    <?php
-                    if (isset($_SESSION['history'])) {
+        </header>
 
-                        foreach ($_SESSION['historico'] as $item) {
-                            echo "<p>$item</p>";
+        <!-- conteudo prinscipal -->
+        <main>
+
+            <section id="main">
+                <!-- conteiner de historia -->
+                <div class="historia">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi asperiores et,
+                        maiores consequatur ex voluptate, sed ratione consequuntur praesentium aut quisquam sequi saepe
+                        culpa, officia odit? Repellendus, nihil!
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi asperiores et,
+                    </p>
+                </div>
+
+
+                <div class="form-bg">
+                    <div class="form-center">
+
+                        <?php
+                        if (isset($_SESSION['history'])) {
+
+                            foreach ($_SESSION['historico'] as $item) {
+                                echo "<p>$item</p>";
+                            }
+
                         }
+                        ?>
 
-                    }
-                    ?>
 
+                    </div>
+                </div>
+
+
+                <!-- barra de pesquisa  -->
+        <div class="form-psq">
+                <form method="POST" action="">
+                    <!-- input de pesquisa -->
+                    <input type="text" id="inputText" name="inputText" placeholder="Digite os codigos" required>
+
+                    <!-- botão de pesquisa -->
+                    <button type="submit">
+                    <i class="bi bi-arrow-up-square-fill"></i>
+                    </button>
+
+                </form>
 
                 </div>
-            </div>
+            </section>
 
 
-            <!-- barra de pesquisa  -->
-    <div class="form-psq">
-            <form method="POST" action="">
-                <!-- input de pesquisa -->
-                <input type="text" id="inputText" name="inputText" placeholder="Digite os codigos" required>
+    </body>
 
-                <!-- botão de pesquisa -->
-                <button type="submit">
-                <i class="bi bi-arrow-up-square-fill"></i>
-                </button>
+    <!-- COMANDO EM JAVSSCRIPT -->
+    <!-- COMANDO EM JAVSSCRIPT -->
+    <!-- COMANDO EM JAVSSCRIPT -->
 
-            </form>
+    <script src="js/bootstrap.bundle.min.js"></script>
 
-            </div>
-        </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+    <script>
+        AOS.init();
+    </script>
+    <script>
+        const btn = document.querySelector('#reset')
 
-</body>
+        btn.addEventListener('click', () => {
+            location.reload()
+        })
 
-<!-- COMANDO EM JAVSSCRIPT -->
-<!-- COMANDO EM JAVSSCRIPT -->
-<!-- COMANDO EM JAVSSCRIPT -->
+    </script>
 
-<script src="js/bootstrap.bundle.min.js"></script>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-<script>
-    AOS.init();
-</script>
-<script>
-    const btn = document.querySelector('#reset')
-
-    btn.addEventListener('click', () => {
-        location.reload()
-    })
-
-</script>
-
-</html>
+    </html>
