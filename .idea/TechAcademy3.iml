@@ -8,5 +8,6 @@
     <orderEntry type="library" name="springframework.amqp.spring" level="project" />
     <orderEntry type="library" name="google.http.client" level="project" />
     <orderEntry type="library" name="springframework.boot.spring" level="project" />
+    <orderEntry type="library" name="sparkjava.spark.core" level="project" />
   </component>
 </module>
