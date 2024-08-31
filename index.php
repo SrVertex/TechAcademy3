@@ -3,21 +3,29 @@
 <?php
 
 session_start();
-
+// metodo de print de dados para o form center
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['inputText'])) {
         if (!isset($_SESSION['historico'])) {
             $_SESSION['historico'] = [];
         }
+
         $inputText = htmlspecialchars($_POST['inputText']);
+        // porta de entrada para o servidor // entragração ao codigo java 
         $url = "http://localhost:8080/api/comando?comando=" . urlencode($inputText);
         $ch = curl_init($url);
+
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($ch);
+
+
         curl_close($ch);
         $_SESSION['historico'][] = $response;
+
     } elseif (isset($_POST['clear'])) {
+
         $_SESSION['historico'] = [];
+
     }
 }
 
@@ -36,10 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // }
 
 ?>
-
-
-
-
 <!--  BACK-END EM PHP  -->
 
 <!DOCTYPE html>
@@ -83,7 +87,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- buttons -->
         <nav>
             <form action="" method="post">
+                <!-- button para limpar o prompt de comando -->
                 <button id="reset" type="submit" name="clear" style="margin: 0 10px 0 0 ;">Reset</button>
+                <!--BTN para realizar o salvamento do game  -->
                 <button type="" href="">Save</button>
             </form>
         </nav>
@@ -105,15 +111,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
             <div class="form-bg">
+
                 <div class="form-center">
+
                     <?php
+
                     if (isset($_SESSION['historico'])) {
+
                         foreach ($_SESSION['historico'] as $item) {
+
                             echo "<p>$item</p>";
+                            echo "<br>";
+
                         }
                     }
+
                     ?>
+
                 </div>
+
             </div>
 
 
@@ -124,6 +140,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="text" id="inputText" name="inputText" placeholder="Digite os codigos" required>
 
                     <!-- botão de pesquisa -->
+                    <!-- metodo de post para enviar a reposta ao codigo java -->
                     <button type="submit">
                         <i class="bi bi-arrow-up-square-fill"></i>
                     </button>
@@ -137,8 +154,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </body>
 
 <!-- COMANDO EM JAVSSCRIPT -->
-<!-- COMANDO EM JAVSSCRIPT -->
-<!-- COMANDO EM JAVSSCRIPT -->
+
+
 
 <script src="js/bootstrap.bundle.min.js"></script>
 
@@ -155,5 +172,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     })
 
 </script>
+
+<!-- COMANDO EM JAVSSCRIPT -->
 
 </html>
