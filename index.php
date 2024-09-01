@@ -102,10 +102,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <section id="main">
             <!-- conteiner de historia -->
             <div class="historia">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi asperiores et,
-                    maiores consequatur ex voluptate, sed ratione consequuntur praesentium aut quisquam sequi saepe
-                    culpa, officia odit? Repellendus, nihil!
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi asperiores et,
+                <p> Olhe só você, provavelmente deve estar perdido ou sem entender onde está. Bom, você foi teleportado
+                    para uma realidade distante, onde tudo funciona estranho, e às vezes talvez familiar, porque não?
+                    Bom não podemos ficar parados, devemos nos mexer e dar uns SOCOS umas MADEIRA para coletar alguns
+                    recursos básicos. Tudo começa pela base.
+
                 </p>
             </div>
 
