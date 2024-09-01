@@ -111,23 +111,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
             <div class="form-bg">
-
                 <div class="form-center">
-
                     <?php
-
                     if (isset($_SESSION['historico'])) {
-
                         foreach ($_SESSION['historico'] as $item) {
-
-                            echo "<p>$item</p>";
-                            echo "<br>";
-
+                            echo "<p><pre>$item</pre></p>";
                         }
                     }
-
                     ?>
-
                 </div>
 
             </div>

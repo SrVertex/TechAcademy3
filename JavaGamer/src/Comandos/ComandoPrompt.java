@@ -11,11 +11,13 @@ public class ComandoPrompt {
 
         switch (ComandoDigitado.toUpperCase()) {
             case "HELP":
-                resposta = "Help é um comando de mostra comandos usaveis no durante o game.\n";
-                resposta += "Get: \n";
-                resposta += "Inventory: O comando de inventario mostrara todos os itens que o jogador adquiriu duarante o progreço do jogo. \n";
-                resposta += "Reset: Cuidado com esse comando, o reset limpara todo o progreço do jogador!!!!!!!! \n";
-                resposta += "Save: Esse é um comando para salvar o progreço do game.\n";
+                resposta = "Comando           Descrição\n" +
+                        "----------------  ------------------------------------------------------------\n" +
+                        "HELP              Help é um comando de mostra comandos usáveis durante o game.\n" +
+                        "GET               \n" +
+                        "INVENTORY         O comando de inventário mostrará todos os itens que o jogador adquiriu durante o progresso do jogo.\n" +
+                        "RESET             Cuidado com esse comando, o reset limpará todo o progresso do jogador!\n" +
+                        "SAVE              Esse é um comando para salvar o progresso do game.\n";
                 break;
             case "GET_MADEIRA":
                 resposta = "Blocos de maderira coletados";
