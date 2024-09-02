@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eadf96f7-6fc5-42b9-b45b-a7ca80caa090" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Model/Cenas.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Model/Cenas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Model/Invetory.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Model/Invetory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Model/save.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Model/save.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Comandos/ComandoPrompt.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/ComandoPrompt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/ComandoPrompt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/ComandoPrompt.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

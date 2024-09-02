@@ -156,7 +156,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script>
     AOS.init();
 </script>
+
+<!-- script para resetar a pagina do game -->
 <script>
+        // condt para 
     const btn = document.querySelector('#reset')
 
     btn.addEventListener('click', () => {
