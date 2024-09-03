@@ -3,47 +3,52 @@
 <?php
 
 session_start();
-// metodo de print de dados para o form center
+
+// Função para limpar e validar o input
+function validar_input($data) {
+    $data = trim($data);               // Remove espaços em branco do início e do fim
+    $data = stripslashes($data);       // Remove barras invertidas
+    $data = htmlspecialchars($data);   // Escapa caracteres HTML para evitar injeção de código
+    return $data;
+}
+
+// Método de processamento do formulário
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['inputText'])) {
         if (!isset($_SESSION['historico'])) {
             $_SESSION['historico'] = [];
         }
 
-        $inputText = htmlspecialchars($_POST['inputText']);
-        // porta de entrada para o servidor // entragração ao codigo java 
-        $url = "http://localhost:8080/api/comando?comando=" . urlencode($inputText);
-        $ch = curl_init($url);
+        // Valida o input recebido
+        $inputText = validar_input($_POST['inputText']);
 
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $response = curl_exec($ch);
+        // Verifica se o campo não está vazio
+        if (!empty($inputText)) {
+            // Porta de entrada para o servidor Java
+            $url = "http://localhost:8080/api/comando?comando=" . urlencode($inputText);
+            $ch = curl_init($url);
 
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($ch);
 
-        curl_close($ch);
-        $_SESSION['historico'][] = $response;
+            // Verifica se houve um erro na comunicação com o servidor Java
+            if ($response === false) {
+                $response = "Erro ao conectar ao servidor: " . curl_error($ch);
+            }
+
+            curl_close($ch);
+            $_SESSION['historico'][] = $response;
+        } else {
+            $_SESSION['historico'][] = "Erro: O campo de comando não pode estar vazio.";
+        }
 
     } elseif (isset($_POST['clear'])) {
-
         $_SESSION['historico'] = [];
-
     }
 }
 
-// session_start();
-
-// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-//     if (isset($_POST['inputText'])) {
-//         if (!isset($_SESSION['historico'])) {
-//             $_SESSION['historico'] = [];
-//         }
-//         $inputText = htmlspecialchars($_POST['inputText']);
-//         $_SESSION['historico'][] = $inputText;
-//     } elseif (isset($_POST['clear'])) {
-//         $_SESSION['historico'] = [];
-//     }
-// }
-
 ?>
+
 <!--  BACK-END EM PHP  -->
 
 <!DOCTYPE html>
