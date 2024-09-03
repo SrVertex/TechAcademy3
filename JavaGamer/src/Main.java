@@ -1,18 +1,16 @@
-import Comandos.ComandoPrompt;
+import static spark.Spark.*;
 
-import java.util.Scanner;
+import Comandos.ComandoPrompt;
 
 public class Main {
     public static void main(String[] args) {
 
-        while (true) {
+        port(8080); // Porta em que o servidor Java vai rodar
 
-            Scanner scanner = new Scanner(System.in);
-
-            System.out.println("Digite o comando");
-            String help = scanner.nextLine();
-
-            ComandoPrompt ComandoHelp = new ComandoPrompt(help);
-        }
+        get("/api/comando", (req, res) -> {
+            String comando = req.queryParams("comando");
+            ComandoPrompt comandoPrompt = new ComandoPrompt(comando);
+            return comandoPrompt.getResposta();
+        });
     }
 }

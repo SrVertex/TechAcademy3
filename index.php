@@ -1,21 +1,49 @@
 <!--  BACK-END EM PHP  -->
 
 <?php
-session_start();
 
+session_start();
+// metodo de print de dados para o form center
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['inputText'])) {
         if (!isset($_SESSION['historico'])) {
             $_SESSION['historico'] = [];
         }
+
         $inputText = htmlspecialchars($_POST['inputText']);
-        $_SESSION['historico'][] = $inputText;
+        // porta de entrada para o servidor // entragração ao codigo java 
+        $url = "http://localhost:8080/api/comando?comando=" . urlencode($inputText);
+        $ch = curl_init($url);
+
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($ch);
+
+
+        curl_close($ch);
+        $_SESSION['historico'][] = $response;
+
     } elseif (isset($_POST['clear'])) {
+
         $_SESSION['historico'] = [];
+
     }
 }
-?>
 
+// session_start();
+
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     if (isset($_POST['inputText'])) {
+//         if (!isset($_SESSION['historico'])) {
+//             $_SESSION['historico'] = [];
+//         }
+//         $inputText = htmlspecialchars($_POST['inputText']);
+//         $_SESSION['historico'][] = $inputText;
+//     } elseif (isset($_POST['clear'])) {
+//         $_SESSION['historico'] = [];
+//     }
+// }
+
+?>
 <!--  BACK-END EM PHP  -->
 
 <!DOCTYPE html>
@@ -59,7 +87,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- buttons -->
         <nav>
             <form action="" method="post">
+                <!-- button para limpar o prompt de comando -->
                 <button id="reset" type="submit" name="clear" style="margin: 0 10px 0 0 ;">Reset</button>
+                <!--BTN para realizar o salvamento do game  -->
                 <button type="" href="">Save</button>
             </form>
         </nav>
@@ -72,62 +102,52 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <section id="main">
             <!-- conteiner de historia -->
             <div class="historia">
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi asperiores et,
-                    maiores consequatur ex voluptate, sed ratione consequuntur praesentium aut quisquam sequi saepe
-                    culpa, officia odit? Repellendus, nihil!
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores debitis excepturi asperiores et,
+                <p> Olhe só você, provavelmente deve estar perdido ou sem entender onde está. Bom, você foi teleportado
+                    para uma realidade distante, onde tudo funciona estranho, e às vezes talvez familiar, porque não?
+                    Bom não podemos ficar parados, devemos nos mexer e dar uns SOCOS umas MADEIRA para coletar alguns
+                    recursos básicos. Tudo começa pela base.
+
                 </p>
             </div>
 
-            <!--  conteudo principal-->
+
             <div class="form-bg">
-                <!-- imagens game -->
-
                 <div class="form-center">
-
                     <?php
-                    if (isset($_SESSION['historico']) && !empty($_SESSION['historico'])) {
-
+                    if (isset($_SESSION['historico'])) {
                         foreach ($_SESSION['historico'] as $item) {
-                            echo "<p>$item</p>";
+                            echo "<p><pre>$item</pre></p>";
                         }
-
                     }
                     ?>
-
-
                 </div>
+
             </div>
 
 
             <!-- barra de pesquisa  -->
             <div class="form-psq">
-
                 <form method="POST" action="">
                     <!-- input de pesquisa -->
                     <input type="text" id="inputText" name="inputText" placeholder="Digite os codigos" required>
 
                     <!-- botão de pesquisa -->
-                    <a href="" type="submit" style="color: white;">
-
+                    <!-- metodo de post para enviar a reposta ao codigo java -->
+                    <button type="submit">
                         <i class="bi bi-arrow-up-square-fill"></i>
-
-                    </a>
+                    </button>
 
                 </form>
+
             </div>
-
         </section>
-
-
-
 
 
 </body>
 
 <!-- COMANDO EM JAVSSCRIPT -->
-<!-- COMANDO EM JAVSSCRIPT -->
-<!-- COMANDO EM JAVSSCRIPT -->
+
+
 
 <script src="js/bootstrap.bundle.min.js"></script>
 
@@ -136,7 +156,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <script>
     AOS.init();
 </script>
+
+<!-- script para resetar a pagina do game -->
 <script>
+        // condt para 
     const btn = document.querySelector('#reset')
 
     btn.addEventListener('click', () => {
@@ -145,7 +168,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </script>
 
+<!-- COMANDO EM JAVSSCRIPT -->
+
 </html>
-
-
-
