@@ -24,7 +24,7 @@ public class Mysql {
             System.out.println("Erro ao conectar com o banco.");
 
         } catch (ClassNotFoundException e) {
-
+            e.printStackTrace();
             System.out.println("Erro ao tentar importar o driver mysql");
 
         }

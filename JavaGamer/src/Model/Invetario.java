@@ -1,8 +1,9 @@
 package Model;
 
-public class Invetory {
+public class Invetario {
     private Integer idInventario;
-    private Integer usuarioSaveId;
+    private Usuario usuarioSaveId;
+
 
     public Integer getIdInventario() {
         return idInventario;
@@ -12,11 +13,11 @@ public class Invetory {
         this.idInventario = idInventario;
     }
 
-    public Integer getUsuarioSaveId() {
+    public Usuario getUsuarioSaveId() {
         return usuarioSaveId;
     }
 
-    public void setUsuarioSaveId(Integer usuarioSaveId) {
+    public void setUsuarioSaveId(Usuario usuarioSaveId) {
         this.usuarioSaveId = usuarioSaveId;
     }
 

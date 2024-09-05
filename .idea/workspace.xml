@@ -5,7 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eadf96f7-6fc5-42b9-b45b-a7ca80caa090" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/CenasDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/ItemDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/SaveDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TechAcademy3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TechAcademy3.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaGamer/JavaGamer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/JavaGamer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Comandos/Mysql.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/Mysql.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Model/Cenas.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Model/Cenas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Model/Invetory.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Model/Invetario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Model/ItensCenas.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Model/ItensCenas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Model/save.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Model/Save.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/Mysql.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/Mysql.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Model/Cenas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Model/Cenas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Model/Invetory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Model/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Model/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Model/ItensCenas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Model/ItensCenas.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Model/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Model/save.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Model/save.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +38,7 @@
       <list>
         <option value="HTML File" />
         <option value="AnnotationType" />
+        <option value="Kotlin Class" />
         <option value="Class" />
       </list>
     </option>
@@ -62,7 +84,8 @@
     &quot;onboarding.tips.debug.path&quot;: &quot;D:/Projetos do vs code/ProjecXampp/TechAcademy3/JavaGamer/src/Main.java&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15332031&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
   <component name="RecentsManager">

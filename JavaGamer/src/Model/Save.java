@@ -1,9 +1,9 @@
 package Model;
 
-public class save {
+public class Save {
     private Integer idSave;
     private String nomeSave;
-    private Integer usuarioId;
+    private Usuario usuarioId;
 
     public Integer getIdSave() {
         return idSave;
@@ -21,11 +21,11 @@ public class save {
         this.nomeSave = nomeSave;
     }
 
-    public Integer getUsuarioId() {
+    public Usuario getUsuarioId() {
         return usuarioId;
     }
 
-    public void setUsuarioId(Integer usuarioId) {
+    public void setUsuarioId(Usuario usuarioId) {
         this.usuarioId = usuarioId;
     }
 

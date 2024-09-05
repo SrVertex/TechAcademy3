@@ -4,7 +4,7 @@ public class Item {
     private Integer idItem;
     private String nomeItem;
     private String comandoUse;
-    private Integer inventarioId;
+    private Invetario inventarioId;
 
     public Integer getIdItem() {
         return idItem;
@@ -30,11 +30,11 @@ public class Item {
         this.comandoUse = comandoUse;
     }
 
-    public Integer getInventarioId() {
+    public Invetario getInventarioId() {
         return inventarioId;
     }
 
-    public void setIdInventario(Integer inventarioId) {
+    public void setInventarioId(Invetario inventarioId) {
         this.inventarioId = inventarioId;
     }
 
@@ -44,7 +44,7 @@ public class Item {
                 "idItem=" + idItem +
                 ", nomeItem='" + nomeItem + '\'' +
                 ", comandoUse='" + comandoUse + '\'' +
-                ", idInventario=" + inventarioId +
+                ", inventarioId=" + inventarioId +
                 '}';
     }
 }

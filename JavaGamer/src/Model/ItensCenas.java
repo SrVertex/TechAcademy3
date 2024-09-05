@@ -2,8 +2,9 @@ package Model;
 
 public class ItensCenas {
     private Integer idItensCenas;
-    private Integer itemId;
-    private Integer cenasId;
+    private Item itemId;
+    private Cenas cenasId;
+
 
     public Integer getIdItensCenas() {
         return idItensCenas;
@@ -13,19 +14,19 @@ public class ItensCenas {
         this.idItensCenas = idItensCenas;
     }
 
-    public Integer getItemId() {
+    public Item getItemId() {
         return itemId;
     }
 
-    public void setItemId(Integer itemId) {
+    public void setItemId(Item itemId) {
         this.itemId = itemId;
     }
 
-    public Integer getCenasId() {
+    public Cenas getCenasId() {
         return cenasId;
     }
 
-    public void setCenasId(Integer cenasId) {
+    public void setCenasId(Cenas cenasId) {
         this.cenasId = cenasId;
     }
 

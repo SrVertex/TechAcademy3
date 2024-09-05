@@ -8,36 +8,12 @@ public class Cenas {
     private String DescrcaonNegativa;
     private Integer idItensCena;
 
-    public Integer getIdItensCena() {
-        return idItensCena;
+    public Integer getIdCena() {
+        return idCena;
     }
 
-    public void setIdItensCena(Integer idItensCena) {
-        this.idItensCena = idItensCena;
-    }
-
-    public String getDescrcaonNegativa() {
-        return DescrcaonNegativa;
-    }
-
-    public void setDescrcaonNegativa(String descrcaonNegativa) {
-        DescrcaonNegativa = descrcaonNegativa;
-    }
-
-    public String getDecricaoPositiva() {
-        return DecricaoPositiva;
-    }
-
-    public void setDecricaoPositiva(String decricaoPositiva) {
-        DecricaoPositiva = decricaoPositiva;
-    }
-
-    public String getDescrcaoCena() {
-        return descrcaoCena;
-    }
-
-    public void setDescrcaoCena(String descrcaoCena) {
-        this.descrcaoCena = descrcaoCena;
+    public void setIdCena(Integer idCena) {
+        this.idCena = idCena;
     }
 
     public String getNomeCena() {
@@ -48,13 +24,38 @@ public class Cenas {
         this.nomeCena = nomeCena;
     }
 
-    public Integer getIdCena() {
-        return idCena;
+    public String getDescrcaoCena() {
+        return descrcaoCena;
     }
 
-    public void setIdCena(Integer idCena) {
-        this.idCena = idCena;
+    public void setDescrcaoCena(String descrcaoCena) {
+        this.descrcaoCena = descrcaoCena;
     }
+
+    public String getDecricaoPositiva() {
+        return DecricaoPositiva;
+    }
+
+    public void setDecricaoPositiva(String decricaoPositiva) {
+        DecricaoPositiva = decricaoPositiva;
+    }
+
+    public String getDescrcaonNegativa() {
+        return DescrcaonNegativa;
+    }
+
+    public void setDescrcaonNegativa(String descrcaonNegativa) {
+        DescrcaonNegativa = descrcaonNegativa;
+    }
+
+    public Integer getIdItensCena() {
+        return idItensCena;
+    }
+
+    public void setIdItensCena(Integer idItensCena) {
+        this.idItensCena = idItensCena;
+    }
+
 
     @Override
     public String toString() {
