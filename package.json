@@ -2,6 +2,7 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "spark": "^1.1.1"
   }
 }

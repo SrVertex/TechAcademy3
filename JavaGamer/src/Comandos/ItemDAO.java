@@ -31,10 +31,10 @@ public class ItemDAO {
         while (resultSet.next()) {
 
             Item item = new Item();
+
             item.setIdItem(resultSet.getInt("id_item"));
-            item.setNomeItem(resultSet.getString("nome"));
-
-
+            item.setNomeItem(resultSet.getString("nome_item"));
+            item.setComandoUse(resultSet.getString("comando_use"));
 
             itens.add(item);
 
@@ -44,6 +44,9 @@ public class ItemDAO {
 
     }
 
+    public static Object findItensByScene(Integer idItem) {
+        return idItem;
+    }
 }
 
 

@@ -1,8 +1,9 @@
 import Comandos.CenasDAO;
-import Comandos.SaveDAO;
-import Model.Save;
+import Comandos.ItemDAO;
 import com.google.gson.Gson;
 import spark.Spark;
+
+
 
 public class Main {
 
@@ -11,17 +12,20 @@ public class Main {
     public static void main(String[] args) {
         try {
 
-//            Save save = SaveDAO.novoJogo();
-
-
 //            String saveJson = Gson.toJson(save);
 //            Spark.get("/", (req,res) -> saveJson);
 
+
             
 
-            Spark.get("cenas/:id", (request, response) -> {
-                Integer idCena = Integer.parseInt(request.params(":id")) ;
-                return  Gson.toJson(CenasDAO.findCenaById(idCena));
+//            Spark.get("cenas/:id", (request, response) -> {
+//                Integer idCena = Integer.parseInt(request.params(":id")) ;
+//                return  Gson.toJson(CenasDAO.findCenaById(idCena));
+//            } );
+
+            Spark.get("item/:id", (request, response) -> {
+                Integer idItem = Integer.parseInt(request.params(":id")) ;
+                return  Gson.toJson(ItemDAO.findItensByScene(idItem));
             } );
 
         } catch (Exception e) {
