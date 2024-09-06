@@ -11,15 +11,15 @@ public class Main {
     public static void main(String[] args) {
         try {
 
-            Save save = SaveDAO.novoJogo();
+//            Save save = SaveDAO.novoJogo();
 
 
-            String saveJson = Gson.toJson(save);
-            Spark.get("/", (req,res) -> saveJson);
+//            String saveJson = Gson.toJson(save);
+//            Spark.get("/", (req,res) -> saveJson);
 
             
 
-            Spark.get("cena/:id", (request, response) -> {
+            Spark.get("cenas/:id", (request, response) -> {
                 Integer idCena = Integer.parseInt(request.params(":id")) ;
                 return  Gson.toJson(CenasDAO.findCenaById(idCena));
             } );
@@ -30,6 +30,7 @@ public class Main {
 
     }
 }
+
 //port(8080); // Porta em que o servidor Java vai rodar
 //
 //get("/api/comando", (req, res) -> {

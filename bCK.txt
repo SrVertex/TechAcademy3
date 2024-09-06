@@ -1,0 +1,52 @@
+<!--  BACK-END EM PHP  -->
+
+<?php
+
+session_start();
+
+// Função para limpar e validar o input
+function validar_input($data) {
+    $data = trim($data);               // Remove espaços em branco do início e do fim
+    $data = stripslashes($data);       // Remove barras invertidas
+    $data = htmlspecialchars($data);   // Escapa caracteres HTML para evitar injeção de código
+    return $data;
+}
+
+// Método de processamento do formulário
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['inputText'])) {
+        if (!isset($_SESSION['historico'])) {
+            $_SESSION['historico'] = [];
+        }
+
+        // Valida o input recebido
+        $inputText = validar_input($_POST['inputText']);
+
+        // Verifica se o campo não está vazio
+        if (!empty($inputText)) {
+            // Porta de entrada para o servidor Java
+            $url = "http://localhost:8080/api/comando?comando=" . urlencode($inputText);
+            $ch = curl_init($url);
+
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($ch);
+
+            // Verifica se houve um erro na comunicação com o servidor Java
+            if ($response === false) {
+                $response = "Erro ao conectar ao servidor: " . curl_error($ch);
+            }
+
+            curl_close($ch);
+            $_SESSION['historico'][] = $response;
+        } else {
+            $_SESSION['historico'][] = "Erro: O campo de comando não pode estar vazio.";
+        }
+
+    } elseif (isset($_POST['clear'])) {
+        $_SESSION['historico'] = [];
+    }
+}
+
+?>
+
+<!--  BACK-END EM PHP  -->

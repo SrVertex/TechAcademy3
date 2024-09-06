@@ -27,6 +27,7 @@ public class CenasDAO {
             cenas.setDescrcaoCena(rs.getString("descricao_cena"));
             cenas.setDecricaoPositiva(rs.getString("descricao_positiva"));
             cenas.setDescrcaonNegativa(rs.getString("descricao_negativa"));
+            cenas.setIdItensCena(rs.getInt("itensCena_id"));
 
         }
         return cenas;

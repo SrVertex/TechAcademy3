@@ -9,7 +9,7 @@ public class SaveDAO {
     public static Save novoJogo() throws SQLException {
 
         Connection conn = Mysql.getConnection();
-        String sql = "INSERT INTO saves(id_cena_atual) VALUES (1)";
+        String sql = "INSERT INTO usuario_save(id_save) VALUES (1)";
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.execute(sql, Statement.RETURN_GENERATED_KEYS);
         ResultSet generatedKeys = stmt.getGeneratedKeys();
