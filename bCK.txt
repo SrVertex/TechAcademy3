@@ -50,3 +50,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 <!--  BACK-END EM PHP  -->
+
+
+
+GGGSSSOOONNN
+
+  get("cenas/:id", (request, response) -> {
+            Integer idCena = Integer.parseInt(request.params(":id"));
+            return gson.toJson(CenasDAO.findCenaById(idCena));
+        });
+
+        get("item/:id", (request, response) -> {
+            Integer idItem = Integer.parseInt(request.params(":id"));
+            return gson.toJson(ItemDAO.findItensByScene(idItem));
+        });
+
+        // Nova rota combinada
+        get("cenas/:idCena/item/:idItem", (request, response) -> {
+            Integer idCena = Integer.parseInt(request.params(":idCena"));
+            Integer idItem = Integer.parseInt(request.params(":idItem"));
+            // Aqui você pode combinar os dados das duas DAOs conforme necessário
+            Object cena = CenasDAO.findCenaById(idCena);
+            Object item = ItemDAO.findItensByScene(idItem);
+            return gson.toJson(new Object[]{cena, item});
+        });
