@@ -3,6 +3,7 @@
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
+    "express": "^4.19.2",
     "spark": "^1.1.1"
   }
 }
