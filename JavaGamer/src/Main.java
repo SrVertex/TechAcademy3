@@ -16,10 +16,7 @@ public class Main {
                 return Gson.toJson(CenasDAO.findCenaById(idCena));
             });
 
-            Spark.get("item/:id", (request, response) -> {
-                Integer idItem = Integer.parseInt(request.params(":id"));
-                return Gson.toJson(ItemDAO.findItensByScene(idItem));
-            });
+
 
         } catch (Exception e) {
             throw new RuntimeException(e);

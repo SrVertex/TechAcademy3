@@ -1,12 +1,14 @@
 package Model;
 
+import java.util.List;
+
 public class Cenas {
     private Integer idCena;
     private String nomeCena;
     private String descrcaoCena;
     private String DecricaoPositiva;
     private String DescrcaonNegativa;
-    private Integer idItensCena;
+    private List<Item> itens;
 
     public Integer getIdCena() {
         return idCena;
@@ -48,14 +50,13 @@ public class Cenas {
         DescrcaonNegativa = descrcaonNegativa;
     }
 
-    public Integer getIdItensCena() {
-        return idItensCena;
+    public List<Item> getItens() {
+        return itens;
     }
 
-    public void setIdItensCena(Integer idItensCena) {
-        this.idItensCena = idItensCena;
+    public void setItens(List<Item> itens) {
+        this.itens = itens;
     }
-
 
     @Override
     public String toString() {
@@ -65,7 +66,7 @@ public class Cenas {
                 ", descrcaoCena='" + descrcaoCena + '\'' +
                 ", DecricaoPositiva='" + DecricaoPositiva + '\'' +
                 ", DescrcaonNegativa='" + DescrcaonNegativa + '\'' +
-                ", idItensCena=" + idItensCena +
+                ", itens=" + itens +
                 '}';
     }
 }

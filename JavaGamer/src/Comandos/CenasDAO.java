@@ -27,7 +27,8 @@ public class CenasDAO {
             cenas.setDescrcaoCena(rs.getString("descricao_cena"));
             cenas.setDecricaoPositiva(rs.getString("descricao_positiva"));
             cenas.setDescrcaonNegativa(rs.getString("descricao_negativa"));
-            cenas.setIdItensCena(rs.getInt("itensCena_id"));
+            cenas.setItens(ItemDAO.findItensByScene(cenas));
+
 
         }
         return cenas;
@@ -54,7 +55,8 @@ public class CenasDAO {
             cena.setDescrcaoCena(resultSet.getString("descricao_cena"));
             cena.setDecricaoPositiva(resultSet.getString("descricao_positiva"));
             cena.setDescrcaonNegativa(resultSet.getString("descricao_negativa"));
-            cena.setIdItensCena(resultSet.getInt("itensCena_id"));
+
+
 
             cenas.add(cena);
         }

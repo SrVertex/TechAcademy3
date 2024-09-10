@@ -272,3 +272,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- COMANDO EM JAVSSCRIPT -->
 
 </html>
+
+
+
+
+
+
+//            Spark.get("item/:id", (request, response) -> {
+//                Integer idItem = Integer.parseInt(request.params(":id"));
+//                return Gson.toJson(ItemDAO.findItensByScene(idItem));
+//            });
