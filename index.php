@@ -47,14 +47,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-
-// forma de de pesquisa via input
-
-if (isset($_GET['query'])) {
-    $query = urlencode($_GET['query']);
-    header("Location: https://www.google.com/search?q=$query");
-    exit();
-}
 ?>
 
 <!--  BACK-END EM PHP  -->
@@ -82,14 +74,6 @@ if (isset($_GET['query'])) {
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-
-    <script>
-        function searchInBrowser() {
-            var input = document.getElementById("searchInput").value;
-            window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(input);
-        }
-    </script>
 
 </head>
 
@@ -151,23 +135,6 @@ if (isset($_GET['query'])) {
                 <form method="POST" action="">
                     <!-- input de pesquisa -->
                     <input type="text" id="inputText" name="inputText" placeholder="Digite os codigos" required>
-
-                    <!-- botão de pesquisa -->
-                    <!-- metodo de post para enviar a reposta ao codigo java -->
-                    <button type="submit">
-                        <i class="bi bi-arrow-up-square-fill"></i>
-                    </button>
-
-                </form>
-
-            </div>
-
-
-             <!-- barra de pesquisa  -->
-             <div class="form-psq">
-                <form omethod="GET" action="search.php">
-                    <!-- input de pesquisa -->
-                    <input type="text" id="searchInput" name="inputText" placeholder="Digite os codigos" required>
 
                     <!-- botão de pesquisa -->
                     <!-- metodo de post para enviar a reposta ao codigo java -->
