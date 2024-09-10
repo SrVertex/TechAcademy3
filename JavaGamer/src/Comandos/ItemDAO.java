@@ -1,6 +1,7 @@
 package Comandos;
 
 import Model.Cenas;
+import Model.Invetario;
 import Model.Item;
 
 import java.sql.Connection;
@@ -46,6 +47,10 @@ public class ItemDAO {
 
     public static Object findItensByScene(Integer idItem) {
         return idItem;
+    }
+
+    public static List<Item> findItensByScene(Invetario invetario1) {
+        return null;
     }
 }
 

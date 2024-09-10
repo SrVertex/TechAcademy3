@@ -5,17 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eadf96f7-6fc5-42b9-b45b-a7ca80caa090" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/InventarioDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/.gradle/8.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/.gradle/8.10.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Comandos/CenasDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/CenasDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Model/Cenas.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Model/Cenas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Model/Invetario.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Model/Invetario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bCK.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bCK.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/CenasDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/CenasDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Comandos/InventarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/InventarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Comandos/ItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/ItemDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Model/Cenas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Model/Cenas.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
