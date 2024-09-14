@@ -1,6 +1,8 @@
+import Comandos.InventarioDAO;
 import com.google.gson.Gson;
 
 import Comandos.CenasDAO;
+import Comandos.ItemDAO;
 import spark.Spark;
 
 public class Main {
@@ -10,10 +12,10 @@ public class Main {
     public static void main(String[] args) {
         try {
 
-            Spark.get("cenas/:id", (request, response) -> {
+            Spark.get("cena/:id", (request, response) -> {
                 Integer idCena = Integer.parseInt(request.params(":id"));
-                return Gson.toJson(CenasDAO.findCenaById(idCena));
-                // return Gson.toJson(InventarioDAO.);
+                // não sei se vai funcionar mais se funcionar é jesus
+                return Gson.toJson(CenasDAO.findCenaById(idCena), InventarioDAO.findInvetarioById(idCena).getClass());
             });
 
         } catch (Exception e) {

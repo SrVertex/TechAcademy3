@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CenasDAO {
-    public static Cenas findCenaById(Integer id) throws SQLException {
+    public static Object findCenaById(Integer id) throws SQLException {
 
         Connection conn = Mysql.getConnection();
         String sql = "SELECT * FROM cena WHERE id_cena = ?";

@@ -1,7 +1,6 @@
 package Comandos;
 
-import Model.Cenas;
-
+import Model.Invetario;
 import Model.Item;
 
 import java.sql.Connection;
@@ -17,7 +16,7 @@ public class ItemDAO {
         return new Item();
     }
 
-    public static List<Item> findItensByScene(Cenas cenas) throws SQLException {
+    public static List<Item> findItensByScene(Invetario cenas) throws SQLException {
 
         Connection connection = Mysql.getConnection();
 
