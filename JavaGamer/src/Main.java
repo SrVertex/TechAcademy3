@@ -18,6 +18,15 @@ public class Main {
                 return Gson.toJson(CenasDAO.findCenaById(idCena));
             });
 
+
+            Spark.get("inventario/:id", (request, response) -> {
+                Integer idInventory = Integer.parseInt(request.params(":id"));
+                // não sei se vai funcionar mais se funcionar é jesus
+                return Gson.toJson(InventarioDAO.findInvetarioById(idInventory));
+            });
+
+
+
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

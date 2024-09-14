@@ -2,13 +2,30 @@ package Comandos;
 
 import Model.Invetario;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class InventarioDAO {
+
+
+    public static Invetario novoJogo() throws SQLException {
+
+        Connection conn = Mysql.getConnection();
+        String sql = "INSERT INTO inventario (id_save) VALUES (1)";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.execute(sql, Statement.RETURN_GENERATED_KEYS);
+        ResultSet generatedKeys = stmt.getGeneratedKeys();
+
+        Invetario save = new Invetario();
+
+        if(generatedKeys.next()){
+
+            save.setId_save(generatedKeys.getInt(1));
+
+        }
+
+        return save;
+
+    }
 
     public static Invetario findInvetarioById(Integer id) throws SQLException {
 
@@ -24,11 +41,13 @@ public class InventarioDAO {
          if (rs.next()) {
 
              invetario.setId_save(rs.getInt("id_save"));
-             invetario.setId_cena_atual(rs.getInt("id_progresso"));
+             invetario.setId_cena_atual(rs.getInt("id_cenaAtual"));
+             invetario.setId_progresso(rs.getInt("id_progresso"));
 
          }
 
          return invetario;
 
     }
+
 }
