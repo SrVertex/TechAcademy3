@@ -12,10 +12,11 @@ public class Mysql {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/gamejava",
+                    "jdbc:mysql://localhost:3306/bancotechacademy3",
                     "root",
                     ""
             );
+
 
             return  connection;
 

@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eadf96f7-6fc5-42b9-b45b-a7ca80caa090" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Comandos/InventarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/InventarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Comandos/ItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/ItemDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/CenasDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/CenasDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/InventarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/InventarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Comandos/Mysql.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/Mysql.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/Mysql.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/Mysql.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +36,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/SrVertex/TechAcademy3.git&quot;,
-    &quot;accountId&quot;: &quot;d72b8146-15bf-4f06-b7ee-5117a267cb9d&quot;
+    &quot;accountId&quot;: &quot;fb46e48d-a915-48cd-997a-aaa356ee4ed9&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -62,9 +59,10 @@
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Back-end2-front-end&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;integracaoApi__frontEnd&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/TechAcademy3&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;D:/Projetos do vs code/ProjecXampp/TechAcademy3/JavaGamer/src/Main.java&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15332031&quot;,
