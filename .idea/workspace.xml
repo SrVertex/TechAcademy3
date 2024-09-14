@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eadf96f7-6fc5-42b9-b45b-a7ca80caa090" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/Console.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaGamer/src/Controle/AutoGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaGamer/src/Repositorio/ComandoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Comandos/InventarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/InventarioDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaGamer/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Model/Invetario.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Model/Invetario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto da aula_5 com bando de dados/tech-forge-3-master/src/repository/SaveDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projeto da aula_5 com bando de dados/tech-forge-3-master/src/repository/SaveDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/InventarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/InventarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Model/Invetario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Model/Invetario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projeto da aula_5 com bando de dados/tech-forge-3-master/src/controller/DuranteOJogoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projeto da aula_5 com bando de dados/tech-forge-3-master/src/controller/DuranteOJogoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bCK.txt" beforeDir="false" afterPath="$PROJECT_DIR$/bCK.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +45,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://C:/Program Files/Java/jdk-22/lib/src.zip!/java.base/java/lang/Integer.java" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="JvmLoggingSettingsStorage">
+    <option name="loggerId" value="Slf4j" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -81,7 +81,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="Controle" />
       <recent name="" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="Controle" />
     </key>
   </component>
   <component name="RunManager">

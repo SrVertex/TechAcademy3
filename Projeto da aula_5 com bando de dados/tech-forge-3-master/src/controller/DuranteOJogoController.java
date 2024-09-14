@@ -16,4 +16,5 @@ public class DuranteOJogoController implements Route {
     public Object handle(Request request, Response response) throws Exception {
         return "Implementar a Rota";
     }
+
 }
