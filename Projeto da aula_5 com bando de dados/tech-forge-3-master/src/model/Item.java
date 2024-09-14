@@ -1,7 +1,6 @@
-package Model;
+package model;
 
 public class Item {
-
     private Integer idItem;
     private String nome;
     private String descricaoPositiva;
@@ -12,7 +11,6 @@ public class Item {
 
     public Integer getIdItem() {
         return idItem;
-        
     }
 
     public void setIdItem(Integer idItem) {
@@ -67,16 +65,4 @@ public class Item {
         this.idCenaDestino = idCenaDestino;
     }
 
-    @Override
-    public String toString() {
-        return "Item{" +
-                "idItem=" + idItem +
-                ", nome='" + nome + '\'' +
-                ", descricaoPositiva='" + descricaoPositiva + '\'' +
-                ", descricaoNegativa='" + descricaoNegativa + '\'' +
-                ", comandoCorreto='" + comandoCorreto + '\'' +
-                ", idCenaAtual=" + idCenaAtual +
-                ", idCenaDestino=" + idCenaDestino +
-                '}';
-    }
 }

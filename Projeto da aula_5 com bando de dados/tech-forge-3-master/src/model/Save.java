@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 public class Save {
     private Integer idSave;
@@ -21,7 +21,7 @@ public class Save {
     }
 
     @Override
-    public String  toString() {
+    public String toString() {
         return "Save{" +
                 "idSave=" + idSave +
                 ", cenaAtual=" + cenaAtual +
