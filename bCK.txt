@@ -282,3 +282,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //                Integer idItem = Integer.parseInt(request.params(":id"));
 //                return Gson.toJson(ItemDAO.findItensByScene(idItem));
 //            });
+
+
+// port(8080); // Porta em que o servidor Java vai rodar
+//
+// get("/api/comando", (req, res) -> {
+// String comando = req.queryParams("comando");
+// ComandoPrompt comandoPrompt = new ComandoPrompt(comando);
+// return comandoPrompt.getResposta();
+// });
