@@ -3,6 +3,8 @@ import com.google.gson.Gson;
 
 import Comandos.CenasDAO;
 import Comandos.ItemDAO;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import spark.Spark;
 
 public class Main {
@@ -11,20 +13,23 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-
             Spark.get("cenas/:id", (request, response) -> {
                 Integer idCena = Integer.parseInt(request.params(":id"));
-                // não sei se vai funcionar mais se funcionar é jesus
-                return Gson.toJson(CenasDAO.findCenaById(idCena));
-            });
-
-
-            Spark.get("inventario/:id", (request, response) -> {
                 Integer idInventory = Integer.parseInt(request.params(":id"));
-                // não sei se vai funcionar mais se funcionar é jesus
-                return Gson.toJson(InventarioDAO.findInvetarioById(idInventory));
-            });
 
+                // Obter dados de CenasDAO
+                String cenasJson = Gson.toJson(CenasDAO.findCenaById(idCena));
+
+                // Obter dados de InventarioDAO
+                String inventarioJson = Gson.toJson(InventarioDAO.findInvetarioById(idInventory));
+
+                // Combinar os resultados em um único JSON
+                JsonObject combinedResult = new JsonObject();
+                combinedResult.add("cenas", new JsonParser().parse(cenasJson));
+                combinedResult.add("inventario", new JsonParser().parse(inventarioJson));
+
+                return combinedResult.toString();
+            });
 
 
         } catch (Exception e) {
