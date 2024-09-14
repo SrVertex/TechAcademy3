@@ -1,7 +1,6 @@
 import com.google.gson.Gson;
 
 import Comandos.CenasDAO;
-import Comandos.ItemDAO;
 import spark.Spark;
 
 public class Main {
@@ -14,9 +13,8 @@ public class Main {
             Spark.get("cenas/:id", (request, response) -> {
                 Integer idCena = Integer.parseInt(request.params(":id"));
                 return Gson.toJson(CenasDAO.findCenaById(idCena));
+                // return Gson.toJson(InventarioDAO.);
             });
-
-
 
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -25,10 +23,3 @@ public class Main {
     }
 }
 
-// port(8080); // Porta em que o servidor Java vai rodar
-//
-// get("/api/comando", (req, res) -> {
-// String comando = req.queryParams("comando");
-// ComandoPrompt comandoPrompt = new ComandoPrompt(comando);
-// return comandoPrompt.getResposta();
-// });

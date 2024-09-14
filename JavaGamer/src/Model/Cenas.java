@@ -3,70 +3,50 @@ package Model;
 import java.util.List;
 
 public class Cenas {
-    private Integer idCena;
-    private String nomeCena;
-    private String descrcaoCena;
-    private String DecricaoPositiva;
-    private String DescrcaonNegativa;
-    private List<Item> itens;
+  private Integer id_cena;
+  private String descricao;
+  private String item_cenario;
+  private List<Item> liste_Item;
 
-    public Integer getIdCena() {
-        return idCena;
+    public Integer getId_cena() {
+        return id_cena;
     }
 
-    public void setIdCena(Integer idCena) {
-        this.idCena = idCena;
+    public void setId_cena(Integer id_cena) {
+        this.id_cena = id_cena;
     }
 
-    public String getNomeCena() {
-        return nomeCena;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setNomeCena(String nomeCena) {
-        this.nomeCena = nomeCena;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public String getDescrcaoCena() {
-        return descrcaoCena;
+    public String getItem_cenario() {
+        return item_cenario;
     }
 
-    public void setDescrcaoCena(String descrcaoCena) {
-        this.descrcaoCena = descrcaoCena;
+    public void setItem_cenario(String item_cenario) {
+        this.item_cenario = item_cenario;
     }
 
-    public String getDecricaoPositiva() {
-        return DecricaoPositiva;
+    public List<Item> getListe_Item() {
+        return liste_Item;
     }
 
-    public void setDecricaoPositiva(String decricaoPositiva) {
-        DecricaoPositiva = decricaoPositiva;
-    }
-
-    public String getDescrcaonNegativa() {
-        return DescrcaonNegativa;
-    }
-
-    public void setDescrcaonNegativa(String descrcaonNegativa) {
-        DescrcaonNegativa = descrcaonNegativa;
-    }
-
-    public List<Item> getItens() {
-        return itens;
-    }
-
-    public void setItens(List<Item> itens) {
-        this.itens = itens;
+    public void setListe_Item(List<Item> liste_Item) {
+        this.liste_Item = liste_Item;
     }
 
     @Override
     public String toString() {
         return "Cenas{" +
-                "idCena=" + idCena +
-                ", nomeCena='" + nomeCena + '\'' +
-                ", descrcaoCena='" + descrcaoCena + '\'' +
-                ", DecricaoPositiva='" + DecricaoPositiva + '\'' +
-                ", DescrcaonNegativa='" + DescrcaonNegativa + '\'' +
-                ", itens=" + itens +
+                "id_cena=" + id_cena +
+                ", descricao='" + descricao + '\'' +
+                ", item_cenario='" + item_cenario + '\'' +
+                ", liste_Item=" + liste_Item +
                 '}';
     }
 }

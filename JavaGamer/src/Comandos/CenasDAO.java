@@ -13,7 +13,7 @@ public class CenasDAO {
     public static Cenas findCenaById(Integer id) throws SQLException {
 
         Connection conn = Mysql.getConnection();
-        String sql = "SELECT * FROM cenas WHERE id_cena = ?";
+        String sql = "SELECT * FROM cena WHERE id_cena = ?";
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setInt(1, id);
         ResultSet rs = stmt.executeQuery();
@@ -22,41 +22,36 @@ public class CenasDAO {
 
         if (rs.next()) {
 
-            cenas.setIdCena(rs.getInt("id_cena"));
-            cenas.setNomeCena(rs.getString("nome_cena"));
-            cenas.setDescrcaoCena(rs.getString("descricao_cena"));
-            cenas.setDecricaoPositiva(rs.getString("descricao_positiva"));
-            cenas.setDescrcaonNegativa(rs.getString("descricao_negativa"));
-            cenas.setItens(ItemDAO.findItensByScene(cenas));
-
+            cenas.setId_cena(rs.getInt("id_cena"));
+            cenas.setDescricao(rs.getString("descricao_cena"));
+            cenas.setItem_cenario(rs.getString("item_cenario"));
+            cenas.setListe_Item(ItemDAO.findItensByScene(cenas));
 
         }
-        return cenas;
+
+            return cenas;
 
     }
     public static void insertCena(Cenas cenas) throws SQLException {
         Connection connection = Mysql.getConnection();
-        String insert = "INSERT INTO cenas(descricao) VALUES (?);";
+        String insert = "INSERT INTO cena (descricao_cena) VALUES (?);";
         PreparedStatement ps = connection.prepareStatement(insert);
-        ps.setString(1, cenas.getDescrcaoCena());
+        ps.setString(1, cenas.getDescricao());
         ps.execute();
     }
     public static List<Cenas> findAll() throws SQLException {
         Connection connection = Mysql.getConnection();
-        String sql = "select * from cenas;";
+        String sql = "select * from cena;";
         PreparedStatement ps = connection.prepareStatement(sql);
         ResultSet resultSet = ps.executeQuery();
 
         List<Cenas> cenas = new ArrayList<>();
         while (resultSet.next()) {
             Cenas cena = new Cenas();
-            cena.setIdCena(resultSet.getInt("id_cena"));
-            cena.setNomeCena(resultSet.getString("nome_cena"));
-            cena.setDescrcaoCena(resultSet.getString("descricao_cena"));
-            cena.setDecricaoPositiva(resultSet.getString("descricao_positiva"));
-            cena.setDescrcaonNegativa(resultSet.getString("descricao_negativa"));
 
-
+            cena.setId_cena(resultSet.getInt("id_cena"));
+            cena.setDescricao(resultSet.getString("descricao_cena"));
+            cena.setItem_cenario(resultSet.getString("item_cenario"));
 
             cenas.add(cena);
         }

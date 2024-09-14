@@ -3,30 +3,40 @@ package Model;
 import java.util.List;
 
 public class Invetario {
-    private Integer idInventario;
-    private List<Item> itens;
+    private Integer Id_save;
+    private List<Item> id_item;
+    private Integer Id_cena_atual;
 
-    public Integer getIdInventario() {
-        return idInventario;
+    public Integer getId_save() {
+        return Id_save;
     }
 
-    public void setIdInventario(Integer idInventario) {
-        this.idInventario = idInventario;
+    public void setId_save(Integer id_save) {
+        Id_save = id_save;
     }
 
-    public List<Item> getItens() {
-        return itens;
+    public List<Item> getId_item() {
+        return id_item;
     }
 
-    public void setItens(List<Item> itens) {
-        this.itens = itens;
+    public void setId_item(List<Item> id_item) {
+        this.id_item = id_item;
+    }
+
+    public Integer getId_cena_atual() {
+        return Id_cena_atual;
+    }
+
+    public void setId_cena_atual(Integer id_cena_atual) {
+        Id_cena_atual = id_cena_atual;
     }
 
     @Override
     public String toString() {
         return "Invetario{" +
-                "idInventario=" + idInventario +
-                ", itens=" + itens +
+                "Id_save=" + Id_save +
+                ", id_item=" + id_item +
+                ", Id_cena_atual=" + Id_cena_atual +
                 '}';
     }
 }
