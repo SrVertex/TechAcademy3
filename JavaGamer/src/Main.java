@@ -12,10 +12,10 @@ public class Main {
     public static void main(String[] args) {
         try {
 
-            Spark.get("cena/:id", (request, response) -> {
+            Spark.get("cenas/:id", (request, response) -> {
                 Integer idCena = Integer.parseInt(request.params(":id"));
                 // não sei se vai funcionar mais se funcionar é jesus
-                return Gson.toJson(CenasDAO.findCenaById(idCena), InventarioDAO.findInvetarioById(idCena).getClass());
+                return Gson.toJson(CenasDAO.findCenaById(idCena));
             });
 
         } catch (Exception e) {
