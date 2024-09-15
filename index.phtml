@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <title>JogoJAva</title>
+    <link rel="shortcut icon" href="imagens/logo2.jpg">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+
+    <!-- Título do jogo -->
+    <header>
+        <div class="logo">
+            <img src="imagens/logo1.jpg" alt="">
+            <h2>Java</h2>
+        </div>
+        <!-- buttons -->
+        <nav>
+            <form action="" method="post">
+                <button id="reset" type="submit" name="clear" style="margin: 0 10px 0 0;">Reset</button>
+                <button type="submit" name="save">Save</button>
+            </form>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main>
+        <section id="main">
+            <!-- Contêiner de história -->
+            <div class="historia">
+                <p>
+                    Olhe só você, provavelmente deve estar perdido ou sem entender onde está...
+                </p>
+            </div>
+
+            <!-- Área de histórico -->
+            <div class="form-bg">
+                <div class="form-center">
+                    <?php
+                    if (isset($_SESSION['historico'])) {
+                        foreach ($_SESSION['historico'] as $item) {
+                            echo "<p><pre>$item</pre></p>";
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+
+            <!-- Barra de pesquisa -->
+            <div class="form-psq">
+                <form method="POST" action="">
+                    <input type="text" id="inputText" name="comando" placeholder="Digite os comandos" required>
+                    <button type="submit">
+                        <i class="bi bi-arrow-up-square-fill"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Script para resetar a página -->
+    <script>
+        const btn = document.querySelector('#reset');
+        btn.addEventListener('click', () => {
+            location.reload();
+        });
+    </script>
+</body>
+
+</html>

@@ -28,4 +28,6 @@ public class AntesDoJogoController implements Route {
         //Retornamos o objeto console convertido para Json.
         return gson.toJson(console);
     }
+
+
 }

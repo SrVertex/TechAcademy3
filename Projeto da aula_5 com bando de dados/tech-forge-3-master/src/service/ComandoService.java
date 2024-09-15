@@ -22,7 +22,7 @@ public class ComandoService {
 
     public Console start() {
         try {
-            Save save = SaveDAO.novoJogo();
+            Save save =.novo SaveDAOJogo();
             console.setMensagem(save.getCenaAtual().getDescricao());
             console.setIdSave(save.getIdSave());
             return console;
