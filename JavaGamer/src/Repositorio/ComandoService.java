@@ -33,22 +33,19 @@ public class ComandoService {
 
 
     public Console getResultadoConsole(){
-        try {
 
-            String primeiroComando = comando[0].toLowerCase();
+        String primeiroComando = comando[0].toLowerCase();
 
-            return switch (primeiroComando.toUpperCase()) {
-                case "help" -> help();
-
-                default -> {
-                    console.setMensagem("89089089089");
-                    yield console;
-                }
-            };
-
-        } catch (Exception e) {
-            console.setMensagem("Comando incorreto!");
-            return console;
+        switch (primeiroComando.toUpperCase()) {
+            case "HELP":
+                System.out.println(help());
+                break;
+            case "MADEIRA":
+                System.out.println("MADEIRA: É um item que é possivel usapo a criação de espadas, pricareta");
+                break;
+            default:
+                System.out.println( "comando invalido Digite novamente!");
         }
+            return console ;
     }
 }
