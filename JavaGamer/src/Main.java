@@ -1,25 +1,8 @@
 import Comandos.Console;
-import Controle.AntesDoJogoController;
-import Controle.DuranteOJogoController;
-import Comandos.CenasDAO;
-import Comandos.InventarioDAO;
-import Comandos.ItemDAO;
-import Model.Cenas;
-import Model.Invetario;
-import Model.Item;
 import Repositorio.ComandoService;
-import com.google.gson.Gson;
-import spark.Spark;
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.Scanner;
 
 public class Main {
-
-    private static final String BASE_URL = "http://localhost:4567"; // URL base do servidor Spark
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -35,9 +18,8 @@ public class Main {
             ComandoService comandoService = new ComandoService(comandoBruto);
             Console resultado = comandoService.getResultadoConsole();
 
-
             System.out.println("Resultado:");
-            System.out.println(resultado.getMensagem("Esse Comando não Existe!!!!!!!! NULL"));
+            System.out.println(resultado.getMensagem("Erro ao bescar dados da Inventario !!!"));
         }
 
         scanner.close();
