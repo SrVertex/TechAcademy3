@@ -21,6 +21,8 @@ public class InventarioDAO {
 
             save.setId_save(generatedKeys.getInt(1));
 
+        } else {
+            return null;
         }
 
         return save;
@@ -38,15 +40,15 @@ public class InventarioDAO {
 
         Invetario invetario = new Invetario();
 
-         if (rs.next()) {
+        if (rs.next()) {
 
-             invetario.setId_save(rs.getInt("id_save"));
-             invetario.setId_cena_atual(rs.getInt("id_cenaAtual"));
-             invetario.setId_progresso(rs.getInt("id_progresso"));
+            invetario.setId_save(rs.getInt("id_save"));
+            invetario.setId_cena_atual(rs.getInt("id_cenaAtual"));
+            invetario.setId_progresso(rs.getInt("id_progresso"));
 
-         }
+        }
 
-         return invetario;
+        return invetario;
 
     }
 

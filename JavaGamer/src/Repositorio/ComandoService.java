@@ -9,7 +9,6 @@ import Model.Invetario;
 
 public class ComandoService {
 
-
     private final String[] comando;
     private final Console console;
     private final CenasDAO cenasDAO;
@@ -29,8 +28,10 @@ public class ComandoService {
                 "----------------  ------------------------------------------------------------\n" +
                 "HELP              Help é um comando de mostra comandos usáveis durante o game.\n" +
                 "GET               \n" +
-                "INVENTORY         O comando de inventário mostrará todos os itens que o jogador adquiriu durante o progresso do jogo.\n" +
+                "INVENTORY         O comando de inventário mostrará todos os itens que o jogador adquiriu durante o progresso do jogo.\n"
+                +
                 "RESET             Cuidado com esse comando, o reset limpará todo o progresso do jogador!\n" +
+                "CHECK             O comando check é feito para especionar um item da cena.\n" +
                 "SAVE              Esse é um comando para salvar o progresso do game.\n");
         return console;
     }
@@ -39,7 +40,7 @@ public class ComandoService {
 
     Integer id = 1;
 
-                                // comando start
+    // comando start
     public Console start() {
         try {
 
@@ -51,7 +52,8 @@ public class ComandoService {
         }
         return console;
     }
-                                // comando inventario
+
+    // comando inventario
     public Console inventario() {
         try {
 
@@ -59,23 +61,24 @@ public class ComandoService {
             console.setMensagem(invetario.getId_save().toString());
             console.setMensagem(invetario.getItenss().toString());
 
-        } catch (Exception e){
+        } catch (Exception e) {
             console.getMensagem();
         }
         return console;
     }
-                                // comando save mostrar
+
+    // comando save mostrar
     public Console savaMostar() {
 
         try {
 
             Invetario invetario = InventarioDAO.findInvetarioById(id);
-            console.setMensagem("Voce esta jogando no save: "+invetario.getId_save().toString());
+            console.setMensagem("Voce esta jogando no save: " + invetario.getId_save().toString());
 
         } catch (Exception e) {
             console.setMensagem(erro);
         }
-            return console;
+        return console;
     }
 
     public Console check() {
@@ -83,9 +86,7 @@ public class ComandoService {
         return console;
     }
 
-
-
-                            // local de execução real
+    // local de execução real
     public Console getResultadoConsole() {
         try {
             String primeiroComando = comando[0].toUpperCase();
