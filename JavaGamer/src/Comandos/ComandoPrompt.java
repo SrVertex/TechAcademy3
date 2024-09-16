@@ -19,8 +19,8 @@ public class ComandoPrompt {
                         "RESET             Cuidado com esse comando, o reset limpará todo o progresso do jogador!\n" +
                         "SAVE              Esse é um comando para salvar o progresso do game.\n";
                 break;
-            case "MADEIRA":
-                resposta = "MADEIRA: É um item que é possivel usapo a criação de espadas, pricareta";
+            case "GET_MADEIRA":
+                resposta = "Blocos de maderira coletados";
                 break;
             default:
                 resposta = "comando invalido Digite novamente!";

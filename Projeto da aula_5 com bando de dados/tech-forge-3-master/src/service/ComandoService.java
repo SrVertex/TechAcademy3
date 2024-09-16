@@ -52,7 +52,7 @@ public class ComandoService {
             };
         } catch (Exception e) {
             console.setMensagem("Comando inválido");
-                return console;
+            return console;
         }
     }
 }

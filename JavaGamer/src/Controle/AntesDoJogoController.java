@@ -8,6 +8,7 @@ import spark.Response;
 import spark.Route;
 
 public class AntesDoJogoController implements Route {
+
     private final Gson gson;
 
     public AntesDoJogoController(Gson gson) {
@@ -15,18 +16,15 @@ public class AntesDoJogoController implements Route {
     }
 
     @Override
-    public Object handle(Request request, Response response) {
-        String comando = request.queryParams("comando");
-        String result = "Você iniciou o comando: " + comando;
-        response.type("application/json");
-        return gson.toJson(new Resposta(result));
-    }
+    public Object handle(Request request, Response response) throws Exception {
 
-    private class Resposta {
-        private String mensagem;
+        String comandoInteiro = request.params(":comando");
 
-        public Resposta(String mensagem) {
-            this.mensagem = mensagem;
-        }
+        ComandoService comandoService = new ComandoService(comandoInteiro);
+
+        Console console = comandoService.getResultadoConsole();
+
+        return gson.toJson(console);
+
     }
 }

@@ -1,7 +1,5 @@
 package Model;
 
-import Comandos.CenasDAO;
-
 import java.util.List;
 
 public class Invetario {

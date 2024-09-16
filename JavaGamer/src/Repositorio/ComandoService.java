@@ -1,51 +1,58 @@
 package Repositorio;
 
 import Comandos.Console;
+import Model.Invetario;
 
 public class ComandoService {
-
     private final String[] comando;
     private final Console console;
 
-    // private de reposta
-    private String resposta;
-
-    public ComandoService(String comandoInteiro) {
-
+    public ComandoService(String comandoBruto){
         Console console = new Console();
         this.console = console;
-        this.comando = comandoInteiro.split(" ");
+        this.comando = comandoBruto.split(" ");
+
     }
-            // comando help
-        public Console help() {
-        console.getMensagem(
-                        "Comando           Descrição\n" +
-                        "----------------  ------------------------------------------------------------\n" +
-                        "HELP              Help é um comando de mostra comandos usáveis durante o game.\n" +
-                        "GET               \n" +
-                        "INVENTORY         O comando de inventário mostrará todos os itens que o jogador adquiriu durante o progresso do jogo.\n" +
-                        "RESET             Cuidado com esse comando, o reset limpará todo o progresso do jogador!\n" +
-                        "SAVE              Esse é um comando para salvar o progresso do game.\n"
 
-        );
-        return  console;
+    public Console help() {
+        console.setMensagem("Este aqui é o texto de ajuda");
+        return console;
+    }
+
+    public Console start() {
+        try {
+            Invetario save = new Invetario();
+            console.setId_save_console(save.getId_save());
+            return console;
+        } catch (Exception e) {
+            e.printStackTrace();
+            console.setMensagem("Erro ao tentar iniciar o jogo");
+            return console;
         }
-
+    }
 
     public Console getResultadoConsole(){
 
-        String primeiroComando = comando[0].toLowerCase();
+        try {
+            //A variável primeiroComando recebe a primeira posição
+            //do array comando.
+            String primeiroComando = comando[0].toLowerCase();
 
-        switch (primeiroComando.toUpperCase()) {
-            case "HELP":
-                System.out.println(help());
-                break;
-            case "MADEIRA":
-                System.out.println("MADEIRA: É um item que é possivel usapo a criação de espadas, pricareta");
-                break;
-            default:
-                System.out.println( "comando invalido Digite novamente!");
+            //O comando switch irá testar o nome do primeiro comando.
+            //se o valor da variável for igual ao da sentença case
+            //iremos chamar o método para tratar sobre aquele comando.
+            return switch (primeiroComando) {
+                case "help" -> help();
+                case "start" -> start();
+                default -> {
+                    console.setMensagem("Comando inválido");
+                    yield console;
+                }
+            };
+        } catch (Exception e) {
+            console.setMensagem("Comando inválido");
+            return console;
         }
-            return console ;
     }
 }
+
