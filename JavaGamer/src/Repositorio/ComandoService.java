@@ -60,22 +60,27 @@ public class ComandoService {
             console.setMensagem(invetario.getItenss().toString());
 
         } catch (Exception e){
-            console.getMensagem(erro);
+            console.getMensagem();
         }
         return console;
     }
                                 // comando save mostrar
-    public  Console savaMostar() {
+    public Console savaMostar() {
 
         try {
 
             Invetario invetario = InventarioDAO.findInvetarioById(id);
-            console.setMensagem(invetario.getId_save().toString());
+            console.setMensagem("Voce esta jogando no save: "+invetario.getId_save().toString());
 
         } catch (Exception e) {
             console.setMensagem(erro);
         }
             return console;
+    }
+
+    public Console check() {
+
+        return console;
     }
 
 
@@ -89,7 +94,8 @@ public class ComandoService {
                 case "HELP" -> help();
                 case "START" -> start();
                 case "INVENTARIO" -> inventario();
-                case "save_mostrar" -> savaMostar();
+                case "SAVE_ID" -> savaMostar();
+                case "CHECK" -> check();
                 default -> {
                     console.setMensagem("Comando incorreto!");
                     yield console;
