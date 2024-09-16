@@ -35,10 +35,15 @@ public class ComandoService {
         return console;
     }
 
+    String erro = "Comando digitado incorretamente!!!!";
+
+    Integer id = 1;
+
+                                // comando start
     public Console start() {
         try {
 
-            Cenas cena = cenasDAO.findCenaById(1);
+            Cenas cena = cenasDAO.findCenaById(id);
             console.setMensagem(cena.getDescricao_cena());
 
         } catch (Exception e) {
@@ -46,20 +51,36 @@ public class ComandoService {
         }
         return console;
     }
-
+                                // comando inventario
     public Console inventario() {
         try {
-            Integer id = 1;
+
             Invetario invetario = InventarioDAO.findInvetarioById(id);
             console.setMensagem(invetario.getId_save().toString());
             console.setMensagem(invetario.getItenss().toString());
 
         } catch (Exception e){
-            console.getMensagem("Erro ao bescar dados da Inventario !!!");
+            console.getMensagem(erro);
         }
         return console;
     }
+                                // comando save mostrar
+    public  Console savaMostar() {
 
+        try {
+
+            Invetario invetario = InventarioDAO.findInvetarioById(id);
+            console.setMensagem(invetario.getId_save().toString());
+
+        } catch (Exception e) {
+            console.setMensagem(erro);
+        }
+            return console;
+    }
+
+
+
+                            // local de execução real
     public Console getResultadoConsole() {
         try {
             String primeiroComando = comando[0].toUpperCase();
@@ -68,6 +89,7 @@ public class ComandoService {
                 case "HELP" -> help();
                 case "START" -> start();
                 case "INVENTARIO" -> inventario();
+                case "save_mostrar" -> savaMostar();
                 default -> {
                     console.setMensagem("Comando incorreto!");
                     yield console;
