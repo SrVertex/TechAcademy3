@@ -15,7 +15,15 @@ public class ComandoService {
     }
 
     public Console help() {
-        console.setMensagem("Este aqui é o texto de ajuda");
+        console.setMensagem(
+                "Comando           Descrição\n" +
+                        "----------------  ------------------------------------------------------------\n" +
+                        "HELP              Help é um comando de mostra comandos usáveis durante o game.\n" +
+                        "GET               \n" +
+                        "INVENTORY         O comando de inventário mostrará todos os itens que o jogador adquiriu durante o progresso do jogo.\n" +
+                        "RESET             Cuidado com esse comando, o reset limpará todo o progresso do jogador!\n" +
+                        "SAVE              Esse é um comando para salvar o progresso do game.\n"
+        );
         return console;
     }
 
@@ -34,13 +42,9 @@ public class ComandoService {
     public Console getResultadoConsole(){
 
         try {
-            //A variável primeiroComando recebe a primeira posição
-            //do array comando.
+
             String primeiroComando = comando[0].toLowerCase();
 
-            //O comando switch irá testar o nome do primeiro comando.
-            //se o valor da variável for igual ao da sentença case
-            //iremos chamar o método para tratar sobre aquele comando.
             return switch (primeiroComando) {
                 case "help" -> help();
                 case "start" -> start();

@@ -35,9 +35,9 @@ public class Main {
             ComandoService comandoService = new ComandoService(comandoBruto);
             Console resultado = comandoService.getResultadoConsole();
 
-            // Exibe a mensagem retornada pelo comando
+
             System.out.println("Resultado:");
-            System.out.println(resultado.getMensagem(null)); // Exibindo mensagem do Console
+            System.out.println(resultado.getMensagem("Esse Comando não Existe!!!!!!!! NULL"));
         }
 
         scanner.close();

@@ -5,24 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eadf96f7-6fc5-42b9-b45b-a7ca80caa090" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/.gradle/8.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/.gradle/8.10.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Comandos/ComandoPrompt.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/ComandoPrompt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Controle/AntesDoJogoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Controle/AntesDoJogoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Controle/DuranteOJogoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Controle/DuranteOJogoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaGamer/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Model/Invetario.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Model/Invetario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaGamer/src/Repositorio/ComandoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Repositorio/ComandoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projeto da aula_5 com bando de dados/tech-forge-3-master/src/service/ComandoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Projeto da aula_5 com bando de dados/tech-forge-3-master/src/service/ComandoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/ComandoPrompt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/ComandoPrompt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Controle/AntesDoJogoController$Resposta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Controle/AntesDoJogoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Controle/AntesDoJogoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Controle/DuranteOJogoController$Resposta.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Controle/DuranteOJogoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Controle/DuranteOJogoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Model/Invetario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Model/Invetario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Repositorio/ComandoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Repositorio/ComandoService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Repositorio/ComandoService.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
