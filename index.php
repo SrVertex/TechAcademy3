@@ -58,10 +58,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comando'])) {
     $_SESSION['historico'][] = $result;
 }
 
-// Resetar o jogo
+// comando para limpar o historico
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['clear'])) {
     // Enviar requisição para resetar o jogo
-    $url = 'http://localhost:4567/reset'; // URL do servidor Java
+    $url = 'http://localhost:4567/reset';
     $result = sendPostRequest($url, array());
 
     // Limpar histórico
