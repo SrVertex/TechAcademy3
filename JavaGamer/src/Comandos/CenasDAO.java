@@ -10,8 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CenasDAO {
+
     public static Cenas findCenaById(Integer id) throws SQLException {
 
+                    // CONECXAO A TABLA CENAS
         Connection conn = Mysql.getConnection();
         String sql = "SELECT * FROM cena WHERE id_cena = ?";
         PreparedStatement stmt = conn.prepareStatement(sql);
@@ -22,6 +24,7 @@ public class CenasDAO {
 
         if (rs.next()) {
 
+                    // ITENS DO BANCO DE DADOS
             cenas.setId_cena(rs.getInt("id_cena"));
             cenas.setDescricao_cena(rs.getString("descricao_cena"));
             cenas.setNome_cena(rs.getString("nome_cena"));
@@ -43,6 +46,7 @@ public class CenasDAO {
         ps.execute();
     }
 
+                     // LISTA DE ITENS DA CENAS
     public static List<Cenas> findAll() throws SQLException {
         Connection connection = Mysql.getConnection();
         String sql = "select * from cena;";
@@ -66,9 +70,10 @@ public class CenasDAO {
         return cenas;
     }
 
+
+                        // COMANDO PARA A PROXIMA CENA
     public void ComandoCerto(Cenas cenas) throws  SQLException{
         Connection connection = Mysql.getConnection();
-
 
     }
 
