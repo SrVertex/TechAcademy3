@@ -86,6 +86,17 @@ public class ComandoService {
         return console;
     }
 
+
+    public Console proximaCena() {
+        if (true){
+
+        } else {
+            System.out.println("comando errado");
+        }
+        return console;
+    }
+
+
     // local de execução real
     public Console getResultadoConsole() {
         try {
@@ -97,6 +108,7 @@ public class ComandoService {
                 case "INVENTARIO" -> inventario();
                 case "SAVE_ID" -> savaMostar();
                 case "CHECK" -> check();
+                case "MADEIRA" -> proximaCena();
                 default -> {
                     console.setMensagem("Comando incorreto!");
                     yield console;

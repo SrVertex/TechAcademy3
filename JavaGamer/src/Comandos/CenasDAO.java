@@ -30,8 +30,8 @@ public class CenasDAO {
             cenas.setTextoNegativo_cena(rs.getString("textoNegativo_cena"));
             cenas.setItens1(ItemDAO.findItensByScene(cenas));
 
-
         }
+
         return cenas;
 
     }
@@ -42,6 +42,7 @@ public class CenasDAO {
         ps.setString(1, cenas.getDescricao_cena());
         ps.execute();
     }
+
     public static List<Cenas> findAll() throws SQLException {
         Connection connection = Mysql.getConnection();
         String sql = "select * from cena;";
@@ -64,4 +65,11 @@ public class CenasDAO {
         }
         return cenas;
     }
+
+    public void ComandoCerto(Cenas cenas) throws  SQLException{
+        Connection connection = Mysql.getConnection();
+
+
+    }
+
 }
