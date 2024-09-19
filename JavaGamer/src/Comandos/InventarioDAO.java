@@ -54,6 +54,8 @@ public class InventarioDAO {
 
 
 
+        // CAPITURA DOS ITENS DO INVENTARIO
+
     public static Invetario findInventarioItemByid(Integer id) throws SQLException {
 
         Connection connection = Mysql.getConnection();
@@ -64,9 +66,38 @@ public class InventarioDAO {
         ResultSet rs = stmt.executeQuery();
 
         Invetario invetario = new Invetario();
-        invetario.setItenss(ItemDAO.findItensByScene(invetario));
+
+        if (rs.next()) {
+
+            invetario.setItenss(ItemDAO.findItensByScene(invetario));
+
+        }
 
         return invetario;
+
+    }
+
+    // AJUSTES DO INVENTARIO/SAVE
+
+    public static Invetario fandInvetarioSaveByid(Integer id) throws SQLException {
+
+        Connection connection = Mysql.getConnection();
+        String sql = "insert into inventario (id_save ,id_cenaAtual ,id_progresso ,id_item)\n" +
+                "values ('?', null, null, null);";
+
+        PreparedStatement stmt = connection.prepareStatement(sql);
+        stmt.setInt(1, id);
+        ResultSet rs = stmt.executeQuery();
+
+        Invetario invetario = new Invetario();
+
+        if (rs.next()) {
+
+            invetario.setId_save(rs.getInt("id_save"));
+        }
+
+        return invetario;
+
     }
 
 
