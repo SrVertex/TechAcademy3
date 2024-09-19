@@ -52,4 +52,23 @@ public class InventarioDAO {
 
     }
 
+
+
+    public static Invetario findInventarioItemByid(Integer id) throws SQLException {
+
+        Connection connection = Mysql.getConnection();
+        String sql = "select id_item from inventario where id_save = ?;";
+
+        PreparedStatement stmt = connection.prepareStatement(sql);
+        stmt.setInt(1, id);
+        ResultSet rs = stmt.executeQuery();
+
+        Invetario invetario = new Invetario();
+        invetario.setItenss(ItemDAO.findItensByScene(invetario));
+
+        return invetario;
+    }
+
+
+
 }
