@@ -7,10 +7,11 @@ import java.sql.*;
 public class InventarioDAO {
 
 
-    public static Invetario novoJogo() throws SQLException {
+    public static Invetario SaveGame() throws SQLException {
 
         Connection conn = Mysql.getConnection();
         String sql = "INSERT INTO inventario (id_save) VALUES (1)";
+
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.execute(sql, Statement.RETURN_GENERATED_KEYS);
         ResultSet generatedKeys = stmt.getGeneratedKeys();
@@ -22,7 +23,9 @@ public class InventarioDAO {
             save.setId_save(generatedKeys.getInt(1));
 
         } else {
+
             return null;
+
         }
 
         return save;
@@ -79,26 +82,26 @@ public class InventarioDAO {
 
     // AJUSTES DO INVENTARIO/SAVE
 
-    public static Invetario fandInvetarioSaveByid(Integer id) throws SQLException {
-
-        Connection connection = Mysql.getConnection();
-        String sql = "insert into inventario (id_save ,id_cenaAtual ,id_progresso ,id_item)\n" +
-                "values ('?', null, null, null);";
-
-        PreparedStatement stmt = connection.prepareStatement(sql);
-        stmt.setInt(1, id);
-        ResultSet rs = stmt.executeQuery();
-
-        Invetario invetario = new Invetario();
-
-        if (rs.next()) {
-
-            invetario.setId_save(rs.getInt("id_save"));
-        }
-
-        return invetario;
-
-    }
+//    public static Invetario fandInvetarioSaveByid(Integer id) throws SQLException {
+//
+//        Connection connection = Mysql.getConnection();
+//        String sql = "insert into inventario (id_save ,id_cenaAtual ,id_progresso ,id_item)\n" +
+//                "values ('?', null, null, null);";
+//
+//        PreparedStatement stmt = connection.prepareStatement(sql);
+//        stmt.setInt(1, id);
+//        ResultSet rs = stmt.executeQuery();
+//
+//        Invetario invetario = new Invetario();
+//
+//        if (rs.next()) {
+//
+//            invetario.setId_save(rs.getInt("id_save"));
+//        }
+//
+//        return invetario;
+//
+//    }
 
 
 
