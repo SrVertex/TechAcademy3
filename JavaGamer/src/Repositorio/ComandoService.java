@@ -106,7 +106,7 @@ public class ComandoService {
                 case "HELP" -> help();
                 case "START" -> start();
                 case "INVENTARIO" -> inventario();
-                case "SAVE_ID" -> savaMostar();
+                case "SAVEID" -> savaMostar();
                 case "CHECK" -> check();
                 case "MADEIRA" -> proximaCena();
                 default -> {
