@@ -7,7 +7,8 @@ public class Invetario {
     private Integer Id_save;
     private Integer Id_progresso;
     private List<Item> itenss;
-    private Integer Id_cena_atual;
+    private Cenas Id_cena_atual;
+    private Integer ID_CENA_ATUAL2;
 
     public Integer getId_save() {
         return Id_save;
@@ -33,12 +34,20 @@ public class Invetario {
         this.itenss = itenss;
     }
 
-    public Integer getId_cena_atual() {
+    public Cenas getId_cena_atual() {
         return Id_cena_atual;
     }
 
-    public void setId_cena_atual(Integer id_cena_atual) {
+    public void setId_cena_atual(Cenas id_cena_atual) {
         Id_cena_atual = id_cena_atual;
+    }
+
+    public Integer getID_CENA_ATUAL2() {
+        return ID_CENA_ATUAL2;
+    }
+
+    public void setID_CENA_ATUAL2(Integer ID_CENA_ATUAL2) {
+        this.ID_CENA_ATUAL2 = ID_CENA_ATUAL2;
     }
 
     @Override
@@ -48,6 +57,7 @@ public class Invetario {
                 ", Id_progresso=" + Id_progresso +
                 ", itenss=" + itenss +
                 ", Id_cena_atual=" + Id_cena_atual +
+                ", ID_CENA_ATUAL2=" + ID_CENA_ATUAL2 +
                 '}';
     }
 }

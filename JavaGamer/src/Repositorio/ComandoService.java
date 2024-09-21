@@ -41,18 +41,18 @@ public class ComandoService {
     Integer id = 1;
 
     // comando start
-    public Console start() {
+    public Console Start() {
         try {
+            Invetario save1 = InventarioDAO.SaveGame();
+            console.setMensagem(save1.getId_cena_atual().getDescricao_cena());
+            console.setId_save_console(save1.getId_save());
+            return console;
+       }catch (Exception e) {
 
-            Cenas cena = cenasDAO.findCenaById(id);
-            console.setMensagem(cena.getDescricao_cena());
-
-        } catch (Exception e) {
-            console.setMensagem("Erro ao obter a cena: " + e.getMessage());
+            console.setMensagem("erro ao tentar iniciar o game");
+            return console;
         }
-        return console;
-    }
-
+  }
     // comando inventario
     public Console inventario() {
         try {
@@ -104,7 +104,7 @@ public class ComandoService {
 
             return switch (primeiroComando) {
                 case "HELP" -> help();
-                case "START" -> start();
+               case "START" -> Start();
                 case "INVENTARIO" -> inventario();
                 case "SAVEID" -> savaMostar();
                 case "CHECK" -> check();
