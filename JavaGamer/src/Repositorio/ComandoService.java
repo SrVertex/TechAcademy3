@@ -73,7 +73,6 @@ public class ComandoService {
         try {
 
             Invetario invetario = InventarioDAO.findInvetarioById(id);
-            console.setMensagem("Voce esta jogando no save: " + invetario.getId_save().toString());
 
         } catch (Exception e) {
             console.setMensagem(erro);
@@ -88,11 +87,7 @@ public class ComandoService {
 
 
     public Console proximaCena() {
-        if (true){
 
-        } else {
-            System.out.println("comando errado");
-        }
         return console;
     }
 
@@ -106,7 +101,6 @@ public class ComandoService {
                 case "HELP" -> help();
                case "START" -> Start();
                 case "INVENTARIO" -> inventario();
-                case "SAVEID" -> savaMostar();
                 case "CHECK" -> check();
                 case "MADEIRA" -> proximaCena();
                 default -> {
