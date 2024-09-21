@@ -1,0 +1,493 @@
+{
+    "help": "O objetivo do text adventure é o usuário interagir com os objetos descritos na cena (identificados pelos nomes em letra maiúsculas) para avançar no jogo. Os comandos possíveis são:\n\nHELP: exbibe o menu de ajuda do jogo\n\nUSE [ITEM]: interage com o item da cena\n\nCHECK [ITEM]: mostra a descrição do objeto na cena\n\nGET [ITEM]: Se possível, adiciona o item ao inventário\n\nINVENTORY: mostra os itens que estão no inventário\n\nUSE [INVENTORY_ITEM] WITH [SCENE_ITEM]: Realiza a ação utilizando um item do inventário com um item da cena\n\nSAVE: salva o jogo\n\nLOAD: carrega um jogo salvo\n\nRESTART: reinicia o jogo",
+    "scenes": [
+        {
+            "idScene": 0,
+            "title": "O Começo",
+            "description": "Em uma das madrugadas viradas, Bill precisava se manter acordado (I feel you Bill). Nada melhor que recorrer ao bom e velho CAFÉ. Começou a procurar os ingredientes: pó (ok), açúcar (ok), jarra (ok), FILTRO (não ok). Tinha um problema.",
+            "objects": [
+                {
+                    "idObject": 1,
+                    "possibleToCarry": false,
+                    "objectName": "cafe",
+                    "objectDescription": "Cafézinho básico, sem muita frescura",
+                    "positiveResult": " ",
+                    "negativeResult": "Acho que não temos muito o que fazer com o café no momento",
+                    "correctCommand": " ",
+                    "targetScene": "",
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 2,
+                    "possibleToCarry": false,
+                    "objectName": "filtro",
+                    "objectDescription": "Filtro para fazer café, de preferência aqueles de papel, mais fácil de limpar",
+                    "positiveResult": "#Partiu procurar um filtro ",
+                    "negativeResult": "Ah, não é bem porai não. Quem sabe outro comando?",
+                    "correctCommand": "use filtro",
+                    "targetScene": 1,
+                    "solved": false,
+                    "got": false
+                }
+            ]
+        },
+        {
+            "idScene": 1,
+            "title": "Hora do café",
+            "description": "Bom, Bill estava empenhado na quest do café. Começou a procurar algum objeto que funcionasse para tal missão. Pensou em várias coisas: GUARDANAPO, TOALHA, MEIA (que?), PAPEL (ok, hora de parar com as ideias). Ah, já ia me esquecendo de falar, enquanto Bill processava seu filtro, pegou o PÓ de café e já deixou separado",
+            "objects": [
+                {
+                    "idObject": 1,
+                    "possibleToCarry": false,
+                    "objectName": "guardanapo",
+                    "objectDescription": "Ah, seria uma ideia menos pior. Mas sabe que todos os guardanapos estã lavando?",
+                    "positiveResult": " ",
+                    "negativeResult": "Não vai dar pra usar o guardanapo pra nada... Afinal não temos um",
+                    "correctCommand": " ",
+                    "targetScene": "",
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 2,
+                    "possibleToCarry": false,
+                    "objectName": "toalha",
+                    "objectDescription": "Hmmm, vamos pensar, Bill é universitário. Logo, qual universitário tem toalha de mesa? Sem contar que a ultima de banho que estava limpa, está sendo usada. Ou seja, sem toalha por hoje",
+                    "positiveResult": " ",
+                    "negativeResult": "Que toalha?",
+                    "correctCommand": "",
+                    "targetScene": "",
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 3,
+                    "possibleToCarry": true,
+                    "objectName": "meia",
+                    "objectDescription": "Péssima escolha. Bom, pelo menos Bill tem meias limpas",
+                    "positiveResult": "",
+                    "negativeResult": "Ah, tenta outro comando ai, não rolou o atual",
+                    "correctCommand": " ",
+                    "targetScene": "",
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 4,
+                    "possibleToCarry": false,
+                    "objectName": "papel",
+                    "objectDescription": "Papel, sério? Papel? Bill, você tá bem querido?",
+                    "positiveResult": " ",
+                    "negativeResult": "Abandona o papel, (só pra ficar com mais objetos na cena, shhhh)",
+                    "correctCommand": " ",
+                    "targetScene": "",
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 5,
+                    "possibleToCarry": false,
+                    "objectName": "po",
+                    "objectDescription": "Olha, não sei te falar a marca, mas é apenas um pó de café. Seria legal usá-lo, não concorda?",
+                    "positiveResult": "Isso vai ser bem estranho, mas bora lá: Café feito na meia",
+                    "negativeResult": "Ah, não era esse o comando esperado. Tente de novo",
+                    "correctCommand": "use meia with po",
+                    "targetScene": 2,
+                    "solved": false,
+                    "got": false
+                }
+            ]
+        },
+        {
+            "idScene": 2,
+            "title": "Mas que P#%$*& aconteceu?",
+            "description": "Bill colocou a água pra ferver, colocou o pó de café na meia, deixou a garrafa embaixo, tudo nos conformes (igorando o fato da meia). Maaas, algo tinha que dar errado. Eis que automagicamente a MEIA começa a ficar colorida. Um PORTAL abre, RAIOS coloridos começam a sair (só faltou o NyanCat). Bill começou a ser sugado pelo PORTAL, mas ainda coneguia resistir",
+            "objects": [
+                {
+                    "idObject": 1,
+                    "possibleToCarry": true,
+                    "objectName": "meia",
+                    "objectDescription": "Sabe a meia de antes? É a mesma, mas com uns trem colorido saindo dela. Ah, talvez ela seja útil mais tarde",
+                    "positiveResult": " ",
+                    "negativeResult": "Olha, não tem muita função pra meia nese momento",
+                    "correctCommand": " ",
+                    "targetScene": "",
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 2,
+                    "possibleToCarry": false,
+                    "objectName": "raios",
+                    "objectDescription": "(Cara, nem da pra pegar ou fazer qualquer coisa com esses raios. Mas não é legal pensar em uns trem colorido e brilhante saindo de uma meia com pó de cafe?)",
+                    "positiveResult": " ",
+                    "negativeResult": " Nada pra fazer com isso",
+                    "correctCommand": " ",
+                    "targetScene": "",
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 3,
+                    "possibleToCarry": false,
+                    "objectName": "portal",
+                    "objectDescription": "Então, lembra que o portal tava sugando o Bill? Só aceita, entra no portal que é mais fácil",
+                    "positiveResult": "Momento psicodélico: Bill começou a ver coisas coloridas, e bolinhas de lã, tudo isso junto em meio a um suposto buraco negro (colorido, no caso). Bill sentiu se impactar em alguma coisa, e desmaiou",
+                    "negativeResult": "Então, nao deu certo. Tenta outra coisa",
+                    "correctCommand": "use portal",
+                    "targetScene": 3,
+                    "solved": false,
+                    "got": false
+                }
+            ]
+        },
+        {
+            "idScene": 3,
+            "title": "Onde está Bill?",
+            "description": "Ao acordar Bill percebeu que estava em um lugar que lembrava geograficamente sua casa. Maaas, estava tudo muito colorido (chega a ser fofo). A meia não estava mais lá, se quer o café pronto. Bill avistou um LIVRO em sua mesa (que não estava lá anteriormente), uma JANELA no cômodo (tavez essa estava lá, quem sabe?).",
+            "objects": [
+                {
+                    "idObject": 1,
+                    "possibleToCarry": true,
+                    "objectName": "livro",
+                    "objectDescription": "Bill abriu o livo, e viu várias coisas fofas nele. Principalmente sobre gatinhos (quem não gosta de gatinhos?). Esse livro é bem pesado, talvez sirva para alguma outra coisa",
+                    "positiveResult": " ",
+                    "negativeResult": "Não funcionou",
+                    "correctCommand": " ",
+                    "targetScene": "",
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 2,
+                    "possibleToCarry": false,
+                    "objectName": "janela",
+                    "objectDescription": "Cara, olhar pra essa janela foi a coisa mais doida que Bill já fez. Estava tudo tão colorido lá fora, todas as pessoas usando orelhas de gato e outdoors com gatinhos para todos os lados (da quase pra falar que é um episódio de Hora de Aventura).",
+                    "positiveResult": "Bom, acho que depois de quebrar a janela, nada mais justo do que passar por ela e entender qual a pira dessas pessoas",
+                    "negativeResult": "Não é porai. Tenta outra coisa",
+                    "correctCommand": "use livro with janela",
+                    "targetScene": 4,
+                    "solved": false,
+                    "got": false
+                }
+            ]
+        },
+        {
+            "idScene": 4,
+            "title": "O estranho mundo lá fora",
+            "description": "Ao sair do sua casa versão gatinhos_doidos_psicodelicos, Bill (todo trabalhado na roupa preta, detalhe importante) começou a reparar nos detalhes desse mundo mais de perto. Primeira coisa que viufoi um OUTDOOR com um gato com coroa. Depois reparou que todas as pessoas o olhavam estranho (ok, ele sabia que estava parecendo um zumbi, mas não é pra tanto né galera?). Viu também um BAR perto de onde estava.",
+            "objects": [
+                {
+                    "idObject": 1,
+                    "possibleToCarry": false,
+                    "objectName": "outdoor",
+                    "objectDescription": "Nesse outdoor tem um gato com roupa militar e pose pomposa. Ein? Ditadura felina aqui? Ah, claro que tinha o nome desse gato também, CatBoss",
+                    "positiveResult": " ",
+                    "negativeResult": "Não funcionou",
+                    "correctCommand": " ",
+                    "targetScene": "",
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 1,
+                    "possibleToCarry": false,
+                    "objectName": "bar",
+                    "objectDescription": "Era apenas um bar na esquina, como outro qualquer. Exceto pelo fato do barman parecer um gangster, e todas as pessoas que estavam lá pareciam estar se escondendo. (Parece um ótimo lugar pra se visitar)",
+                    "positiveResult": "(Cara, lembra da parte que eu falei que o barman parece um gangster? o que que você veio fazer aqui doido?) Bill entra no bar",
+                    "negativeResult": "Que comando é esse? Não rolou com esse objeto",
+                    "correctCommand": "use bar",
+                    "targetScene": 5,
+                    "solved": false,
+                    "got": false
+                }
+            ]
+        },
+        {
+            "idScene": 5,
+            "title": "Que bar é esse?",
+            "description": "Ao entrer no bar, Bill vê o BARMAN (sim, o com cara de gangster. Com direito a lenço na cara e tudo). Vê também várias pessoas bebendo e conversando. Há também um POSTER (adivinha? Mais gatos) mas um pouco diferente dos outros.",
+            "objects": [
+                {
+                    "idObject": 1,
+                    "possibleToCarry": false,
+                    "objectName": "barman",
+                    "objectDescription": "Estava lá de boas, fazendo as biritas pro pessoal, aproveitando pra beber um pouco no caminho, e mudando as músicas do rádio. Ele tem cara de quem sabe alguma coisa",
+                    "positiveResult": "(Seria melhor um comando TALK, seria, mas USE vai funcionar também) Bill chega e começa a puxar assunto com o barman (eu já disse que ele tem cara de gangster????)",
+                    "negativeResult": "(Eu sei, eu sei, não é muito usual o comando correto, mas usa a criatividade que vai)",
+                    "correctCommand": "use barman",
+                    "targetScene": 6,
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 2,
+                    "possibleToCarry": false,
+                    "objectName": "poster",
+                    "objectDescription": "Bom, tinha o CatBoss no poster. Padrão dessa cidade. Mas ao mesmo tempo, ele tinha um X em vermelho. Curioso, será que o pessoal nao curte o gatinho?",
+                    "positiveResult": " ",
+                    "negativeResult": "Que comando é esse? Não rolou com esse objeto",
+                    "correctCommand": " ",
+                    "targetScene": "",
+                    "solved": false,
+                    "got": false
+                }
+            ]
+        },
+        {
+            "idScene": 6,
+            "title": "Qual é a desse barman?",
+            "description": "- Oi Sr. barman, sou novo por aqui, você poderia me ajudar com algumas coisas?\n- Garoto, só pela cor da sua roupa da pra ver que tu é turista.\n- Ue... bom, ok. Qual a pira da cidade por gatos?\n- Pira? Você realmente não sabe onde está. O 'prefeito' dessa cidade é o CatBoss, como você já deve ter visto poraí\n(mals pelo excesso de critividade)\n- Ta... o gato é o prefeito? Que drogas vocês usam?\n- HAHAHAHHA Garoto você é hilário. O CatBoss usa um artefato que controla as pessoas daqui para o louvarem. Algumas pessoas da outra dimensão não são afetadas por isso.\n- Dimensão? Tipo universo paralelo? (claramente as programadoras estão usando muito a internet)\n- É... porai.\n-Tá e como eu saiu daqui?\n-Primeiro, como você veio parar aqui?\n- Cara eu juro que só tava fazendo café\n- LOL, essa é nova até pra mim. Bom, creio que eu possa te ajudar. Siga por aquela PORTA, e talvez encontre seu caminho para casa.\n(NUNCA sigam por uma porta nos fundos de um bar suspeito. Ok crianças?)",
+            "objects": [
+                {
+                    "idObject": 1,
+                    "possibleToCarry": false,
+                    "objectName": "porta",
+                    "objectDescription": "Porta dos fundos do bar. Talvez tenha alguma coisa interessante lá, talvez não. Quem sabe?",
+                    "positiveResult": "Bill entra pela porta suspeita",
+                    "negativeResult": "Ah, não funcionou",
+                    "correctCommand": "use porta",
+                    "targetScene": 7,
+                    "solved": false,
+                    "got": false
+                }
+            ]
+        },
+        {
+            "idScene": 7,
+            "title": "A porta misteriosa",
+            "description": "Ao entrar na porta, Bill se depara com uma GARRAFA, um ESPELHO, uma mesa com umas coisas estranhas em cima, incluindo um TENIS e uma CHAVE. Ah claro, uma PORTA também",
+            "objects": [
+                {
+                    "idObject": 1,
+                    "possibleToCarry": false,
+                    "objectName": "garrafa",
+                    "objectDescription": "Apenas uma garrafa vazia. Olha pensando bem, na situação atual não seria ruim se ela possuisse alguma bebida alcóolica",
+                    "positiveResult": "",
+                    "negativeResult": "Nada a se fazer por aqui",
+                    "correctCommand": "",
+                    "targetScene": "",
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 2,
+                    "possibleToCarry": false,
+                    "objectName": "espelho",
+                    "objectDescription": "Espelho velho e sujo. Mas claro, com gatinhos em volta. (Afinal Bill, que cara é essa meu amigo? vai dormir)",
+                    "positiveResult": " ",
+                    "negativeResult": "Que comando é esse? Não rolou com esse objeto",
+                    "correctCommand": " ",
+                    "targetScene": "",
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 3,
+                    "possibleToCarry": false,
+                    "objectName": "tenis",
+                    "objectDescription": "Hmm, não sei, mas acho esse tenis bastante comum (digo, isso é bastante estranho por aqui). Acho uma ideia intressante usá-lo com meia (pegou a dica né?)",
+                    "positiveResult": "Aeeeee garoto. Os dois se fundiram e começou a aparecer algo bastante curioso",
+                    "negativeResult": "Pensa um pouco garoto, vai que dá",
+                    "correctCommand": "use meia with tenis",
+                    "targetScene": 8,
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 4,
+                    "possibleToCarry": true,
+                    "objectName": "chave",
+                    "objectDescription": "Estranhamente outro objeto normal. Talvez ela seja útil mais tarde",
+                    "positiveResult": " ",
+                    "negativeResult": "Tente outro comando",
+                    "correctCommand": " ",
+                    "targetScene": "",
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 5,
+                    "possibleToCarry": false,
+                    "objectName": "porta",
+                    "objectDescription": "Porta esperando para ser destrancada. Ou não??",
+                    "positiveResult": "Bill sai do bar pela porta dos fundos e se depara com a policia. Não há muito o que fazer.",
+                    "negativeResult": "Ah, não funcionou",
+                    "correctCommand": "use chave with porta",
+                    "targetScene": 14,
+                    "solved": false,
+                    "got": false
+                }
+            ]
+        },
+        {
+            "idScene": 8,
+            "title": "Objeto misterioso",
+            "description": "Após a fusão da meia com o tenis, um objeto diferente apareceu. Esse parecia um ORBE meio critalino, mas muito bonito. Ah, claro, lembre-se de voltar para falar com o barman (gangsteeeer) pela PORTA (é a mesma de antes mesmo)",
+            "objects": [
+                {
+                    "idObject": 1,
+                    "possibleToCarry": true,
+                    "objectName": "orbe",
+                    "objectDescription": "Muito bonito, mas feito de só Deus sabe o que (lembra uma esfera do dragão transparente). Pode ser (spoiler: será) útil mais tarde",
+                    "positiveResult": " ",
+                    "negativeResult": "Ah, não tem o que fazer com a orbe. Ainda...",
+                    "correctCommand": "",
+                    "targetScene": "",
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 2,
+                    "possibleToCarry": false,
+                    "objectName": "porta",
+                    "objectDescription": "Porta que volta para a ala central do bar. Caso queira falar com o barman, recomendo",
+                    "positiveResult": "Bill volta para a área central do bar",
+                    "negativeResult": "Comando errado",
+                    "correctCommand": "use porta",
+                    "targetScene": 9,
+                    "solved": false,
+                    "got": false
+                }
+            ]
+        },
+        {
+            "idScene": 9,
+            "title": "Outra conversa",
+            "description": "Ao voltar para o bar, Bill vai direto falar com o barman. Este explica melhor sobre o CatBoss, a história é a seguinte (claramente as programadoras não queriam mais fazer diálogos):\n A cidade era pacífica, e conhecida por seus gatos (enquanto animais de estimação mesmo. Os gatos eram quase o celular hoje em dia: todo mundo tem e não vive sem), os quais eram muito inteligentes (para um gato) e num geral, divertidos. Até que um dia, uma senhora que tinha MUITOS gatos (tipo a velha do Simpsons mesmo), um deles, até então chamado de Rex (piadinha tosca), era muito quieto, e não gostava de brincadeiras ne de contato humano (único gato que realmente era um gato). Rex foi crescendo, comendo Wiskas sachê, até que um dia achou um item mágico. Um orbe colorido. Com este orbe, estranhamente colocando energia nele, Rex conseguiu poder sobre os humanos, e como vingaça por estes sempre deixarem tudo o que tem gato fofo, criou o universo paralelo da fofura (como? ajuda do orbe. Mas se tiver uma ideia mais criativa, use-a), onde ele, agora chamado de CatBoss, controla os humanos, e os fazem ser máquinas de fofura (Lembra da roupa preta do Bill? Extremamente proibido. Só coisas coloridas, fofinhas e de gatinhos). \n\nApós contar a história, Bill percebe que precisa voltar urgente para sua dimensão (afinal, com trocentos trabalhos pra entregar, nao é ficar vendo gatinhos que vai resolver). Vê então uma PORTA para sair do bar",
+            "objects": [
+                {
+                    "idObject": 2,
+                    "possibleToCarry": false,
+                    "objectName": "porta",
+                    "objectDescription": "Porta que conecta o bar à rua",
+                    "positiveResult": "Bill volta para a rua",
+                    "negativeResult": "Comando errado",
+                    "correctCommand": "use porta",
+                    "targetScene": 10,
+                    "solved": false,
+                    "got": false
+                }
+            ]
+        },
+        {
+            "idScene": 10,
+            "title": "Hora de ir pra casa?",
+            "description": "(Sabe a roupa preta_gótica_suave.jpeg de Bill? hora dela dar problema) Fato 1: As pessoas dessa cidade não gostavam mesmo de gente que não seguia a Lei da Fofura. Fato 2: A polícia local muito menos. Ao sair do bar, bill foi avistado por 2 policiais na rua (os quais parciam personagens do anime Sailor Moon). Ao avistar Bill, os policiais começaram a correr atrás dele. Não haviam muitas escapatórias. Apenas um POSTE no caminho, um BUEIRO, e uma SENHORA (vai que né?)",
+            "objects": [
+                {
+                    "idObject": 1,
+                    "possibleToCarry": false,
+                    "objectName": "poste",
+                    "objectDescription": "Poste alto, mas escalável. E ai, alpinismo tá em dia?",
+                    "positiveResult": "Bill Consegue subir no poste, e agora é hora de pensar no que fazer",
+                    "negativeResult": "Comando errado",
+                    "correctCommand": "use poste",
+                    "targetScene": 11,
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 2,
+                    "possibleToCarry": false,
+                    "objectName": "bueiro",
+                    "objectDescription": "Tampadíssimo. Péssima ideia tentar entrar ai",
+                    "positiveResult": "",
+                    "negativeResult": "Nada pra fazer aqui. Tá tampado querido",
+                    "correctCommand": "",
+                    "targetScene": "",
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 3,
+                    "possibleToCarry": false,
+                    "objectName": "senhora",
+                    "objectDescription": "Que? quer pegar uma senhora como refém? Tá doido, doido? (eu sei que esse jogo está um completo caos nosense. Mas vamos tentar manter os modos né?)",
+                    "positiveResult": "",
+                    "negativeResult": "Deixa essa senhora pra lá, mexe com ela não.",
+                    "correctCommand": "",
+                    "targetScene": "",
+                    "solved": false,
+                    "got": false
+                }
+            ]
+        },
+        {
+            "idScene": 11,
+            "title": "Outra conversa",
+            "description": "Em cima do poste Bill percebe FIOS ligados no mesmo, a POLICIA lá embaixo, a senhora gritando apavorada (aprendizado do dia: nunca use roupas pretas perto de uma velha viciada em gatinhos) Ideias do que fazer?",
+            "objects": [
+                {
+                    "idObject": 1,
+                    "possibleToCarry": false,
+                    "objectName": "fios",
+                    "objectDescription": "Fios de um poste de energia. Com sorte Bill não morrerá eletrocultado, caso os use para algo",
+                    "positiveResult": "Um novo portal se abre e Bill entra novamente em um buraco negro dimensional",
+                    "negativeResult": "Oi? Criatividade amigo",
+                    "correctCommand": "use orbe with fios",
+                    "targetScene": 12,
+                    "solved": false,
+                    "got": false
+                },
+                {
+                    "idObject": 2,
+                    "possibleToCarry": false,
+                    "objectName": "policia",
+                    "objectDescription": "Olha, não é uma ideia boa. Mas, quem sabe você não pode se entregar para a polícia Sailor Moon?",
+                    "positiveResult": "Bill desiste da fuga mirabolante, desce do poste e se rende",
+                    "negativeResult": "Oi? Criatividade amigo",
+                    "correctCommand": "use policia",
+                    "targetScene": 14,
+                    "solved": false,
+                    "got": false
+                }
+            ]
+        },
+        {
+            "idScene": 12,
+            "title": "Is this the end?",
+            "description": "Bill escuta um barulho vindo de perto de seu ouvido. Era uma voz baixa. Parecia que alguém estava cutucando seu ombro também. Sentia algo molhado vindo do seu rosto. \nApós alguns minutos sonolentos, Bill finalmente acorda. \n\n(hora do plot twist)Ao acordar ele percebe que estava em um lugar bastante familiar. Popularmente conhecido como sala de aula. Bill percebe que tudo não passou de um sonho, e a única coisa que conseguiu com isso foi seu caderno babado (e um professor nada contente tentando acordá-lo).\n\nMas espera... ele acordou mesmo? ou será que só sonhou que estava acordando? Será que Bill realmente saiu da terra dos gatinhos? Ou melhor, será que ele foi mesmo para lá? (recomendo a checagem do SPOILER). Tire suas conclusões",
+            "objects": [
+                {
+                    "idObject": 1,
+                    "possibleToCarry": false,
+                    "objectName": "spoiler",
+                    "objectDescription": "(então... Bill na real sonhou que estava acordando. Na verdade, agora ele acordou de verdade. No fim das contas, só tinha dormido enquanto programava um trabalho da faculdade, e teve essa brisa toda dormindo. Juro, esse é o final da história mesmo) Fim do.. (ahhh já ia esquecendo. O orbe que Bill usou para sair da dimensão era meio que o oposto que Rex usou para dominar o mundo. Afinal, ele era um 'objeto normal'. Claro claro, isso tudo na brisa de Bill. Ou não?)",
+                    "positiveResult": " ",
+                    "negativeResult": "Oi?",
+                    "correctCommand": "use spoiler",
+                    "targetScene": 13,
+                    "solved": false,
+                    "got": false
+                }
+            ]
+        },
+        {
+            "idScene": 13,
+            "title": "Is this the end?",
+            "description": "Fim do jogo! (spoiler: são 2 finais. Na real 2 finais, com 3 caminhos possíveis)",
+            "objects": []
+        },
+        {
+            "idScene": 14,
+            "title": "Is this the end?",
+            "description": "Bill está preso por não usar roupas coloridas e fofinhas (desabafo: já cansei de escrever 'colorido, fofinho e gatinho'). (usa um USE POLICIA só pra terminar o joguim).",
+            "objects": [
+                {
+                    "idObject": 1,
+                    "possibleToCarry": false,
+                    "objectName": "policia",
+                    "objectDescription": "É isso. Bill foi preso, e vai passar o resto de sua vida em uma prisão, sendo torturado com uma televisão passando o NyanCat e tocando sua musiquinha  até  o fim de seus dias",
+                    "positiveResult": " ",
+                    "negativeResult": "Oi?",
+                    "correctCommand": "use policia",
+                    "targetScene": 13,
+                    "solved": false,
+                    "got": false
+                }
+            ]
+        }
+    ]
+}
