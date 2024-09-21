@@ -8,7 +8,6 @@ import Model.Cenas;
 import Model.Invetario;
 
 public class ComandoService {
-
     private final String[] comando;
     private final Console console;
     private final CenasDAO cenasDAO;
@@ -23,6 +22,12 @@ public class ComandoService {
         this.inventarioDAO = new InventarioDAO();
     }
 
+
+    String erro = "Comando digitado incorretamente!!!!";
+
+    Integer id = 1;
+
+    // comando help
     public Console help() {
         console.setMensagem("Comando           Descrição\n" +
                 "----------------  ------------------------------------------------------------\n" +
@@ -35,10 +40,6 @@ public class ComandoService {
                 "SAVE              Esse é um comando para salvar o progresso do game.\n");
         return console;
     }
-
-    String erro = "Comando digitado incorretamente!!!!";
-
-    Integer id = 1;
 
     // comando start
     public Console Start() {
@@ -53,6 +54,7 @@ public class ComandoService {
             return console;
         }
   }
+
     // comando inventario
     public Console inventario() {
         try {
@@ -67,28 +69,15 @@ public class ComandoService {
         return console;
     }
 
-    // comando save mostrar
-    public Console savaMostar() {
-
-        try {
-
-            Invetario invetario = InventarioDAO.findInvetarioById(id);
-
-        } catch (Exception e) {
-            console.setMensagem(erro);
-        }
-        return console;
-    }
-
     public Console check() {
+        try {
+//            Invetario invetario = InventarioDAO ;
 
-        return console;
-    }
+            return console;
+        }catch (Exception e) {
 
-
-    public Console proximaCena() {
-
-        return console;
+            return console;
+        }
     }
 
 
@@ -99,10 +88,9 @@ public class ComandoService {
 
             return switch (primeiroComando) {
                 case "HELP" -> help();
-               case "START" -> Start();
+                case "START" -> Start();
                 case "INVENTARIO" -> inventario();
                 case "CHECK" -> check();
-                case "MADEIRA" -> proximaCena();
                 default -> {
                     console.setMensagem("Comando incorreto!");
                     yield console;

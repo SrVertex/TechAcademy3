@@ -1,6 +1,5 @@
 package Comandos;
 
-import Model.Cenas;
 import Model.Invetario;
 
 import java.sql.*;
@@ -25,9 +24,7 @@ public class InventarioDAO {
             save.setId_cena_atual(CenasDAO.findCenaById(1));
 
         }
-
         return save;
-
     }
 
     public static Invetario findInvetarioById(Integer id) throws SQLException {
@@ -48,9 +45,7 @@ public class InventarioDAO {
             invetario.setID_CENA_ATUAL2(rs.getInt("id_cenaAtual"));
 
         }
-
         return invetario;
-
     }
 
 
@@ -73,32 +68,7 @@ public class InventarioDAO {
             invetario.setItenss(ItemDAO.findItensByScene(invetario));
 
         }
-
         return invetario;
-
     }
-
-    // AJUSTES DO INVENTARIO/SAVE
-
-//    public static Invetario fandInvetarioSaveByid(Integer id) throws SQLException {
-//
-//        Connection connection = Mysql.getConnection();
-//        String sql = "insert into inventario (id_save ,id_cenaAtual ,id_progresso ,id_item)\n" +
-//                "values ('?', null, null, null);";
-//
-//        PreparedStatement stmt = connection.prepareStatement(sql);
-//        stmt.setInt(1, id);
-//        ResultSet rs = stmt.executeQuery();
-//
-//        Invetario invetario = new Invetario();
-//
-//        if (rs.next()) {
-//
-//            invetario.setId_save(rs.getInt("id_save"));
-//        }
-//
-//        return invetario;
-//
-//    }
 
 }
