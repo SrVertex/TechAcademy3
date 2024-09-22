@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="eadf96f7-6fc5-42b9-b45b-a7ca80caa090" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Comandos/InventarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/InventarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Repositorio/ComandoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Repositorio/ComandoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/InventarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Comandos/InventarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Repositorio/ComandoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Repositorio/ComandoService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +38,7 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="jar://C:/Program Files/Java/jdk-22/lib/src.zip!/java.base/java/lang/Integer.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$PROJECT_DIR$/../../../Program Files/Java/jdk-22/lib/src.zip!/java.base/java/lang/Integer.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JvmLoggingSettingsStorage">
     <option name="loggerId" value="Slf4j" />
