@@ -17,6 +17,8 @@ public class ItemDAO {
         return new Item();
     }
 
+    public static Integer atualizaItem = 1;
+
     public static List<Item> findItensByScene(Cenas cenas) throws SQLException {
 
         Connection connection = Mysql.getConnection();
@@ -24,7 +26,7 @@ public class ItemDAO {
         String sql = "select * from item i where id_item = ?;";
 
         PreparedStatement ps = connection.prepareStatement(sql);
-        ps.setInt(CenasDAO.proximaCenas, cenas.getId_cena());
+        ps.setInt(atualizaItem, cenas.getId_cena());
         ResultSet resultSet = ps.executeQuery();
 
         List<Item> itens = new ArrayList<>();
@@ -47,7 +49,6 @@ public class ItemDAO {
         return itens;
 
     }
-
 
     public static Object findItensByScene(Integer idItem) {
         return idItem;

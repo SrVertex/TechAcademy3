@@ -55,10 +55,10 @@ public class ComandoService {
 
 
 
-                       CenasDAO.proximaCenas = CenasDAO.proximaCenas + 1;
+                       CenasDAO.proximaCenas ++;
 
                        InventarioDAO.atualizaInventario = InventarioDAO.atualizaInventario + 1;
-
+                       ItemDAO.atualizaItem = ItemDAO.atualizaItem + 1;
 
 
                    }else {

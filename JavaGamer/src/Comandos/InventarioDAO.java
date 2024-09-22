@@ -22,7 +22,7 @@ public class InventarioDAO {
         if(generatedKeys.next()){
 
             save.setId_save(generatedKeys.getInt(1));
-            save.setId_cena_atual(CenasDAO.findCenaById(atualizaInventario));
+            save.setId_cena_atual(CenasDAO.findCenaById(1));
 
         }
 
@@ -49,6 +49,7 @@ public class InventarioDAO {
         }
         return invetario;
     }
+
 
 
 

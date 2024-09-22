@@ -44,7 +44,7 @@ public class CenasDAO {
         Connection connection = Mysql.getConnection();
         String insert = "INSERT INTO cena (descricao_cena) VALUES (?);";
         PreparedStatement ps = connection.prepareStatement(insert);
-        ps.setString(proximaCenas, cenas.getDescricao_cena());
+        ps.setString(1, cenas.getDescricao_cena());
         ps.execute();
     }
 
