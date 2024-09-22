@@ -52,30 +52,4 @@ public class InventarioDAO {
 
 
 
-        // get items para o inventario
-
-    public static Invetario itemsGet() throws SQLException{
-
-        Cenas cenas = CenasDAO.findCenaById(1);
-
-        Connection conn = Mysql.getConnection();
-        String sql ="insert into inventario (id_item) values ("+cenas+");" ;
-
-
-        PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.execute(sql, Statement.RETURN_GENERATED_KEYS);
-        ResultSet generatedKeys = stmt.getGeneratedKeys();
-
-        Invetario nomeItem = new Invetario();
-
-        if (generatedKeys.next()) {
-
-            nomeItem.setItenss(ItemDAO.findItensByScene(nomeItem));
-
-        }
-
-        return nomeItem;
-
-    }
-
 }

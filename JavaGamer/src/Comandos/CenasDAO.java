@@ -2,14 +2,16 @@ package Comandos;
 
 import Model.Cenas;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CenasDAO {
+
+
+        public static Integer proximaCenas = 1;
+
+
 
     public static Cenas findCenaById(Integer id) throws SQLException {
 
@@ -17,7 +19,7 @@ public class CenasDAO {
         Connection conn = Mysql.getConnection();
         String sql = "SELECT * FROM cena WHERE id_cena = ?";
         PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1, id);
+        stmt.setInt(proximaCenas, id);
         ResultSet rs = stmt.executeQuery();
 
         Cenas cenas = new Cenas();
@@ -42,7 +44,7 @@ public class CenasDAO {
         Connection connection = Mysql.getConnection();
         String insert = "INSERT INTO cena (descricao_cena) VALUES (?);";
         PreparedStatement ps = connection.prepareStatement(insert);
-        ps.setString(1, cenas.getDescricao_cena());
+        ps.setString(proximaCenas, cenas.getDescricao_cena());
         ps.execute();
     }
 
@@ -69,8 +71,6 @@ public class CenasDAO {
         }
         return cenas;
     }
-
-
 
     @Override
     protected Object clone() throws CloneNotSupportedException {

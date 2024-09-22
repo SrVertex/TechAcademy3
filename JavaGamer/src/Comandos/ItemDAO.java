@@ -24,7 +24,7 @@ public class ItemDAO {
         String sql = "select * from item i where id_item = ?;";
 
         PreparedStatement ps = connection.prepareStatement(sql);
-        ps.setInt(1, cenas.getId_cena());
+        ps.setInt(CenasDAO.proximaCenas, cenas.getId_cena());
         ResultSet resultSet = ps.executeQuery();
 
         List<Item> itens = new ArrayList<>();

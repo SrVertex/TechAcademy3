@@ -8,7 +8,6 @@ import Model.Cenas;
 import Model.Invetario;
 import Model.Item;
 
-import java.awt.font.TextHitInfo;
 import java.util.List;
 
 public class ComandoService {
@@ -40,7 +39,7 @@ public class ComandoService {
 
         } else if ("use".equals(this.comando[0])){
            try {
-              Cenas cenas = CenasDAO.findCenaById(1);
+              Cenas cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
 
                List<Item> itens = ItemDAO.findItensByScene(cenas);
 
@@ -50,46 +49,22 @@ public class ComandoService {
 
                    if (item.getNome_item().equals(nomeitem)){
 
+                       Thread.sleep(1000);
+                       CenasDAO.proximaCenas = CenasDAO.proximaCenas + 1;
 
-
-
-                       Thread.sleep(5000);
-
-
-
+                   }else {
+                       console.setMensagem("deu ruim caralho");
                    }
-
 
                }
            }catch (Exception e) {
                return console;
            }
-        } else if ("test".equals(this.comando[0])) {
-            this.positivo();
         }
 
-
         return console;
     }
 
-
-    public Console erro() {
-
-        console.setMensagem("Comando Errado!!!");
-
-            return console;
-    }
-
-    public Console nome() {
-        console.setMensagem("lucas pedrozo");
-        return console;
-    }
-
-
-    public Console positivo() {
-
-        return console;
-    }
 
     // comando help
     public Console help() {
@@ -106,6 +81,7 @@ public class ComandoService {
         return console;
     }
 
+    // comando start
     public Console Start() {
         try {
             Invetario save1 = InventarioDAO.SaveGame();
