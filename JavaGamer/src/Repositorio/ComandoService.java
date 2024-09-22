@@ -49,16 +49,10 @@ public class ComandoService {
                for (Item item : itens) {
                    if (item.getNome_item().equals(nomeitem)){
 
-                       Invetario save1 = InventarioDAO.SaveGame();
+                       System.out.println(cenas.getDescricao_cena());
 
-                       console.setMensagem(save1.getId_cena_atual().getDescricao_cena());
-
-
-
-                       CenasDAO.proximaCenas ++;
-
-                       InventarioDAO.atualizaInventario = InventarioDAO.atualizaInventario + 1;
-                       ItemDAO.atualizaItem = ItemDAO.atualizaItem + 1;
+                       CenasDAO.proximaCenas = CenasDAO.proximaCenas + 1;
+                       System.out.println(CenasDAO.proximaCenas);
 
 
                    }else {

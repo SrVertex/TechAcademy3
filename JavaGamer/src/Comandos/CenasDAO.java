@@ -44,7 +44,7 @@ public class CenasDAO {
         Connection connection = Mysql.getConnection();
         String insert = "INSERT INTO cena (descricao_cena) VALUES (?);";
         PreparedStatement ps = connection.prepareStatement(insert);
-        ps.setString(1, cenas.getDescricao_cena());
+        ps.setString(CenasDAO.proximaCenas, cenas.getDescricao_cena());
         ps.execute();
     }
 
@@ -62,7 +62,7 @@ public class CenasDAO {
 
             cena.setId_cena(resultSet.getInt("id_cena"));
             cena.setDescricao_cena(resultSet.getString("descricao_cena"));
-            cena.setNome_cena();
+            cena.setNome_cena(resultSet.getString("nome_cena"));
             cena.setItem_cenario(resultSet.getString("item_cenario"));
             cena.setTextoPositivo_cena(resultSet.getString("textoPositivo_cena"));
             cena.setTextoNegativo_cena(resultSet.getString("textoNegativo_cena"));
