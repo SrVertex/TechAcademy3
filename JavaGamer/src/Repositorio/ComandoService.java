@@ -76,24 +76,9 @@ public class ComandoService {
                }
 
 
-
-
-
-
-
-
                 if (this.comando[2] != null && "with".equals(this.comando[2])){
                     String nomeitem2 = this.comando[3];
                     for (Item item : itens){
-
-
-
-
-
-
-
-
-
 
                         if (item.getItemCenario_with().equals(nomeitem2)) {
                             System.out.println(cenas.getTextoPositivo_cena());
@@ -120,17 +105,6 @@ public class ComandoService {
                         } else {
                             System.out.println(cenas.getTextoNegativo_cena());
                         }
-
-
-
-
-
-
-
-
-
-
-
                     }
                }
 
@@ -138,17 +112,6 @@ public class ComandoService {
                return console;
            }
         }
-
-
-
-
-
-
-
-
-
-
-
 
         else {
             System.out.println("Voce nao utilizou um dos comandos disponiveis. Utilize 'help' para consultar a lista disponivel");
