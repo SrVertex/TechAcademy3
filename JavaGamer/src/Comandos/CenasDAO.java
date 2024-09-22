@@ -71,10 +71,9 @@ public class CenasDAO {
     }
 
 
-                        // COMANDO PARA A PROXIMA CENA
-    public void ComandoCerto(Cenas cenas) throws  SQLException{
-        Connection connection = Mysql.getConnection();
 
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
-
 }
