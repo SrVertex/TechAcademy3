@@ -1,5 +1,6 @@
 package Comandos;
 
+import Model.Cenas;
 import Model.Invetario;
 
 import java.sql.*;
@@ -51,28 +52,30 @@ public class InventarioDAO {
 
 
 
-        // CAPITURA DOS ITENS DO INVENTARIO
+        // get items para o inventario
 
-    public static Invetario findInventarioItemByid(Integer id) throws SQLException {
+    public static Invetario itemsGet() throws SQLException{
 
-        Connection connection = Mysql.getConnection();
-        String sql = "select id_item from inventario where id_save = ?;";
+        Cenas cenas = CenasDAO.findCenaById(1);
 
-        PreparedStatement stmt = connection.prepareStatement(sql);
-        stmt.setInt(1, id);
-        ResultSet rs = stmt.executeQuery();
+        Connection conn = Mysql.getConnection();
+        String sql ="insert into inventario (id_item) values ("+cenas+");" ;
 
-        Invetario invetario = new Invetario();
 
-        if (rs.next()) {
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.execute(sql, Statement.RETURN_GENERATED_KEYS);
+        ResultSet generatedKeys = stmt.getGeneratedKeys();
 
-            invetario.setItenss(ItemDAO.findItensByScene(invetario));
+        Invetario nomeItem = new Invetario();
+
+        if (generatedKeys.next()) {
+
+            nomeItem.setItenss(ItemDAO.findItensByScene(nomeItem));
 
         }
-        return invetario;
+
+        return nomeItem;
+
     }
-
-
-
 
 }
