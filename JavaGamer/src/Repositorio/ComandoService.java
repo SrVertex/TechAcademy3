@@ -16,6 +16,7 @@ public class ComandoService {
     private final InventarioDAO inventarioDAO;
     private final CenasDAO cenasDAO;
 
+
     public ComandoService(String ComandoBruto) {
 
         this.console = new Console();
@@ -46,11 +47,19 @@ public class ComandoService {
                String nomeitem = this.comando[1];
 
                for (Item item : itens) {
-
                    if (item.getNome_item().equals(nomeitem)){
 
-                       Thread.sleep(1000);
+                       Invetario save1 = InventarioDAO.SaveGame();
+
+                       console.setMensagem(save1.getId_cena_atual().getDescricao_cena());
+
+
+
                        CenasDAO.proximaCenas = CenasDAO.proximaCenas + 1;
+
+                       InventarioDAO.atualizaInventario = InventarioDAO.atualizaInventario + 1;
+
+
 
                    }else {
                        console.setMensagem("deu ruim caralho");

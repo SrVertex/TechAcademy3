@@ -62,7 +62,7 @@ public class CenasDAO {
 
             cena.setId_cena(resultSet.getInt("id_cena"));
             cena.setDescricao_cena(resultSet.getString("descricao_cena"));
-            cena.setNome_cena(resultSet.getString("nome_cena"));
+            cena.setNome_cena();
             cena.setItem_cenario(resultSet.getString("item_cenario"));
             cena.setTextoPositivo_cena(resultSet.getString("textoPositivo_cena"));
             cena.setTextoNegativo_cena(resultSet.getString("textoNegativo_cena"));

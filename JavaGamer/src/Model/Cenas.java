@@ -49,7 +49,7 @@ public class Cenas {
         return nome_cena;
     }
 
-    public void setNome_cena(String nome_cena) {
+    public void setNome_cena(String nomeCena) {
         this.nome_cena = nome_cena;
     }
 
@@ -91,4 +91,6 @@ public class Cenas {
                 '}';
     }
 
+    public void setNome_cena() {
+    }
 }

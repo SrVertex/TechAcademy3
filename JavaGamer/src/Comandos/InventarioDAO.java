@@ -6,7 +6,7 @@ import Model.Invetario;
 import java.sql.*;
 
 public class InventarioDAO {
-
+    public static Integer atualizaInventario = 2;
 
     public static Invetario SaveGame() throws SQLException {
 
@@ -22,7 +22,7 @@ public class InventarioDAO {
         if(generatedKeys.next()){
 
             save.setId_save(generatedKeys.getInt(1));
-            save.setId_cena_atual(CenasDAO.findCenaById(1));
+            save.setId_cena_atual(CenasDAO.findCenaById(atualizaInventario));
 
         }
 
