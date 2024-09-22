@@ -24,6 +24,7 @@ public class InventarioDAO {
             save.setId_cena_atual(CenasDAO.findCenaById(1));
 
         }
+
         return save;
     }
 
@@ -70,5 +71,8 @@ public class InventarioDAO {
         }
         return invetario;
     }
+
+
+
 
 }
