@@ -41,7 +41,7 @@ public class ItemDAO {
             item.setUse_item(resultSet.getString("use_item"));
             item.setGet_item(resultSet.getInt("get_item"));
             item.setId_proxCena(resultSet.getInt("id_proxCena"));
-
+            item.setItemCenario_with(resultSet.getString("id_proxCena"));
             itens.add(item);
 
         }

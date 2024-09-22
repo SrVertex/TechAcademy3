@@ -10,8 +10,15 @@ public class Item {
    private Integer get_item;
    private Integer id_proxCena;
    private Integer id_cena;
+   private String itemCenario_with;
 
+    public String getItemCenario_with() {
+        return itemCenario_with;
+    }
 
+    public void setItemCenario_with(String itemCenario_with) {
+        this.itemCenario_with = itemCenario_with;
+    }
 
     public Integer getId_item() {
         return id_item;
@@ -70,7 +77,6 @@ public class Item {
     }
 
 
-
     @Override
     public String toString() {
         return "Item{" +
@@ -81,6 +87,7 @@ public class Item {
                 ", get_item=" + get_item +
                 ", id_proxCena=" + id_proxCena +
                 ", id_cena=" + id_cena +
+                ", itemCenario_with='" + itemCenario_with + '\'' +
                 '}';
     }
 }

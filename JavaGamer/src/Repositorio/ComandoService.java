@@ -8,6 +8,7 @@ import Model.Cenas;
 import Model.Invetario;
 import Model.Item;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class ComandoService {
@@ -30,6 +31,7 @@ public class ComandoService {
 
     public Console getResultadoConsole() {
 
+
         if ("start".equals(this.comando[0])) {
 
             this.Start();
@@ -41,31 +43,115 @@ public class ComandoService {
         } else if ("use".equals(this.comando[0])){
            try {
               Cenas cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
-
                List<Item> itens = ItemDAO.findItensByScene(cenas);
-
                String nomeitem = this.comando[1];
 
+
                for (Item item : itens) {
-                   if (item.getNome_item().equals(nomeitem)){
-
-                       System.out.println(cenas.getDescricao_cena());
-
+                   if (item.getNome_item().equals(nomeitem)) {
+                       System.out.println(cenas.getTextoPositivo_cena());
+                       // Exibe a descrição da cena atual
+                       // Atualiza para a próxima cena
                        CenasDAO.proximaCenas = CenasDAO.proximaCenas + 1;
-                       System.out.println(CenasDAO.proximaCenas);
 
+                       // Espera por 5 segundos
+                       try {
+                           Thread.sleep(5000);
+                           System.out.println("----------------------------------");
+                       } catch (InterruptedException e) {
+                           e.printStackTrace();
+                       }
 
-                   }else {
-                       console.setMensagem("deu ruim caralho");
+                       // Busca a nova cena após a atualização
+                       try {
+                           cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
+                           // Exibe a descrição da nova cena
+                           System.out.println(cenas.getDescricao_cena());
+                       } catch (SQLException e) {
+                           e.printStackTrace();
+                       }
+                   } else {
+                       System.out.println(cenas.getTextoNegativo_cena());
                    }
-
                }
 
 
 
-           }catch (Exception e) {
+
+
+
+
+
+                if (this.comando[2] != null && "with".equals(this.comando[2])){
+                    String nomeitem2 = this.comando[3];
+                    for (Item item : itens){
+
+
+
+
+
+
+
+
+
+
+                        if (item.getItemCenario_with().equals(nomeitem2)) {
+                            System.out.println(cenas.getTextoPositivo_cena());
+                            // Exibe a descrição da cena atual
+                            // Atualiza para a próxima cena
+                            CenasDAO.proximaCenas = CenasDAO.proximaCenas + 1;
+
+                            // Espera por 5 segundos
+                            try {
+                                Thread.sleep(5000);
+                                System.out.println("----------------------------------");
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+
+                            // Busca a nova cena após a atualização
+                            try {
+                                cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
+                                // Exibe a descrição da nova cena
+                                System.out.println(cenas.getDescricao_cena());
+                            } catch (SQLException e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+                            System.out.println(cenas.getTextoNegativo_cena());
+                        }
+
+
+
+
+
+
+
+
+
+
+
+                    }
+               }
+
+           } catch (Exception e) {
                return console;
            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        else {
+            System.out.println("Voce nao utilizou um dos comandos disponiveis. Utilize 'help' para consultar a lista disponivel");
         }
 
         return console;
