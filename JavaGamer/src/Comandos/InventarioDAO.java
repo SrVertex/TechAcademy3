@@ -6,7 +6,7 @@ import Model.Invetario;
 import java.sql.*;
 
 public class InventarioDAO {
-    public static Integer atualizaInventario = 2;
+    public static Integer atualizaInventario = 1;
 
     public static Invetario SaveGame() throws SQLException {
 
