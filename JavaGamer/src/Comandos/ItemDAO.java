@@ -53,7 +53,7 @@ public class ItemDAO {
 
     public static List<Item> findItensByScene(Invetario invetario1) {
 
-        return null;
+        return findItensByScene(invetario1);
     }
 }
 

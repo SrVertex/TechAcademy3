@@ -2,6 +2,7 @@ package Comandos;
 
 import Model.Cenas;
 import Model.Invetario;
+import Model.Item;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -97,6 +98,11 @@ public class InventarioDAO {
         for (Invetario item : inventario) {
             System.out.println("ID do Item: " + item.getItem());
         }
+    }
+
+    public static List<Invetario> findItensByScene(Invetario inventarioBusca) {
+
+        return null ;
     }
 
 }

@@ -58,7 +58,7 @@ public class ComandoService {
 
                     if (item.getNome_item().equals(nomeitem)) {
 
-                        System.out.println(cenas.getTextoPositivo_cena());
+                        console.setMensagem(cenas.getTextoPositivo_cena());
                         CenasDAO.proximaCenas = CenasDAO.proximaCenas + 1;
 
                         try {
@@ -74,14 +74,14 @@ public class ComandoService {
                         try {
 
                             cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
-                            System.out.println(cenas.getDescricao_cena());
+                            console.setMensagem(cenas.getDescricao_cena());
 
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
 
                     } else {
-                        System.out.println(cenas.getTextoNegativo_cena());
+                        console.setMensagem(cenas.getTextoNegativo_cena());
                     }
                 }
 
@@ -93,7 +93,7 @@ public class ComandoService {
 
                         if (item.getItemCenario_with().equals(nomeitem2)) {
 
-                            System.out.println(cenas.getTextoPositivo_cena());
+                            console.setMensagem(cenas.getTextoPositivo_cena());
                             CenasDAO.proximaCenas = CenasDAO.proximaCenas + 1;
 
                             try {
@@ -109,7 +109,7 @@ public class ComandoService {
                             try {
 
                                 cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
-                                System.out.println(cenas.getDescricao_cena());
+                                console.setMensagem(cenas.getDescricao_cena());
 
                             } catch (SQLException e) {
                                 e.printStackTrace();
@@ -117,7 +117,7 @@ public class ComandoService {
 
                         } else {
 
-                            System.out.println(cenas.getTextoNegativo_cena());
+                         console.setMensagem(cenas.getTextoNegativo_cena());
 
                         }
                     }
@@ -132,7 +132,22 @@ public class ComandoService {
 
             // COMMAND RESPONSIVE POR RESGATAR O ITEM DA CENA E DICTIONARY NO INVENTORY
             try {
-                this.erro();
+
+                Cenas cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
+
+                List<Item> itens = ItemDAO.findItensByScene(cenas);
+
+                String nomeitem = this.comando[1];
+
+              for (Item item : itens) {
+
+                  if (item.getNome_item().equals(nomeitem)) {
+
+                      console.setMensagem("o " + item.getNome_item() + " foi coletado e inserido no Inventario");
+
+                  }
+              }
+
             } catch (Exception e) {
                 return console;
             }
@@ -157,15 +172,15 @@ public class ComandoService {
     // comando help
     public Console help() {
         console.setMensagem("Comando           Descrição\n" +
-                "----------------  ------------------------------------------------------------\n" +
-                "START             O start é usado para iniciar o game.\n" +
-                "HELP              Help é um comando de mostra comandos usáveis durante o game.\n" +
-                "GET               O get é usado para pegar um item da cena (get nome do item).\n" +
-                "INVENTORY         O comando de inventário mostrará todos os itens que o jogador adquiriu durante o progresso do jogo.\n" +
-                "RESET             Cuidado com esse comando, o reset limpará todo o progresso do jogador!\n" +
-                "CHECK             O comando check é feito para especionar um item da cena.\n" +
-                "SAVE              Esse é um comando para salvar o progresso do game.\n" +
-                "EXIT              Esse comando serve para finalizar o game.");
+                            "---------------------------------------------------------------------------------------\n" +
+                            "START             O start é usado para iniciar o game.\n" +
+                            "HELP              Help é um comando de mostra comandos usáveis durante o game.\n" +
+                            "GET               O get é usado para pegar um item da cena (get nome do item).\n" +
+                            "INVENTORY         O comando de inventário mostrará todos os itens que o jogador adquiriu durante o progresso do jogo.\n" +
+                            "RESET             Cuidado com esse comando, o reset limpará todo o progresso do jogador!\n" +
+                            "CHECK             O comando check é feito para especionar um item da cena.\n" +
+                            "SAVE              Esse é um comando para salvar o progresso do game.\n" +
+                            "EXIT              Esse comando serve para finalizar o game.");
         return console;
     }
 
