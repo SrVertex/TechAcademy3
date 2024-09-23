@@ -51,10 +51,12 @@ public class ItemDAO {
     }
 
     public static Object findItensByScene(Integer idItem) {
+
         return idItem;
     }
 
     public static List<Item> findItensByScene(Invetario invetario1) {
+
         return null;
     }
 }

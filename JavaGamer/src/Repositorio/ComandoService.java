@@ -152,16 +152,16 @@ public class ComandoService {
         }
     }
 
-    public Console inventario() {
+    public static void inventario() {
         try {
-                Invetario Busca = InventarioDAO.BuscaInventario();
-                console.setMensagem(Busca.getItem().toString());
+            List<Invetario> inventario = InventarioDAO.BuscaInventario();
 
-            return console;
+            // Imprimir os IDs dos itens
+            for (Invetario item : inventario) {
+                System.out.println("ID do Item: " + item.getItem());
+            }
         } catch (Exception e) {
             e.printStackTrace();
-            return console;
         }
     }
-
 }
