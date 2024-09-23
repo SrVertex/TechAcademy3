@@ -40,6 +40,10 @@ public class ComandoService {
 
             this.help();
 
+        } else if ("inventario".equals(comando[0])) {
+
+            this.inventario();
+
         } else if ("use".equals(this.comando[0])) {
 
             try {
@@ -113,8 +117,6 @@ public class ComandoService {
             }
 
 
-        } else if ("inventario".equals(comando[0])) {
-             this.inventario();
         } else {
             System.out.println("Voce nao utilizou um dos comandos disponiveis. Utilize 'help' para consultar a lista disponivel");
         }

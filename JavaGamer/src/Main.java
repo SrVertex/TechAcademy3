@@ -24,7 +24,7 @@ private static final Gson Gson = new Gson();
         Scanner scanner = new Scanner(System.in);
         String input;
 
-        System.out.println("Bem-vindo ao Jogo! Digite 'start' para iniciar ou 'help' para ver os comandos disponíveis.");
+        System.out.println("Bem vindo ao Jogo! Digite 'start' para iniciar ou 'help' para ver os comandos disponíveis.");
 
         while (true) {
             System.out.print("> ");
