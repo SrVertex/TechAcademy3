@@ -9,6 +9,15 @@ public class Invetario {
     private List<Item> itenss;
     private Cenas Id_cena_atual;
     private Integer ID_CENA_ATUAL2;
+    private Integer item;
+
+    public Integer getItem() {
+        return item;
+    }
+
+    public void setItem(Integer item) {
+        this.item = item;
+    }
 
     public Integer getId_save() {
         return Id_save;
@@ -58,6 +67,7 @@ public class Invetario {
                 ", itenss=" + itenss +
                 ", Id_cena_atual=" + Id_cena_atual +
                 ", ID_CENA_ATUAL2=" + ID_CENA_ATUAL2 +
+                ", item=" + item +
                 '}';
     }
 }

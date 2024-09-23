@@ -25,7 +25,6 @@ public class InventarioDAO {
             save.setId_cena_atual(CenasDAO.findCenaById(1));
 
         }
-
         return save;
     }
 
@@ -45,12 +44,28 @@ public class InventarioDAO {
             invetario.setId_save(rs.getInt("id_save"));
             invetario.setId_progresso(rs.getInt("id_progresso"));
             invetario.setID_CENA_ATUAL2(rs.getInt("id_cenaAtual"));
+            invetario.setItem(rs.getInt("id_item"));
 
         }
         return invetario;
     }
 
+    public static  Invetario BuscaInventario() throws SQLException {
 
+        Connection connection = Mysql.getConnection();
+        String sql = "SELECT * FROM inventario";
 
+        PreparedStatement stmt = connection.prepareStatement(sql);
+          ResultSet rs = stmt.executeQuery();
+
+        Invetario invetario = new Invetario();
+
+        if (rs.next()) {
+
+            invetario.setItem(rs.getInt("id_item"));
+
+        }
+        return  invetario;
+    }
 
 }

@@ -48,7 +48,7 @@ private static final Gson Gson = new Gson();
 
 //        //Rota 1 http://localhost:4567/{o comando vai aqui}
 //        Spark.get("/:comando", new AntesDoJogoController(Gson));
-//
+
 //        //Rota 2 http://localhost:4567/{comando}/{save}
 //        Spark.get("/:comando/:save", new DuranteOJogoController(Gson));
 
