@@ -1,19 +1,7 @@
-
-import Comandos.CenasDAO;
-import Comandos.Console;
-import Controle.AntesDoJogoController;
-import Controle.DuranteOJogoController;
-
-import Model.Cenas;
+import Model.Console;
 import Repositorio.ComandoService;
 import com.google.gson.Gson;
-
-import spark.Spark;
-
 import java.util.Scanner;
-
-import static spark.Spark.post;
-
 
 public class Main {
 
@@ -35,22 +23,13 @@ private static final Gson Gson = new Gson();
                 break;
             }
 
-            // Processar o comando com o ComandoService
             ComandoService comandoService = new ComandoService(input);
             Console resultado = comandoService.getResultadoConsole();
 
-            // Exibir a mensagem de retorno no console
             System.out.println(resultado.getMensagem());
+
         }
-
         scanner.close();
-
-
-//        //Rota 1 http://localhost:4567/{o comando vai aqui}
-//        Spark.get("/:comando", new AntesDoJogoController(Gson));
-
-//        //Rota 2 http://localhost:4567/{comando}/{save}
-//        Spark.get("/:comando/:save", new DuranteOJogoController(Gson));
 
 
 

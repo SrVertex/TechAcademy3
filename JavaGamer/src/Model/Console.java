@@ -1,4 +1,4 @@
-package Comandos;
+package Model;
 
 public class Console {
 

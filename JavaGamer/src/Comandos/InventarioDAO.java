@@ -13,21 +13,23 @@ public class InventarioDAO {
 
 
     public static Invetario SaveGame() throws SQLException {
+
         Connection conn = Mysql.getConnection();
-        String sql = "INSERT INTO inventario (id_cenaAtual) VALUES (1)";
+            String sql = "INSERT INTO inventario (id_cenaAtual) VALUES (1)";
 
         PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-        stmt.executeUpdate();
-        ResultSet generatedKeys = stmt.getGeneratedKeys();
+            stmt.executeUpdate();
+                 ResultSet generatedKeys = stmt.getGeneratedKeys();
 
         Invetario save = new Invetario();
 
         if (generatedKeys.next()) {
+
             save.setId_save(generatedKeys.getInt(1));
             save.setId_cena_atual(CenasDAO.findCenaById(1));
+
         }
 
-        // Fechar recursos
         generatedKeys.close();
         stmt.close();
         conn.close();
@@ -36,6 +38,7 @@ public class InventarioDAO {
     }
 
     public static Invetario findInvetarioById(Integer id) throws SQLException {
+
         Connection connection = Mysql.getConnection();
         String sql = "SELECT * FROM inventario i WHERE id_save = ?;";
 
@@ -46,13 +49,14 @@ public class InventarioDAO {
         Invetario invetario = new Invetario();
 
         if (rs.next()) {
+
             invetario.setId_save(rs.getInt("id_save"));
-            invetario.setId_progresso(rs.getInt("id_progresso"));
-            invetario.setID_CENA_ATUAL2(rs.getInt("id_cenaAtual"));
-            invetario.setItem(rs.getInt("id_item"));
+                invetario.setId_progresso(rs.getInt("id_progresso"));
+                    invetario.setID_CENA_ATUAL2(rs.getInt("id_cenaAtual"));
+                        invetario.setItem(rs.getInt("id_item"));
+
         }
 
-        // Fechar recursos
         rs.close();
         stmt.close();
         connection.close();
@@ -61,6 +65,7 @@ public class InventarioDAO {
     }
 
     public static List<Invetario> BuscaInventario() throws SQLException {
+
         Connection connection = Mysql.getConnection();
         String sql = "SELECT id_item FROM inventario";
 
@@ -70,13 +75,15 @@ public class InventarioDAO {
         List<Invetario> inventario = new ArrayList<>();
 
         while (rs.next()) {
+
             int idItem = rs.getInt("id_item");
-            Invetario item = new Invetario();
-            item.setItem(idItem);
-            inventario.add(item);
+                Invetario item = new Invetario();
+                    item.setItem(idItem);
+                    inventario.add(item);
+
         }
 
-        // Fechar recursos
+
         rs.close();
         stmt.close();
         connection.close();

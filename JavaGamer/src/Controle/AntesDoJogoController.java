@@ -1,6 +1,6 @@
 package Controle;
 
-import Comandos.Console;
+import Model.Console;
 import Repositorio.ComandoService;
 import com.google.gson.Gson;
 import spark.Request;

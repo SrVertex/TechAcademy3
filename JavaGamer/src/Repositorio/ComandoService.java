@@ -1,7 +1,7 @@
 package Repositorio;
 
 import Comandos.CenasDAO;
-import Comandos.Console;
+import Model.Console;
 import Comandos.InventarioDAO;
 import Comandos.ItemDAO;
 import Model.Cenas;
@@ -33,81 +33,92 @@ public class ComandoService {
 
 
         if ("start".equals(this.comando[0])) {
-
+                // COMANDO START QUANDO O COMANDO SER INICIALIZADO IRA CRIA UM NOVO SAVE NO BANCO DE DADOS
             this.Start();
 
         } else if ("help".equals(this.comando[0])) {
-
+                // COMANDO HELP VAI PRINTAR INFOMAÇÕES DE AJUDA PARA O USURAIO
             this.help();
 
         } else if ("inventario".equals(comando[0])) {
-
+                // COMANDO INVENTARIO VAI FORNECER TODOS OS ITENS DISPODIVEIS NO INVENTARIO
             this.inventario();
 
         } else if ("use".equals(this.comando[0])) {
-
+                    // VALIDAÇÃO DO COMANOD USE
             try {
+
                 Cenas cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
+
                 List<Item> itens = ItemDAO.findItensByScene(cenas);
+
                 String nomeitem = this.comando[1];
 
-
                 for (Item item : itens) {
+
                     if (item.getNome_item().equals(nomeitem)) {
+
                         System.out.println(cenas.getTextoPositivo_cena());
-                        // Exibe a descrição da cena atual
-                        // Atualiza para a próxima cena
                         CenasDAO.proximaCenas = CenasDAO.proximaCenas + 1;
 
-                        // Espera por 5 segundos
                         try {
+
                             Thread.sleep(5000);
                             System.out.println("----------------------------------");
+
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
 
-                        // Busca a nova cena após a atualização
+
                         try {
+
                             cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
-                            // Exibe a descrição da nova cena
                             System.out.println(cenas.getDescricao_cena());
+
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
+
                     } else {
                         System.out.println(cenas.getTextoNegativo_cena());
                     }
                 }
 
                 if (this.comando[2] != null && "with".equals(this.comando[2])) {
+
                     String nomeitem2 = this.comando[3];
+
                     for (Item item : itens) {
 
                         if (item.getItemCenario_with().equals(nomeitem2)) {
+
                             System.out.println(cenas.getTextoPositivo_cena());
-                            // Exibe a descrição da cena atual
-                            // Atualiza para a próxima cena
                             CenasDAO.proximaCenas = CenasDAO.proximaCenas + 1;
 
-                            // Espera por 5 segundos
                             try {
+
                                 Thread.sleep(5000);
                                 System.out.println("----------------------------------");
+
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
 
-                            // Busca a nova cena após a atualização
+
                             try {
+
                                 cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
-                                // Exibe a descrição da nova cena
                                 System.out.println(cenas.getDescricao_cena());
+
                             } catch (SQLException e) {
                                 e.printStackTrace();
                             }
+
                         } else {
+
                             System.out.println(cenas.getTextoNegativo_cena());
+
                         }
                     }
                 }
@@ -117,11 +128,29 @@ public class ComandoService {
             }
 
 
+        } else if ("get".equals(comando[0])) {
+
+            // COMMAND RESPONSIVE POR RESGATAR O ITEM DA CENA E DICTIONARY NO INVENTORY
+            try {
+                this.erro();
+            } catch (Exception e) {
+                return console;
+            }
+
         } else {
-            System.out.println("Voce nao utilizou um dos comandos disponiveis. Utilize 'help' para consultar a lista disponivel");
+            this.erro();
         }
 
         return console;
+    }
+
+
+    // comando de erro
+    public Console erro() {
+
+        System.out.println("Voce nao utilizou um dos comandos disponiveis. Utilize 'help' para consultar a lista disponivel");
+        return console;
+
     }
 
 
@@ -154,16 +183,24 @@ public class ComandoService {
         }
     }
 
-    public static void inventario() {
+    // comando de busca de itens no inventario
+    // public static void inventario() {
+    public Console inventario() {
+
         try {
+
             List<Invetario> inventario = InventarioDAO.BuscaInventario();
 
-            // Imprimir os IDs dos itens
             for (Invetario item : inventario) {
-                System.out.println("ID do Item: " + item.getItem());
+
+                System.out.println("ID do Item é : " + item.getItem());
+
             }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        return console;
     }
 }
