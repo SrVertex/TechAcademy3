@@ -8,12 +8,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comando'])) {
 
     $options = array(
         'http' => array(
-            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-            'method'  => 'POST',
+            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method' => 'POST',
             'content' => $data,
         ),
     );
-    $context  = stream_context_create($options);
+    $context = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
 
     // Exibir resposta do servidor Java
@@ -33,15 +33,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['comando'])) {
 session_start();
 
 // Função para enviar requisição HTTP POST
-function sendPostRequest($url, $data) {
+function sendPostRequest($url, $data)
+{
     $options = array(
         'http' => array(
-            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-            'method'  => 'POST',
+            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+            'method' => 'POST',
             'content' => http_build_query($data),
         ),
     );
-    $context  = stream_context_create($options);
+    $context = stream_context_create($options);
     return file_get_contents($url, false, $context);
 }
 
