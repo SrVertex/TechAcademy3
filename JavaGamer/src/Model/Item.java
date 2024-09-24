@@ -90,4 +90,8 @@ public class Item {
                 ", itemCenario_with='" + itemCenario_with + '\'' +
                 '}';
     }
+
+    public String getNome() {
+        return nome_item;
+    }
 }

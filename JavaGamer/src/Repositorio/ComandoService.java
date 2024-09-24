@@ -131,7 +131,9 @@ public class ComandoService {
                 }
 
             } catch (Exception e) {
+
                 return console;
+
             }
 
         } else if ("check".equals(comando[0])) {
@@ -207,25 +209,20 @@ public class ComandoService {
     }
 
     // comando de busca de itens no inventario
-    public static void inventario() {
-    // public Console inventario() {
-
+//    public static void inventario() {
+    public Console inventario() {
         try {
-
+            // Busca os itens do inventário
             List<Invetario> inventario = InventarioDAO.BuscaInventario();
 
             for (Invetario item : inventario) {
-
-                System.out.println("ID do Item é : " + item.getItem());
-
+                console.setMensagem("ID do Item: " + item.getItem() + " Nome do Item: " + item.getNome_item());
             }
 
         } catch (Exception e) {
-
             e.printStackTrace();
-
         }
 
-        // return console;
+        return console;
     }
 }

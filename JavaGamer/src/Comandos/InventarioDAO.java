@@ -102,9 +102,9 @@ public class InventarioDAO {
     }
 
     public static List<Invetario> BuscaInventario() throws SQLException {
-
         Connection connection = Mysql.getConnection();
-        String sql = "SELECT id_item FROM inventario";
+        String sql = "select ivt.id_item, i.nome_item from inventario ivt " +
+                "inner join item i on ivt.id_item = i.id_item;";
 
         PreparedStatement stmt = connection.prepareStatement(sql);
         ResultSet rs = stmt.executeQuery();
@@ -112,14 +112,14 @@ public class InventarioDAO {
         List<Invetario> inventario = new ArrayList<>();
 
         while (rs.next()) {
-
             int idItem = rs.getInt("id_item");
-                Invetario item = new Invetario();
-                    item.setItem(idItem);
-                    inventario.add(item);
+            String nomeItem = rs.getString("nome_item");
 
+            Invetario item = new Invetario();
+            item.setItem(idItem);
+            item.setNome_item(nomeItem);  // Adiciona o nome do item
+            inventario.add(item);
         }
-
 
         rs.close();
         stmt.close();
@@ -132,7 +132,7 @@ public class InventarioDAO {
         List<Invetario> inventario = BuscaInventario();
 
         for (Invetario item : inventario) {
-            System.out.println("ID do Item: " + item.getItem());
+            System.out.println("ID do Item: " + item.getItem() + " Nome do Item: " + item.getNome_item());
         }
     }
 
