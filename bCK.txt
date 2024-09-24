@@ -11,7 +11,7 @@ function validar_input($data) {
     $data = htmlspecialchars($data);   // Escapa caracteres HTML para evitar injeção de código
     return $data;
 }
-
+ s
 // Método de processamento do formulário
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['inputText'])) {
