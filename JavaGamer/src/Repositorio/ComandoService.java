@@ -45,40 +45,28 @@ public class ComandoService {
 
         } else if ("use".equals(this.comando[0])) {
 
-
             try {
-
                 Cenas cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
-
-
-                Integer idItem = Integer.parseInt(this.comando[1]);
-
+                String nomeItem = this.comando[1]; // Altere para capturar o nome do item
 
                 List<Invetario> inventario = InventarioDAO.BuscaInventario();
 
                 boolean itemNoInventario = false;
 
-
                 for (Invetario item : inventario) {
-
-                    if (item.getItem().equals(idItem)) {
-
+                    if (item.getNome_item().equalsIgnoreCase(nomeItem)) { // Comparação pelo nome do item
                         itemNoInventario = true;
-
                         break;
-
                     }
                 }
 
                 if (itemNoInventario) {
-
-                    if (cenas.getItens1().stream().anyMatch(item -> item.getId_item().equals(idItem))) {
-
+                    if (cenas.getItens1().stream().anyMatch(item -> item.getNome_item().equalsIgnoreCase(nomeItem))) {
+                        // Comparação pelo nome do item na cena
                         System.out.println(cenas.getTextoPositivo_cena());
                         CenasDAO.proximaCenas = CenasDAO.proximaCenas + 1;
 
                         try {
-
                             Thread.sleep(5000);
                             System.out.println("----------------------------------");
                         } catch (InterruptedException e) {
@@ -93,22 +81,16 @@ public class ComandoService {
                         }
 
                     } else {
-
                         console.setMensagem(cenas.getTextoNegativo_cena());
                     }
                 } else {
-
                     console.setMensagem("O item informado não está no inventário.");
-
                 }
 
             } catch (Exception e) {
-
                 return console;
-
             }
-        }
-        else if ("get".equals(comando[0])) {
+        }else if ("get".equals(comando[0])) {
 
             // COMMAND RESPONSIVE POR RESGATAR O ITEM DA CENA E DICTIONARY NO INVENTORY
             try {

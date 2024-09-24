@@ -44,7 +44,9 @@ public class CenasDAO {
             if (conn != null) conn.close();
 
         }
+
         return cenas;
+
     }
 
     public static void insertCena(Cenas cenas) throws SQLException {
