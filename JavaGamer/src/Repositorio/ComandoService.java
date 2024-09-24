@@ -58,7 +58,7 @@ public class ComandoService {
 
                     if (item.getNome_item().equals(nomeitem)) {
 
-                        console.setMensagem(cenas.getTextoPositivo_cena());
+                        System.out.println(cenas.getTextoPositivo_cena());
                         CenasDAO.proximaCenas = CenasDAO.proximaCenas + 1;
 
                         try {
@@ -163,7 +163,7 @@ public class ComandoService {
     // comando de erro
     public Console erro() {
 
-        System.out.println("Voce nao utilizou um dos comandos disponiveis. Utilize 'help' para consultar a lista disponivel");
+      console.setMensagem("Voce nao utilizou um dos comandos disponiveis. Utilize 'help' para consultar a lista disponivel");
         return console;
 
     }
@@ -199,8 +199,8 @@ public class ComandoService {
     }
 
     // comando de busca de itens no inventario
-    // public static void inventario() {
-    public Console inventario() {
+    public static void inventario() {
+    // public Console inventario() {
 
         try {
 
@@ -216,6 +216,6 @@ public class ComandoService {
             e.printStackTrace();
         }
 
-        return console;
+        // return console;
     }
 }

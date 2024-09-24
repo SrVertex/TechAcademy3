@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eadf96f7-6fc5-42b9-b45b-a7ca80caa090" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Comandos/InventarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/InventarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaGamer/src/Comandos/ItemDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Comandos/ItemDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaGamer/src/Repositorio/ComandoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaGamer/src/Repositorio/ComandoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Repositorio/ComandoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaGamer/Repositorio/ComandoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGamer/Repositorio/ComandoService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +45,9 @@
   <component name="JvmLoggingSettingsStorage">
     <option name="loggerId" value="Slf4j" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -70,7 +71,7 @@
     &quot;git-widget-placeholder&quot;: &quot;development&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projetos do vs code/ProjecXampp/TechAcademy3 - Copia&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projetos do vs code/ProjecXampp/tech com integração&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;D:/Projetos do vs code/ProjecXampp/TechAcademy3/JavaGamer/src/Main.java&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15332031&quot;,
