@@ -11,14 +11,17 @@
 }
 
 src
- └── main
-     └── java
-         ├── Main.java
-         └── Comandos
-             └── ComandoPrompt.java
-             
-
-::-webkit-scrollbar {
+  └──
+  main
+  └──
+  java
+  ├──
+  Main.java
+  └──
+  Comandos
+  └──
+  ComandoPrompt.java
+  ::-webkit-scrollbar {
   background-color: rgb(54, 57, 58);
   border-radius: 30px;
 }

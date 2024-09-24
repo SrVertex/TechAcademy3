@@ -13,7 +13,6 @@ public class DuranteOJogoController implements Route {
         this.gson = gson;
     }
 
-
     @Override
     public Object handle(Request request, Response response) throws Exception {
         return "Implementar a Rota";

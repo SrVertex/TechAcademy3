@@ -2,7 +2,8 @@ package Model;
 
 public class Console {
 
-        private String mensagem;
+    private String mensagem;
+
     private Integer id_save_console;
 
     public String getMensagem() {

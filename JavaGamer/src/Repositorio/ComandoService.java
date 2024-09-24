@@ -18,7 +18,6 @@ public class ComandoService {
     private final InventarioDAO inventarioDAO;
     private final CenasDAO cenasDAO;
 
-
     public ComandoService(String ComandoBruto) {
 
         this.console = new Console();
@@ -30,17 +29,17 @@ public class ComandoService {
 
     public Console getResultadoConsole() {
 
-
         if ("start".equals(this.comando[0])) {
-                // COMANDO START QUANDO O COMANDO SER INICIALIZADO IRA CRIA UM NOVO SAVE NO BANCO DE DADOS
+            // COMANDO START QUANDO O COMANDO SER INICIALIZADO IRA CRIA UM NOVO SAVE NO
+            // BANCO DE DADOS
             this.Start();
 
         } else if ("help".equals(this.comando[0])) {
-                // COMANDO HELP VAI PRINTAR INFOMAÇÕES DE AJUDA PARA O USURAIO
+            // COMANDO HELP VAI PRINTAR INFOMAÇÕES DE AJUDA PARA O USURAIO
             this.help();
 
         } else if ("inventario".equals(comando[0])) {
-                // COMANDO INVENTARIO VAI FORNECER TODOS OS ITENS DISPODIVEIS NO INVENTARIO
+            // COMANDO INVENTARIO VAI FORNECER TODOS OS ITENS DISPODIVEIS NO INVENTARIO
             this.inventario();
 
         } else if ("use".equals(this.comando[0])) {
@@ -62,7 +61,7 @@ public class ComandoService {
 
                 if (itemNoInventario) {
                     if (cenas.getItens1().stream().anyMatch(item -> item.getNome_item().equalsIgnoreCase(nomeItem))) {
-                        // Comparação pelo nome do item na cena
+
                         System.out.println(cenas.getTextoPositivo_cena());
                         CenasDAO.proximaCenas = CenasDAO.proximaCenas + 1;
 
@@ -83,33 +82,34 @@ public class ComandoService {
                     } else {
                         console.setMensagem(cenas.getTextoNegativo_cena());
                     }
+
                 } else {
                     console.setMensagem("O item informado não está no inventário.");
                 }
 
             } catch (Exception e) {
+                e.printStackTrace();
                 return console;
+
             }
-        }else if ("get".equals(comando[0])) {
+        } else if ("get".equals(comando[0])) {
 
             // COMMAND RESPONSIVE POR RESGATAR O ITEM DA CENA E DICTIONARY NO INVENTORY
             try {
 
                 Cenas cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
-
                 List<Item> itens = ItemDAO.findItensByScene(cenas);
-
                 String nomeitem = this.comando[1];
 
                 for (Item item : itens) {
 
-                   if (item.getNome_item().equals(nomeitem)) {
+                    if (item.getNome_item().equals(nomeitem)) {
 
                         InventarioDAO.itemInventario();
 
                         console.setMensagem("o " + item.getNome_item() + " foi coletado e inserido no Inventario");
 
-                   }
+                    }
                 }
 
             } catch (Exception e) {
@@ -124,21 +124,19 @@ public class ComandoService {
             try {
 
                 Cenas cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
-
                 List<Item> itens = ItemDAO.findItensByScene(cenas);
-
                 String nomeitem = this.comando[1];
 
                 for (Item item : itens) {
 
                     if (item.getNome_item().equals(nomeitem)) {
-                        console.setMensagem(item.getCheck_item());
-                    } else{
-                        console.setMensagem("O item digitado para checagem nao existe.");
 
+                        console.setMensagem(item.getCheck_item());
+
+                    } else {
+                        console.setMensagem("O item digitado para checagem nao existe.");
                     }
                 }
-
 
             } catch (Exception e) {
                 return console;
@@ -151,12 +149,11 @@ public class ComandoService {
         return console;
     }
 
-
-
-    // comando de erro
+    // comando erro
     public Console erro() {
 
-      console.setMensagem("Voce nao utilizou um dos comandos disponiveis. Utilize 'help' para consultar a lista disponivel");
+        console.setMensagem(
+                "Voce nao utilizou um dos comandos disponiveis. Utilize 'help' para consultar a lista disponivel");
         return console;
 
     }
@@ -164,15 +161,16 @@ public class ComandoService {
     // comando help
     public Console help() {
         console.setMensagem("Comando           Descrição\n" +
-                            "---------------------------------------------------------------------------------------\n" +
-                            "START             O start é usado para iniciar o game.\n" +
-                            "HELP              Help é um comando de mostra comandos usáveis durante o game.\n" +
-                            "GET               O get é usado para pegar um item da cena (get nome do item).\n" +
-                            "INVENTORY         O comando de inventário mostrará todos os itens que o jogador adquiriu durante o progresso do jogo.\n" +
-                            "RESET             Cuidado com esse comando, o reset limpará todo o progresso do jogador!\n" +
-                            "CHECK             O comando check é feito para especionar um item da cena.\n" +
-                            "SAVE              Esse é um comando para salvar o progresso do game.\n" +
-                            "EXIT              Esse comando serve para finalizar o game.");
+                "---------------------------------------------------------------------------------------\n" +
+                "START             O start é usado para iniciar o game.\n" +
+                "HELP              Help é um comando de mostra comandos usáveis durante o game.\n" +
+                "GET               O get é usado para pegar um item da cena (get nome do item).\n" +
+                "INVENTORY         O comando de inventário mostrará todos os itens que o jogador adquiriu durante o progresso do jogo.\n"
+                +
+                "RESET             Cuidado com esse comando, o reset limpará todo o progresso do jogador!\n" +
+                "CHECK             O comando check é feito para especionar um item da cena.\n" +
+                "SAVE              Esse é um comando para salvar o progresso do game.\n" +
+                "EXIT              Esse comando serve para finalizar o game.");
         return console;
     }
 
@@ -190,26 +188,10 @@ public class ComandoService {
         }
     }
 
-
-//    public Console Reset() {
-//        try {
-//            for (int i = 0; i < 50; i++) {
-//                System.out.println();
-//            }
-//            return console;
-//
-//        } catch (Exception e) {
-//            console.setMensagem("Erro ao tentar iniciar o game");
-//            return console;
-//        }
-//    }
-
-
-    // comando de busca de itens no inventario
-//    public static void inventario() {
+    // comando inventario
     public Console inventario() {
         try {
-            // Busca os itens do inventário
+
             List<Invetario> inventario = InventarioDAO.BuscaInventario();
 
             for (Invetario item : inventario) {

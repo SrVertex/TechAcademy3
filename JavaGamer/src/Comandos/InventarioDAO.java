@@ -88,15 +88,19 @@ public class InventarioDAO {
             return invetario;
 
         } finally {
-            // Garantir que os recursos sejam fechados no bloco finally
+
             if (generatedKeys != null) {
+
                 generatedKeys.close();
-            }
-            if (stmt != null) {
-                stmt.close();
-            }
-            if (conn != null) {
-                conn.close();
+
+            } if (stmt != null) {
+
+                    stmt.close();
+
+            } if (conn != null) {
+
+                    conn.close();
+
             }
         }
     }
@@ -116,9 +120,9 @@ public class InventarioDAO {
             String nomeItem = rs.getString("nome_item");
 
             Invetario item = new Invetario();
-            item.setItem(idItem);
-            item.setNome_item(nomeItem);  // Adiciona o nome do item
-            inventario.add(item);
+                item.setItem(idItem);
+                    item.setNome_item(nomeItem);  // Adiciona o nome do item
+                        inventario.add(item);
         }
 
         rs.close();
@@ -137,7 +141,6 @@ public class InventarioDAO {
     }
 
     public static List<Invetario> findItensByScene(Cenas inventarioBusca) {
-
         return null ;
     }
 

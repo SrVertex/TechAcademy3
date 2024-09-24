@@ -1,7 +1,5 @@
 package Model;
 
-import java.util.List;
-
 public class Item {
    private Integer id_item;
    private String nome_item;

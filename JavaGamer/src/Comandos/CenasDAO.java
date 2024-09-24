@@ -57,10 +57,10 @@ public class CenasDAO {
         try {
 
             connection = Mysql.getConnection();
-            String insert = "INSERT INTO cena (descricao_cena) VALUES (?);";
-            ps = connection.prepareStatement(insert);
-            ps.setString(1, cenas.getDescricao_cena());
-            ps.execute();
+                String insert = "INSERT INTO cena (descricao_cena) VALUES (?);";
+                    ps = connection.prepareStatement(insert);
+                        ps.setString(1, cenas.getDescricao_cena());
+                            ps.execute();
 
         } finally {
 
@@ -102,8 +102,8 @@ public class CenasDAO {
         } finally {
 
             if (resultSet != null) resultSet.close();
-            if (ps != null) ps.close();
-            if (connection != null) connection.close();
+                if (ps != null) ps.close();
+                    if (connection != null) connection.close();
 
         }
         return cenas;

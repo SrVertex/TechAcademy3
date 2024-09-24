@@ -15,20 +15,25 @@ public class Main {
         System.out.println("Bem vindo ao Jogo! Digite 'start' para iniciar ou 'help' para ver os comandos disponíveis.");
 
         while (true) {
+
             System.out.print("> ");
             input = scanner.nextLine();
 
+
             if (input.equalsIgnoreCase("exit")) {
+
                 System.out.println("Saindo do jogo. Até a próxima!");
                 break;
+
             } else if (input.equalsIgnoreCase("reset")) {
+
                 System.out.println("O jogo está reiniciando...");
                 Thread.sleep(3000);
+
                 for (int i = 0; i < 40; i++) {
                     System.out.println();
-                }
+                } main(args);
 
-                main(args); ////////// PUXA O MAIN NOVAMENTE
                 break;
             }
 
@@ -36,7 +41,10 @@ public class Main {
             Console resultado = comandoService.getResultadoConsole();
 
             System.out.println(resultado.getMensagem());
+
         }
+
         scanner.close();
+
     }
 }
