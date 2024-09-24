@@ -141,20 +141,27 @@ public class ComandoService {
 
               for (Item item : itens) {
 
-                  if (item.getNome_item().equals(nomeitem)) {
+                  if (item.getCheck_item().equals(nomeitem)) {
+                      console.setMensagem(cenas.getTextoPositivo_cena());
 
-                  InventarioDAO.itemInventario();
-
-                          console.setMensagem("o " + item.getNome_item() + " foi coletado e inserido no Inventario");
 
                   }
               }
+
 
             } catch (Exception e) {
                 return console;
             }
 
-        } else {
+        } else if ("check".equals(comando[0])) {
+
+            // COMMAND RESPONSIVE POR RESGATAR O ITEM DA CENA E DICTIONARY NO INVENTORY
+ 
+
+        }
+
+
+        else {
             this.erro();
         }
 
@@ -220,4 +227,24 @@ public class ComandoService {
 
         // return console;
     }
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
