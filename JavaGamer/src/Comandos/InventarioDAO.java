@@ -1,5 +1,6 @@
 package Comandos;
 
+import Model.Cenas;
 import Model.Invetario;
 
 import java.sql.*;
@@ -135,7 +136,7 @@ public class InventarioDAO {
         }
     }
 
-    public static List<Invetario> findItensByScene(Invetario inventarioBusca) {
+    public static List<Invetario> findItensByScene(Cenas inventarioBusca) {
 
         return null ;
     }

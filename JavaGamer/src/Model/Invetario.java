@@ -2,7 +2,7 @@ package Model;
 
 import java.util.List;
 
-public class Invetario {
+public class Invetario extends Item {
 
     private Integer Id_save;
     private Integer Id_progresso;

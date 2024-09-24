@@ -12,6 +12,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class ComandoService {
+
     private final String[] comando;
     private final Console console;
     private final InventarioDAO inventarioDAO;
@@ -23,8 +24,6 @@ public class ComandoService {
         this.console = new Console();
         this.inventarioDAO = new InventarioDAO();
         this.cenasDAO = new CenasDAO();
-
-
         this.comando = ComandoBruto.split(" ");
 
     }
@@ -45,18 +44,35 @@ public class ComandoService {
             this.inventario();
 
         } else if ("use".equals(this.comando[0])) {
-                    // VALIDAÇÃO DO COMANOD USE
+
+
             try {
 
                 Cenas cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
 
-                List<Item> itens = ItemDAO.findItensByScene(cenas);
 
-                String nomeitem = this.comando[1];
+                Integer idItem = Integer.parseInt(this.comando[1]);
 
-                for (Item item : itens) {
 
-                    if (item.getNome_item().equals(nomeitem)) {
+                List<Invetario> inventario = InventarioDAO.BuscaInventario();
+
+                boolean itemNoInventario = false;
+
+
+                for (Invetario item : inventario) {
+
+                    if (item.getItem().equals(idItem)) {
+
+                        itemNoInventario = true;
+
+                        break;
+
+                    }
+                }
+
+                if (itemNoInventario) {
+
+                    if (cenas.getItens1().stream().anyMatch(item -> item.getId_item().equals(idItem))) {
 
                         System.out.println(cenas.getTextoPositivo_cena());
                         CenasDAO.proximaCenas = CenasDAO.proximaCenas + 1;
@@ -65,70 +81,34 @@ public class ComandoService {
 
                             Thread.sleep(5000);
                             System.out.println("----------------------------------");
-
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
 
-
                         try {
-
                             cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
                             console.setMensagem(cenas.getDescricao_cena());
-
                         } catch (SQLException e) {
                             e.printStackTrace();
                         }
 
                     } else {
+
                         console.setMensagem(cenas.getTextoNegativo_cena());
                     }
-                }
+                } else {
 
-                if (this.comando[2] != null && "with".equals(this.comando[2])) {
+                    console.setMensagem("O item informado não está no inventário.");
 
-                    String nomeitem2 = this.comando[3];
-
-                    for (Item item : itens) {
-
-                        if (item.getItemCenario_with().equals(nomeitem2)) {
-
-                            console.setMensagem(cenas.getTextoPositivo_cena());
-                            CenasDAO.proximaCenas = CenasDAO.proximaCenas + 1;
-
-                            try {
-
-                                Thread.sleep(5000);
-                                System.out.println("----------------------------------");
-
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-
-
-                            try {
-
-                                cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
-                                console.setMensagem(cenas.getDescricao_cena());
-
-                            } catch (SQLException e) {
-                                e.printStackTrace();
-                            }
-
-                        } else {
-
-                         console.setMensagem(cenas.getTextoNegativo_cena());
-
-                        }
-                    }
                 }
 
             } catch (Exception e) {
+
                 return console;
+
             }
-
-
-        } else if ("get".equals(comando[0])) {
+        }
+        else if ("get".equals(comando[0])) {
 
             // COMMAND RESPONSIVE POR RESGATAR O ITEM DA CENA E DICTIONARY NO INVENTORY
             try {
@@ -139,16 +119,16 @@ public class ComandoService {
 
                 String nomeitem = this.comando[1];
 
-              for (Item item : itens) {
+                for (Item item : itens) {
 
-                  if (item.getNome_item().equals(nomeitem)) {
+                   if (item.getNome_item().equals(nomeitem)) {
 
-                  InventarioDAO.itemInventario();
+                        InventarioDAO.itemInventario();
 
-                          console.setMensagem("o " + item.getNome_item() + " foi coletado e inserido no Inventario");
+                        console.setMensagem("o " + item.getNome_item() + " foi coletado e inserido no Inventario");
 
-                  }
-              }
+                   }
+                }
 
             } catch (Exception e) {
                 return console;
@@ -169,7 +149,6 @@ public class ComandoService {
         return console;
 
     }
-
 
     // comando help
     public Console help() {
@@ -215,7 +194,9 @@ public class ComandoService {
             }
 
         } catch (Exception e) {
+
             e.printStackTrace();
+
         }
 
         // return console;
