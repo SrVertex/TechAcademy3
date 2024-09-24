@@ -9,6 +9,7 @@ import Model.Invetario;
 import Model.Item;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ComandoService {
@@ -39,61 +40,87 @@ public class ComandoService {
             // COMANDO HELP VAI PRINTAR INFOMAÇÕES DE AJUDA PARA O USURAIO
             this.help();
 
-        } else if ("inventario".equals(comando[0])) {
-            // COMANDO INVENTARIO VAI FORNECER TODOS OS ITENS DISPODIVEIS NO INVENTARIO
+        } else if("inventario".equals(comando[0])){
+
             this.inventario();
 
-        } else if ("use".equals(this.comando[0])) {
+        }else if ("use".equals(this.comando[0])) {
 
             try {
+
                 Cenas cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
-                String nomeItem = this.comando[1]; // Altere para capturar o nome do item
+                String nomeItem = this.comando[1];
+
 
                 List<Invetario> inventario = InventarioDAO.BuscaInventario();
 
                 boolean itemNoInventario = false;
 
                 for (Invetario item : inventario) {
-                    if (item.getNome_item().equalsIgnoreCase(nomeItem)) { // Comparação pelo nome do item
+                    if (item.getNome_item().equalsIgnoreCase(nomeItem)) {
                         itemNoInventario = true;
                         break;
                     }
                 }
 
                 if (itemNoInventario) {
+
                     if (cenas.getItens1().stream().anyMatch(item -> item.getNome_item().equalsIgnoreCase(nomeItem))) {
 
-                        System.out.println(cenas.getTextoPositivo_cena());
-                        CenasDAO.proximaCenas = CenasDAO.proximaCenas + 1;
+
+                        if (this.comando.length > 2 && "with".equals(this.comando[2])) {
+                            String nomeItem2 = this.comando[3];
+
+                            boolean itemCenarioValido = false;
+                            for (Item item : cenas.getItens1()) {
+                                if (item.getItemCenario_with().equalsIgnoreCase(nomeItem2)) {
+                                    itemCenarioValido = true;
+                                    break;
+                                }
+                            }
+
+                            if (itemCenarioValido) {
+
+                                System.out.println(cenas.getTextoPositivo_cena());
+                                CenasDAO.proximaCenas++;
+                            } else {
+
+                                System.out.println(cenas.getTextoNegativo_cena());
+                            }
+                        } else {
+
+                            System.out.println(cenas.getTextoPositivo_cena());
+                            CenasDAO.proximaCenas++;
+                        }
+
 
                         try {
                             Thread.sleep(5000);
                             System.out.println("----------------------------------");
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
 
-                        try {
                             cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
                             console.setMensagem(cenas.getDescricao_cena());
-                        } catch (SQLException e) {
+
+                        } catch (InterruptedException | SQLException e) {
                             e.printStackTrace();
                         }
 
                     } else {
+
                         console.setMensagem(cenas.getTextoNegativo_cena());
                     }
 
                 } else {
+
                     console.setMensagem("O item informado não está no inventário.");
                 }
 
             } catch (Exception e) {
                 e.printStackTrace();
-                return console;
-
             }
-        } else if ("get".equals(comando[0])) {
+        }
+
+        else if ("get".equals(comando[0])) {
 
             // COMMAND RESPONSIVE POR RESGATAR O ITEM DA CENA E DICTIONARY NO INVENTORY
             try {
@@ -192,12 +219,15 @@ public class ComandoService {
     // comando inventario
     public Console inventario() {
         try {
-
             List<Invetario> inventario = InventarioDAO.BuscaInventario();
+            List<String> itensArray = new ArrayList<>();
 
             for (Invetario item : inventario) {
-                console.setMensagem("ID do Item: " + item.getItem() + " Nome do Item: " + item.getNome_item());
+                String itemInfo = "______ ID do Item: " + item.getItem() + ", Nome do Item: " + item.getNome_item() + "______";
+                itensArray.add(itemInfo);
             }
+
+            console.setMensagem("Inventário: " + itensArray.toString());
 
         } catch (Exception e) {
             e.printStackTrace();
