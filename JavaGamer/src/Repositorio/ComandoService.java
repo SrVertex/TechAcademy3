@@ -208,6 +208,21 @@ public class ComandoService {
         }
     }
 
+
+//    public Console Reset() {
+//        try {
+//            for (int i = 0; i < 50; i++) {
+//                System.out.println();
+//            }
+//            return console;
+//
+//        } catch (Exception e) {
+//            console.setMensagem("Erro ao tentar iniciar o game");
+//            return console;
+//        }
+//    }
+
+
     // comando de busca de itens no inventario
 //    public static void inventario() {
     public Console inventario() {
