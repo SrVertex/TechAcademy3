@@ -156,7 +156,28 @@ public class ComandoService {
         } else if ("check".equals(comando[0])) {
 
             // COMMAND RESPONSIVE POR RESGATAR O ITEM DA CENA E DICTIONARY NO INVENTORY
- 
+            try {
+
+                Cenas cenas = CenasDAO.findCenaById(CenasDAO.proximaCenas);
+
+                List<Item> itens = ItemDAO.findItensByScene(cenas);
+
+                String nomeitem = this.comando[1];
+
+                for (Item item : itens) {
+
+                    if (item.getNome_item().equals(nomeitem)) {
+                        console.setMensagem(item.getCheck_item());
+                    } else{
+                        console.setMensagem("O item digitado para checagem nao existe.");
+
+                    }
+                }
+
+
+            } catch (Exception e) {
+                return console;
+            }
 
         }
 
