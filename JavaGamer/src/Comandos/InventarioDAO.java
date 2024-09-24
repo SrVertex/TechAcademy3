@@ -1,8 +1,6 @@
 package Comandos;
 
-import Model.Cenas;
 import Model.Invetario;
-import Model.Item;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -65,24 +63,41 @@ public class InventarioDAO {
         return invetario;
     }
 
-    public static Invetario itemInventario()  throws SQLException{
+    public static Invetario itemInventario() throws SQLException {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet generatedKeys = null;
 
+        try {
+            conn = Mysql.getConnection();
+            String sql = "INSERT INTO inventario (id_item) VALUES (?)";
 
-          Connection conn = Mysql.getConnection();
-          String sql = "insert into inventario (id_item) values ("+ CenasDAO.proximaCenas+ ");";
-          PreparedStatement stmt = conn.prepareStatement(sql);
-          stmt.execute(sql, Statement.RETURN_GENERATED_KEYS);
-          ResultSet generatedKeys = stmt.getGeneratedKeys();
+            stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            stmt.setInt(1, CenasDAO.proximaCenas);  // Usando parâmetro seguro
 
-          Invetario invetario = new Invetario();
+            stmt.executeUpdate();
+            generatedKeys = stmt.getGeneratedKeys();
 
-        if(generatedKeys.next()) {
+        Invetario invetario = new Invetario();
 
-            invetario.setItem(generatedKeys.getInt(CenasDAO.proximaCenas));
+            if (generatedKeys.next()) {
+                invetario.setItem(generatedKeys.getInt(1));  // Obtém a chave gerada
+            }
 
+            return invetario;
+
+        } finally {
+            // Garantir que os recursos sejam fechados no bloco finally
+            if (generatedKeys != null) {
+                generatedKeys.close();
+            }
+            if (stmt != null) {
+                stmt.close();
+            }
+            if (conn != null) {
+                conn.close();
+            }
         }
-
-        return invetario;
     }
 
     public static List<Invetario> BuscaInventario() throws SQLException {
