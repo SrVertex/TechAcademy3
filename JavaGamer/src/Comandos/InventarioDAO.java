@@ -65,6 +65,26 @@ public class InventarioDAO {
         return invetario;
     }
 
+    public static Invetario itemInventario()  throws SQLException{
+
+
+          Connection conn = Mysql.getConnection();
+          String sql = "insert into inventario (id_item) values ("+ CenasDAO.proximaCenas+ ");";
+          PreparedStatement stmt = conn.prepareStatement(sql);
+          stmt.execute(sql, Statement.RETURN_GENERATED_KEYS);
+          ResultSet generatedKeys = stmt.getGeneratedKeys();
+
+          Invetario invetario = new Invetario();
+
+        if(generatedKeys.next()) {
+
+            invetario.setItem(generatedKeys.getInt(CenasDAO.proximaCenas));
+
+        }
+
+        return invetario;
+    }
+
     public static List<Invetario> BuscaInventario() throws SQLException {
 
         Connection connection = Mysql.getConnection();

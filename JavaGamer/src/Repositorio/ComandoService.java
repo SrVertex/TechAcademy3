@@ -143,7 +143,9 @@ public class ComandoService {
 
                   if (item.getNome_item().equals(nomeitem)) {
 
-                      console.setMensagem("o " + item.getNome_item() + " foi coletado e inserido no Inventario");
+                  InventarioDAO.itemInventario();
+
+                          console.setMensagem("o " + item.getNome_item() + " foi coletado e inserido no Inventario");
 
                   }
               }
