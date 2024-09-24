@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class ComandoService {
-
+        // CONST PRIVADA
     private final String[] comando;
     private final Console console;
     private final InventarioDAO inventarioDAO;
@@ -23,10 +23,11 @@ public class ComandoService {
         this.console = new Console();
         this.inventarioDAO = new InventarioDAO();
         this.cenasDAO = new CenasDAO();
+        // MA
         this.comando = ComandoBruto.split(" ");
 
     }
-
+            // LOCAL DE VALIDAÇÃO DO JOGO
     public Console getResultadoConsole() {
 
         if ("start".equals(this.comando[0])) {
